@@ -77,6 +77,7 @@ local function ParseRankFile(path)
     local function parse_alignment(k)
         local off = 0
         local result = {}
+        local unknown = {}
         local score = 0
         for _ = 1, k do
             local order = read_uint_le(off, 2)
@@ -99,24 +100,26 @@ local function ParseRankFile(path)
             if name and not IsIgnoredMigrationClass(name) then
                 result[name] = { level = level, exp = to_signed(exp) }
                 score = score + 1
+            elseif not name and (level > 0 or to_signed(exp) > 0) then
+                unknown[#unknown + 1] = crc .. " (level " .. level .. ")"
             end
             off = off + 10
         end
-        return result, score
+        return result, score, unknown
     end
 
     local current_count = table.Count(HORDE.classes or {})
     local max_k = math.min(math.floor(body_len / 8), current_count + 32)
-    local best, best_score, best_diff
+    local best, best_score, best_diff, best_unknown
     for k = 0, max_k do
         if (body_len - k * 8) % 10 == 0 then
-            local result, score = parse_alignment(k)
+            local result, score, unknown = parse_alignment(k)
             if result then
                 local diff = math.abs(k - current_count)
                 if not best
                     or score > best_score
                     or (score == best_score and diff < best_diff) then
-                    best, best_score, best_diff = result, score, diff
+                    best, best_score, best_diff, best_unknown = result, score, diff, unknown
                 end
             end
         end
@@ -124,23 +127,25 @@ local function ParseRankFile(path)
     if not best then
         return nil, "truncated or malformed rank file: " .. path
     end
+    if #best_unknown > 0 then
+        log("WARNING: " .. path .. ": unknown subclass CRC skipped: " .. table.concat(best_unknown, ", "))
+    end
     return best
 end
 
 local function ParseTokenFile(path)
     if not file.Exists(path, "DATA") then return nil, "file missing: " .. path end
-    local size = file.Size(path, "DATA")
-    if not size or size < #HEADER_TOKENS + 4 then return nil, "truncated token file: " .. path end
-    local strm = file.Open(path, "rb", "DATA")
-    if not strm then return nil, "could not open: " .. path end
+    local data = file.Read(path, "DATA")
+    if not data then return nil, "could not read: " .. path end
+    if data:sub(1, #HEADER_TOKENS) ~= HEADER_TOKENS then return nil, "invalid token header: " .. path end
 
-    local header = strm:Read(#HEADER_TOKENS)
-    local tokens = nil
-    if header == HEADER_TOKENS then
-        tokens = strm:ReadLong()
-    end
-    strm:Close()
-    if header ~= HEADER_TOKENS or tokens == nil then return nil, "invalid or truncated token file: " .. path end
+    local body = data:sub(#HEADER_TOKENS + 1)
+    if #body > 4 then body = body:gsub("\r\n", "\n") end
+    if #body ~= 4 then return nil, "invalid or truncated token file: " .. path end
+
+    local b1, b2, b3, b4 = string.byte(body, 1, 4)
+    local tokens = b1 + b2 * 256 + b3 * 65536 + b4 * 16777216
+    if tokens > 2147483647 then tokens = tokens - 4294967296 end
     return tokens
 end
 
@@ -163,6 +168,8 @@ local function ParseUnlockFile(path)
         local name = SubclassNameFromCRC(crc)
         if name and not IsIgnoredMigrationClass(name) then
             result[name] = status and true or false
+        elseif not name and status then
+            log("WARNING: " .. path .. ": unknown unlocked subclass CRC skipped: " .. crc)
         end
     end
     strm:Close()
@@ -173,21 +180,26 @@ local function WriteMigrationData(steamid, ranks, tokens, unlocks)
     return DB.Transaction(function(exec)
         for subclass_key, data in pairs(ranks or {}) do
             local _, err = exec(DB.Prepare([[
-                INSERT OR IGNORE INTO horde_redux_ranks (steamid, subclass_key, parent_class, level, exp)
-                VALUES (?, ?, ?, ?, ?);
+                INSERT INTO horde_redux_ranks (steamid, subclass_key, parent_class, level, exp)
+                VALUES (?, ?, ?, ?, ?)
+                ON CONFLICT(steamid, subclass_key) DO UPDATE SET level = excluded.level, exp = excluded.exp
+                WHERE excluded.level > horde_redux_ranks.level
+                   OR (excluded.level = horde_redux_ranks.level AND excluded.exp > horde_redux_ranks.exp);
             ]], steamid, subclass_key, ParentOf(subclass_key), data.level or 0, data.exp or 0))
             if err then return false end
         end
         if tokens ~= nil then
             local _, err = exec(DB.Prepare([[
-                INSERT OR IGNORE INTO horde_redux_tokens (steamid, tokens) VALUES (?, ?);
+                INSERT INTO horde_redux_tokens (steamid, tokens) VALUES (?, ?)
+                ON CONFLICT(steamid) DO UPDATE SET tokens = horde_redux_tokens.tokens + excluded.tokens;
             ]], steamid, tokens))
             if err then return false end
         end
         for subclass_key, status in pairs(unlocks or {}) do
             local _, err = exec(DB.Prepare([[
-                INSERT OR IGNORE INTO horde_redux_unlocks (steamid, subclass_key, unlocked)
-                VALUES (?, ?, ?);
+                INSERT INTO horde_redux_unlocks (steamid, subclass_key, unlocked)
+                VALUES (?, ?, ?)
+                ON CONFLICT(steamid, subclass_key) DO UPDATE SET unlocked = MAX(horde_redux_unlocks.unlocked, excluded.unlocked);
             ]], steamid, subclass_key, status and 1 or 0))
             if err then return false end
         end
@@ -210,13 +222,18 @@ end
 
 local function ArchiveFile(src, sub)
     if not file.Exists(src, "DATA") then return true end
+    if (file.Size(src, "DATA") or 0) == 0 then return true end
     local data = file.Read(src, "DATA")
     if data == nil then return false, "could not read " .. src end
     local fname = string.GetFileFromFilename(src)
     local backup = BACKUP_DIR .. "/" .. sub .. "/" .. fname
-    if not file.Write(backup, data) then return false, "could not write backup " .. backup end
+    file.Write(backup, data)
     if file.Read(backup, "DATA") ~= data then return false, "backup verification failed " .. backup end
     return true
+end
+
+local function HasData(path)
+    return file.Exists(path, "DATA") and (file.Size(path, "DATA") or 0) > 0
 end
 
 local function MigrateScrubbed(scrubbed, steamid)
@@ -235,9 +252,18 @@ local function MigrateScrubbed(scrubbed, steamid)
 
     local ranks, tokens, unlocks = {}, nil, {}
     local parse_error
-    if file.Exists(rank_path, "DATA") then ranks, parse_error = ParseRankFile(rank_path); if not ranks then return false, parse_error end end
-    if file.Exists(token_path, "DATA") then tokens, parse_error = ParseTokenFile(token_path); if tokens == nil then return false, parse_error end end
-    if file.Exists(unlock_path, "DATA") then unlocks, parse_error = ParseUnlockFile(unlock_path); if not unlocks then return false, parse_error end end
+    if HasData(rank_path) then
+        ranks, parse_error = ParseRankFile(rank_path)
+        if not ranks then return false, parse_error end
+    end
+    if HasData(token_path) then
+        tokens, parse_error = ParseTokenFile(token_path)
+        if tokens == nil then return false, parse_error end
+    end
+    if HasData(unlock_path) then
+        unlocks, parse_error = ParseUnlockFile(unlock_path)
+        if not unlocks then return false, parse_error end
+    end
 
     EnsureBackupDirs()
     for _, entry in ipairs({{rank_path, "ranks"}, {token_path, "tokens"}, {unlock_path, "subclass_unlocks"}}) do
@@ -263,7 +289,7 @@ end
 
 local function UnscrubSteamID(scrubbed)
     if not isstring(scrubbed) then return nil end
-    local universe, account, id = string.match(scrubbed, "^STEAM_(%d+)_(%d+)_(%d+)$")
+    local universe, account, id = string.match(string.lower(scrubbed), "^steam_(%d+)_(%d+)_(%d+)$")
     if not universe then return nil end
     return "STEAM_" .. universe .. ":" .. account .. ":" .. id
 end
@@ -276,21 +302,42 @@ local function IsMigrated(steamid)
     return tonumber(v) == 1, err
 end
 
+local LEGACY_DIRS = {
+    { RANKS_DIR,   "ranks" },
+    { TOKENS_DIR,  "tokens" },
+    { UNLOCKS_DIR, "subclass_unlocks" },
+}
+
+local function NeedsMigration(scrubbed, steamid)
+    local fname = scrubbed .. ".txt"
+    local any, unarchived = false, false
+    for _, d in ipairs(LEGACY_DIRS) do
+        if file.Exists(d[1] .. "/" .. fname, "DATA") then
+            any = true
+            if not file.Exists(BACKUP_DIR .. "/" .. d[2] .. "/" .. fname, "DATA") then
+                unarchived = true
+            end
+        end
+    end
+    if not any then return false end
+    local migrated, err = IsMigrated(steamid)
+    if err then return nil, err end
+    return (not migrated) or unarchived
+end
+
 function HORDE:TryMigratePlayer(ply)
     if not IsValid(ply) then return end
     if not DB.IsReady() then return end
 
     local steamid = ply:SteamID()
-    local migrated, query_error = IsMigrated(steamid)
+    local scrubbed = string.lower((steamid:gsub(":", "_")))
+    local need, query_error = NeedsMigration(scrubbed, steamid)
     if query_error then return false, "could not query migration status" end
-    if migrated then return true end
+    if not need then return true end
 
-    local scrubbed = steamid:gsub(":", "_")
-    local migrated, err = MigrateScrubbed(scrubbed, steamid)
-
-    if migrated then
+    local ok, err = MigrateScrubbed(scrubbed, steamid)
+    if ok then
         ply.Horde_Just_Migrated = true
-        return true
     elseif err then
         log("ERROR: lazy migration failed for " .. steamid .. ": " .. tostring(err))
         if not ply.Horde_Migration_Failed then
@@ -299,16 +346,8 @@ function HORDE:TryMigratePlayer(ply)
                 "Old save migration failed; original files are kept untouched. Please contact an admin.",
                 1, ply)
         end
-        return true
-    else
-        local _, write_error = DB.Query(DB.Prepare([[
-            INSERT INTO horde_redux_players (steamid, migrated, first_seen, last_seen)
-            VALUES (?, 1, ?, ?)
-            ON CONFLICT(steamid) DO UPDATE SET migrated = 1;
-        ]], steamid, os.time(), os.time()))
-        if write_error then return false, "could not store empty migration marker" end
-        return true
     end
+    return true
 end
 
 function HORDE:RunBatchMigration()
@@ -325,7 +364,7 @@ function HORDE:RunBatchMigration()
         local files = file.Find(dir .. "/*.txt", "DATA")
         if not files then return end
         for _, fname in ipairs(files) do
-            local scrubbed = string.StripExtension(fname)
+            local scrubbed = string.lower(string.StripExtension(fname))
             seen[scrubbed] = true
         end
     end
@@ -339,13 +378,13 @@ function HORDE:RunBatchMigration()
         if not steamid then
             log("ERROR: ignoring malformed legacy filename " .. scrubbed .. "; original is untouched.")
         else
-            local migrated, query_error = IsMigrated(steamid)
+            local need, query_error = NeedsMigration(scrubbed, steamid)
             if query_error then
                 log("ERROR: could not query migration status for " .. steamid .. "; originals are untouched.")
-            elseif not migrated then
+            elseif need then
                 local ok, err = MigrateScrubbed(scrubbed, steamid)
                 if ok then
-                count = count + 1
+                    count = count + 1
                 elseif err then
                     log("ERROR: migration failed for " .. steamid .. ": " .. tostring(err))
                 end
