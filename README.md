@@ -2,9 +2,9 @@
 Redux version of Horde gamemode made by SHG community
 
 ## Original authors
-Original gamemode - [Horde](https://github.com/Cabel496/Horde)
-Original gamemode on Steam - [Horde](https://steamcommunity.com/sharedfiles/filedetails/?id=2401598805)
-Original author - [Gorlami](https://github.com/Cabel496)
+- Original gamemode - [Horde](https://github.com/Cabel496/Horde)
+- Original gamemode on Steam - [Horde](https://steamcommunity.com/sharedfiles/filedetails/?id=2401598805)
+- Original author - [Gorlami](https://github.com/Cabel496)
 
 ## Steam Workshop
 -
