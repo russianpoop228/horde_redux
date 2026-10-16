@@ -1,4 +1,5 @@
 GM.Name = "Horde: REDUX"
+GM.Author = "\"Horde\" Made by Gorlami & \"Horde: REDUX\" Made by SHG"
 GM.Email = "N/A"
 GM.Website = "N/A"
 
