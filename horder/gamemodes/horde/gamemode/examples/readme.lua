@@ -1,3 +1,4 @@
+return [==[
 HORDE: REDUX - EXTERNAL MODULE EXAMPLES
 
 
@@ -134,3 +135,4 @@ IsStackableSkill   shows the charge count on the icon
 UsePerkCooldown    false = the status has its own cooldown
 Draw               return true to replace the default icon rendering
 Charges = -1       hides the charge count
+]==]
