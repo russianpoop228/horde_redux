@@ -1,0 +1,136 @@
+AddCSLuaFile()
+
+ENT.Type 			= "anim"
+ENT.Base 			= "obj_vj_projectile_base"
+ENT.PrintName		= "Combine Ball"
+ENT.Information		= "Projectiles for my addons"
+ENT.Category		= "Projectiles"
+
+ENT.VJ_IsDetectableDanger = true
+
+if CLIENT then
+	local Name = "Combine Ball"
+	local LangName = "obj_vj_horde_cball"
+	language.Add(LangName, Name)
+    killicon.AddAlias(LangName, "projectile_horde_hyperblast_projectile")
+	language.Add("#"..LangName, Name)
+    killicon.AddAlias("#"..LangName, "projectile_horde_hyperblast_projectile")
+
+	function ENT:Draw()
+		self:DrawModel()
+		self:SetAngles((LocalPlayer():EyePos() - self:GetPos()):Angle())
+	end
+end
+if !SERVER then return end
+
+ENT.Model = "models/effects/combineball.mdl"
+ENT.CollisionBehavior = VJ.PROJ_COLLISION_PERSIST
+ENT.CollisionDecal = "FadingScorch"
+ENT.RemoveOnHit = false
+ENT.DoesDirectDamage = false
+ENT.DirectDamage = 50
+ENT.DirectDamageType = DMG_BLAST
+ENT.DecalTbl_DeathDecals = {"Scorch"}
+ENT.SoundTbl_Idle = {"weapons/physcannon/energy_sing_loop4.wav"}
+ENT.SoundTbl_OnCollide = {"weapons/physcannon/energy_bounce1.wav","weapons/physcannon/energy_bounce2.wav"}
+
+ENT.IdleSoundPitch = VJ_Set(100, 100)
+function ENT:InitPhys()
+	self:PhysicsInitSphere(1, "metal_bouncy")
+	construct.SetPhysProp(self:GetOwner(), self, 0, self:GetPhysicsObject(), {GravityToggle = false, Material = "metal_bouncy"})
+end
+function ENT:SetCoreType(capture)
+	if capture then
+		self:SetSubMaterial(0, "models/effects/comball_glow1")
+	else
+		self:SetSubMaterial(0, "vj_base/effects/comball_glow2")
+	end
+end
+local colorWhite = Color(255, 255, 255, 255)
+function ENT:CustomOnInitialize()
+	timer.Simple(5, function() if IsValid(self) then self:DeathEffects() end end)
+
+	self:DrawShadow(false)
+	self:ResetSequence("idle")
+	self:SetCoreType(false)
+
+	util.SpriteTrail(self, 0, colorWhite, true, 15, 0, 0.1, 1 / 6 * 0.5, "sprites/combineball_trail_black_1.vmt")
+end
+function ENT:OnBounce(data, phys)
+	local myPos = self:GetPos()
+	local owner = self:GetOwner()
+	local newVel = phys:GetVelocity():GetNormal()
+	local lastVel = math.max(newVel:Length(), math.max(data.OurOldVelocity:Length(), data.Speed))
+
+	if !IsValid(owner) then return end
+	local closestDist = 1024
+	local target = NULL
+	for _, v in ipairs(ents.FindInSphere(myPos, 1024)) do
+		if v == owner then continue end
+		if (!v:IsNPC() && !v:IsPlayer()) then continue end
+		if owner:IsNPC() && owner:CheckRelationship(v) == D_LI then continue end
+		local dist = v:GetPos():Distance(myPos)
+		if dist < closestDist && dist > 20 then
+			closestDist = dist
+			target = v
+		end
+	end
+
+	if IsValid(target) then
+		local targetPos = target:GetPos() + target:OBBCenter()
+		local norm = (targetPos - myPos):GetNormalized()
+		if self:GetForward():DotProduct(norm) < 0.75 then
+			phys:SetVelocity(norm * lastVel)
+		end
+	end
+end
+
+local sdHit = {"weapons/physcannon/energy_disintegrate4.wav", "weapons/physcannon/energy_disintegrate5.wav"}
+function ENT:OnCollision(data, phys)
+	local owner = self:GetOwner()
+	local dataF = EffectData()
+	dataF:SetOrigin(data.HitPos)
+	util.Effect("cball_bounce", dataF)
+
+	dataF = EffectData()
+	dataF:SetOrigin(data.HitPos)
+	dataF:SetNormal(data.HitNormal)
+	dataF:SetScale(50)
+	util.Effect("AR2Impact", dataF)
+    self:DeathEffects()
+end
+function ENT:GravGunPunt(ply)
+	self:SetCoreType(false)
+	self:GetPhysicsObject():EnableMotion(true)
+	return true
+end
+
+function ENT:DeathEffects()
+
+    local myPos = self:GetPos()
+	effects.BeamRingPoint(myPos, 0.2, 12, 512, 64, 0, color1, {material="sprites/lgtning.vmt", framerate=2, flags=0, speed=0, delay=0, spread=0})
+	effects.BeamRingPoint(myPos, 0.5, 12, 512, 64, 0, color2, {material="sprites/lgtning.vmt", framerate=2, flags=0, speed=0, delay=0, spread=0})
+
+	local effectData = EffectData()
+	effectData:SetOrigin(myPos)
+	util.Effect("cball_explode", effectData)
+
+	VJ_EmitSound(self, "weapons/physcannon/energy_sing_explosion2.wav", 150)
+	util.ScreenShake(myPos, 20, 150, 1, 500)
+
+    local owner = self.Owner
+    if not IsValid(owner) then
+        owner = self
+    end
+
+    local dmg = DamageInfo()
+    dmg:SetAttacker(owner)
+    dmg:SetInflictor(self)
+    dmg:SetDamageType(DMG_CLUB)
+    dmg:SetDamage(60)
+    util.BlastDamageInfo(dmg, self:GetPos(), 150)
+
+    self:Remove()
+end
+local color1 = Color(255, 255, 225, 32)
+local color2 = Color(255, 255, 225, 64)

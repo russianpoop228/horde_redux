@@ -1,0 +1,10 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\hl2beta\houndeye\eye"
+	"$envmap" "models\hl2beta\houndeye\eye_env"
+	"$envmapcontrast" 1.6
+	"$envmapsphere" 0
+	"$envmapmode" 1
+	"$multipass" 1
+	"$model" "1"
+}

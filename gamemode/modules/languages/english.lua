@@ -1,0 +1,2859 @@
+translate.AddLanguage("en", "English")
+
+LANGUAGE["Game_Preparing..."] = "Preparing..."
+LANGUAGE["Game_Ready"] = "Ready"
+LANGUAGE["Game_Not Ready"] = "Not Ready"
+LANGUAGE["Game_Players_Ready"] = "Players Ready"
+LANGUAGE["Game_Next_Wave_Number"] = "Wave "
+LANGUAGE["Game_Next_Wave_Starts_In"] = "starts in %d seconds"
+LANGUAGE["Game_Difficulty_NIGHTMARE"] = "NIGHTMARE"
+LANGUAGE["Game_Difficulty_APOCALYPSE"] = "APOCALYPSE"
+LANGUAGE["Game_Difficulty_CHAOS"] = "CHAOS"
+LANGUAGE["Game_Difficulty_HUNDRED"] = "HUNDRED"
+LANGUAGE["Game_Difficulty_TOWDEF"] = "TOWER DEFENSE"
+LANGUAGE["Game_Difficulty_UNARMED"] = "UNARMED"
+LANGUAGE["Game_Difficulty_WAVE_666"] = "WAVE 666"
+LANGUAGE["Game_Difficulty_PURISM"] = "PURISM"
+LANGUAGE["Game_Difficulty_BOSS_RUSH"] = "BOSS RUSH"
+LANGUAGE["Game_Difficulty_BUDGET"] = "BUDGET"
+LANGUAGE["Game_Difficulty_CASUAL"] = "CASUAL"
+LANGUAGE["Game_Enemies"] = "Enemies"
+LANGUAGE["Game_HintBottomReady"] = "F2 - Info/Config, F3 - Shop/Perk, F4 - Ready"
+LANGUAGE["Game_HintBottom"] = "F2 - Info/Config, F3 - Shop/Perk, V - Drop $"
+LANGUAGE["Game_Result_VICTORY"] = "VICTORY"
+LANGUAGE["Game_Result_DEFEAT"] = "DEFEAT"
+LANGUAGE["Game_Result_Change Map"] = "Change Map"
+LANGUAGE["Game_Wave"] = "Wave"
+LANGUAGE["Game_Wave_Has_Started"] = "Wave %d has started"
+LANGUAGE["Game_Wave_Completed"] = "Wave Completed"
+LANGUAGE["Game_Remaining_Time"] = "Remaining Time"
+LANGUAGE["Game_Vote_Map"] = "Vote Map"
+
+LANGUAGE["Game_Obj_Defend"] = "Defend: %s"
+LANGUAGE["Game_Obj_DefendAll"] = "Defend All Objectives"
+LANGUAGE["Game_Obj_Deliver"] = "Deliver: %s"
+LANGUAGE["Game_Obj_DeliverAll"] = "Deliver All Payloads"
+LANGUAGE["Game_Obj_Escape"] = "Escape to Safety!"
+LANGUAGE["Game_Obj_Multiple"] = "Objectives"
+LANGUAGE["Game_Obj_Mixed"] = "Objectives"
+LANGUAGE["Game_Obj_MixedArg"] = "Defend and deliver: %s"
+LANGUAGE["Game_Game_Summary"] = "Game Summary"
+LANGUAGE["Game_Most_Damage_Dealt"] = "Most Damage Dealt"
+LANGUAGE["Game_Damage"] = "Damage"
+LANGUAGE["Game_Most_Damage_Taken"] = "Most Damage Taken"
+LANGUAGE["Game_Damage_Taken"] = "Damage Taken"
+LANGUAGE["Game_Most_Kills"] = "Most Kills"
+LANGUAGE["Game_Kills"] = "Kills"
+LANGUAGE["Game_Elite_Killer"] = "Elite Killer"
+LANGUAGE["Game_Elite_Kills"] = "Elite Kills"
+LANGUAGE["Game_SharpShooter"] = "SharpShooter"
+LANGUAGE["Game_Headshots"] = "Headshots"
+LANGUAGE["Game_Most_Heal"] = "Team Healer"
+LANGUAGE["Game_Healed"] = "Healed"
+LANGUAGE["Game_Healed_You"] = "healed you"
+
+LANGUAGE["Game_F4_CannotSkip"] = "You can't skip right now!"
+LANGUAGE["Game_F4_Starting"] = "Next wave is starting!"
+LANGUAGE["Game_F4_Readied"] = "You are already readied up!"
+
+LANGUAGE["Rank_Novice"] = "Novice"
+LANGUAGE["Rank_Amateur"] = "Amateur"
+LANGUAGE["Rank_Skilled"] = "Skilled"
+LANGUAGE["Rank_Professional"] = "Professional"
+LANGUAGE["Rank_Expert"] = "Expert"
+LANGUAGE["Rank_Champion"] = "Champion"
+LANGUAGE["Rank_Master"] = "Master"
+LANGUAGE["Rank_Not_Met"] = "Rank Requirement(s) Not Met"
+
+LANGUAGE["Scoreboard_Name"] = "Name"
+LANGUAGE["Scoreboard_Class"] = "Class"
+LANGUAGE["Scoreboard_Perks"] = "Perks"
+LANGUAGE["Scoreboard_Gadget"] = "Gadget"
+LANGUAGE["Scoreboard_Money"] = "Money"
+LANGUAGE["Scoreboard_Kill"] = "Kill"
+LANGUAGE["Scoreboard_Death"] = "Death"
+LANGUAGE["Scoreboard_Ping"] = "Ping"
+
+LANGUAGE["Shop_Not_Enough_Money_Or_Carrying_Capacity"] = "Not Enough Money or Carrying Capacity!"
+LANGUAGE["Shop_Class"] = "Class"
+LANGUAGE["Shop_Cash"] = "Cash"
+LANGUAGE["Shop_Weight"] = "Weight"
+LANGUAGE["Shop_Melee"] = "Melee"
+LANGUAGE["Shop_Pistol"] = "Pistol"
+LANGUAGE["Shop_Shotgun"] = "Shotgun"
+LANGUAGE["Shop_SMG"] = "SMG"
+LANGUAGE["Shop_Rifle"] = "Rifle"
+LANGUAGE["Shop_MG"] = "MG"
+LANGUAGE["Shop_Explosive"] = "Explosive"
+LANGUAGE["Shop_Special"] = "Special"
+LANGUAGE["Shop_Equipment"] = "Equipment"
+LANGUAGE["Shop_Attachment"] = "Attachment"
+LANGUAGE["Shop_Gadget"] = "Gadget"
+
+LANGUAGE["Shop_Optic"] = "Optic"
+LANGUAGE["Shop_Underbarrel"] = "Underbarrel"
+LANGUAGE["Shop_Tactical"] = "Tactical"
+LANGUAGE["Shop_Barrel"] = "Barrel"
+LANGUAGE["Shop_Muzzle"] = "Muzzle"
+LANGUAGE["Shop_Magazine"] = "Magazine"
+LANGUAGE["Shop_Stock"] = "Stock"
+LANGUAGE["Shop_Ammo Type"] = "Ammo Type"
+LANGUAGE["Shop_Perk"] = "Perk"
+
+LANGUAGE["Shop_Class/Perks"] = "Class/Perks"
+LANGUAGE["Shop_Select_Class"] = "Select Class (Your Items Will Be Removed)"
+LANGUAGE["Shop_Show_Perks"] = "Show Class Perks"
+LANGUAGE["Shop_Hide_Perks"] = "Hide Class Perks"
+LANGUAGE["Shop_Unlocks_After_Wave"] = "Unlocks After Wave %d"
+LANGUAGE["Shop_Buy_Ammo_Clip"] = "Buy Ammo Clip"
+LANGUAGE["Shop_DoubleClick_Buy"] = "Double-click to buy"
+LANGUAGE["Shop_DoubleClick_Ammo"] = "Double-click to buy ammo"
+LANGUAGE["Shop_DoubleClick_Upgrade"] = "Double-click to upgrade"
+LANGUAGE["Shop_Sell_For"] = "Sell For"
+LANGUAGE["Shop_Sell_All_For"] = "Sell All For"
+LANGUAGE["Shop_Buy_Item"] = "Buy Item"
+LANGUAGE["Shop_OWNED"] = "OWNED"
+LANGUAGE["Shop_Buy_Secondary_Ammo"] = "Buy Secondary Ammo"
+LANGUAGE["Shop_Primary_Ammo"] = "Primary Ammo"
+LANGUAGE["Shop_Secondary_Ammo"] = "Secondary Ammo"
+
+LANGUAGE["Game_Infusion"] = "Infusion"
+LANGUAGE["Game_Infused"] = "Infused"
+LANGUAGE["Infusion_None"] = "None"
+LANGUAGE["Infusion_Hemo"] = "Hemo"
+LANGUAGE["Infusion_Concussive"] = "Concussive"
+LANGUAGE["Infusion_Septic"] = "Septic"
+LANGUAGE["Infusion_Flaming"] = "Flaming"
+LANGUAGE["Infusion_Arctic"] = "Arctic"
+LANGUAGE["Infusion_Galvanizing"] = "Galvanizing"
+LANGUAGE["Infusion_Quality"] = "Quality"
+LANGUAGE["Infusion_Impaling"] = "Impaling"
+LANGUAGE["Infusion_Rejuvenating"] = "Rejuvenating"
+LANGUAGE["Infusion_Quicksilver"] = "Quicksilver"
+LANGUAGE["Infusion_Titanium"] = "Titanium"
+LANGUAGE["Infusion_Siphoning"] = "Siphoning"
+LANGUAGE["Infusion_Chrono"] = "Chrono"
+LANGUAGE["Infusion_Ruination"] = "Ruination"
+
+LANGUAGE["Infusion_Description_Hemo"] = [[
+Convert 75% weapon damage into Slashing damage.
+
+Weapon deals only Slashing damage.
+
+Weapon damage increases Bleeding buildup. 
+]]
+LANGUAGE["Infusion_Description_Concussive"] = [[
+Convert 75% weapon damage into Blunt damage.
+
+Weapon deals only Blunt damage.
+
+Weapon damage increases Stun buildup. 
+]]
+LANGUAGE["Infusion_Description_Septic"] = [[
+Convert 75% weapon damage into Poison damage.
+
+Weapon deals only Poison damage.
+
+Weapon damage increases Break buildup. 
+]]
+LANGUAGE["Infusion_Description_Flaming"] = [[
+Convert 75% weapon damage into Fire damage.
+
+Weapon deals only Fire damage.
+
+Weapon ignites enemies on hit.
+]]
+LANGUAGE["Infusion_Description_Arctic"] = [[
+Convert 75% weapon damage into Cold damage.
+
+Weapon deals only Cold damage.
+
+Weapon damage increases Frostbite buildup. 
+]]
+LANGUAGE["Infusion_Description_Galvanizing"] = [[
+Convert 75% weapon damage into Lightning damage.
+
+Weapon deals only Lightning damage.
+
+Weapon damage increases Shock buildup. 
+]]
+LANGUAGE["Infusion_Description_Quality"] = [[
+20% increased weapon damage.
+
+Weapon damage is no longer affected by perks or gadgets.
+(i.e. Your perks become useless for this weapon)
+]]
+LANGUAGE["Infusion_Description_Impaling"] = [[
+25% increased weapon headshot damage.
+
+25% less weapon non-headshot damage.
+]]
+LANGUAGE["Infusion_Description_Rejuvenating"] = [[
+Amplifies weapon healing/leeching by 25%.
+
+20% less weapon damage.
+]]
+LANGUAGE["Infusion_Description_Quicksilver"] = [[
+Increases/decreases weapon damage based on player's available weight.
+
+<= 15% weight -> 30% damage increase
+<= 30% weight -> 25% damage increase 
+<= 40% weight -> 15% damage increase 
+>40% weight -> 25% damage decrease
+]]
+LANGUAGE["Infusion_Description_Titanium"] = [[
+Reduces player damage taken based on weapon weight.
+
+Decrease 1% damage taken for every 1 weight on the weapon.
+
+20% less weapon damage.
+]]
+LANGUAGE["Infusion_Description_Siphoning"] = [[
++1 health when you kill an enemy.
+
+20% less weapon damage.
+]]
+LANGUAGE["Infusion_Description_Chrono"] = [[
+Increases weapon damage the longer the weapon is being held by the user.
+
+6% damage increase per wave held by the user.
+Increase caps at 50%.
+
+20% decreased weapon damage.
+]]
+LANGUAGE["Infusion_Description_Ruination"] = [[
+Increases weapon damage based on your current Necrosis buildup.
+5% damage increase per 10 Necrosis buildup, up to 25%.
+
+Gain 10 Necrosis buildup per second while holding this weapon.
+]]
+
+LANGUAGE["Class_Survivor"] = "Survivor"
+LANGUAGE["Class_Assault"] = "Assault"
+LANGUAGE["Class_Heavy"] = "Heavy"
+LANGUAGE["Class_Medic"] = "Medic"
+LANGUAGE["Class_Demolition"] = "Demolition"
+LANGUAGE["Class_Ghost"] = "Ghost"
+LANGUAGE["Class_Engineer"] = "Engineer"
+LANGUAGE["Class_Berserker"] = "Berserker"
+LANGUAGE["Class_Warden"] = "Warden"
+LANGUAGE["Class_Cremator"] = "Cremator"
+
+LANGUAGE["Class_Psycho"] = "Psycho"
+LANGUAGE["Class_SpecOps"] = "SpecOps"
+LANGUAGE["Class_Carcass"] = "Carcass"
+LANGUAGE["Class_Hatcher"] = "Hatcher"
+LANGUAGE["Class_Warlock"] = "Warlock"
+LANGUAGE["Class_Gunslinger"] = "Gunslinger"
+LANGUAGE["Class_Necromancer"] = "Necromancer"
+LANGUAGE["Class_Samurai"] = "Samurai"
+LANGUAGE["Class_Overlord"] = "Overlord"
+LANGUAGE["Class_Artificer"] = "Artificer"
+
+LANGUAGE["Gadget_Activation"] = "Press T to activate."
+LANGUAGE["Gadget_Cooldown"] = "Cooldown"
+LANGUAGE["Gadget_Duration"] = "Duration"
+LANGUAGE["Gadget_Owned_Warning"] = "Only 1 Gadget can be OWNED!"
+LANGUAGE["Gadget_Seconds"] = "seconds"
+
+LANGUAGE["Class_Description_Survivor"] = [[
+Has access to all weapons except for exclusive and special weapons.
+Limited access to attachments.]]
+
+LANGUAGE["Class_Description_Assault"] = [[
+Has full access to assault rifles.]]
+
+LANGUAGE["Class_Description_Heavy"] = [[
+Has full access to machine guns and high weight weapons.]]
+
+LANGUAGE["Class_Description_Medic"] = [[
+Has acesss to most light weapons and medical tools.]]
+
+LANGUAGE["Class_Description_Demolition"] = [[
+Has full access to explosive weapons.]]
+
+LANGUAGE["Class_Description_Ghost"] = [[
+Has access to sniper rifles and selected light weapons.
+Has access to suppressors and sniper scopes.]]
+
+LANGUAGE["Class_Description_Engineer"] = [[
+Has access to special weapons and equipment.]]
+
+LANGUAGE["Class_Description_Berserker"] = [[
+Has access to melee weapons and some ranged equipment.]]
+
+LANGUAGE["Class_Description_Warden"] = [[
+Has full access to shotguns and watchtowers, built and managed via the Watchtower Staff (horde_wardenstaff) from Money.]]
+
+LANGUAGE["Class_Description_Cremator"] = [[
+Has access to heat-based weaponry.]]
+
+LANGUAGE["Perk_survivor_base"] = [[
+The Survivor class can be played into any class to fill in missing roles for the team.
+Complexity: EASY
+
+No bonus.]]
+
+LANGUAGE["Perk_assault_base"] = [[
+The Assault class is an all-purpose fighter with high mobility and a focus on Adrenaline stacks.
+Complexity: EASY
+
+{1} more movement speed. ({2} per level, up to {3}).
+{5} increased Ballistic damage. ({6} per level, up to {7}).
+
+Gain Adrenaline when you kill an enemy.
+Adrenaline increases damage and speed by {4}.]]
+
+LANGUAGE["Perk_heavy_base"] = [[
+The Heavy class is a tank class that provides strong suppression firepower.
+Complexity: EASY
+
+{6} increased maximum armor. ({7} per level, up to {8}).
+
+Regenerate {1} armor per second.
+Regenerate up to {2} armor. ({3} + {4} per level, up to {5})]]
+
+LANGUAGE["Perk_medic_base"] = [[
+The Medic class is a durable support class that focuses on healing and buffing teammates.
+Complexity: MEDIUM
+
+Amplifies healing by {1}. ({2} per level, up to {3}).
+
+Regenerate {4} health per second.]]
+
+LANGUAGE["Perk_demolition_base"] = [[
+The Demolition class is a crowd-control class that can also provide high single target damage.
+Complexity: MEDIUM
+
+{7} increased Blast damage. ({8} per level, up to {9}).
+{1} increased Blast damage resistance. ({2} + {3} per level, up to {4}).
+
+Regenerate {5} frag grenade every {6} seconds, if you do not have one.]]
+
+LANGUAGE["Perk_ghost_base"] = [[
+The Ghost class is focused on taking down boss enemies using Camoflague.
+Complexity: HIGH
+
+{1} more headshot damage. ({2} per level, up to {3}).
+
+Crouch to activate Camoflague, granting {4} evasion.
+Attacking or Running REMOVES Camoflague.]]
+
+LANGUAGE["Perk_engineer_base"] = [[
+The Engineer builds and fights with minions and structures.
+Complexity: MEDIUM
+
+{1} increased minion damage. ({2} per level, up to {3}).
+Turrets have {4} base health and deal {5} base damage.
+
+Starting Metal: {6} ({7} + {8} per level, up to {9}).
+Regenerates {10} Metal every {11} seconds (down to {12} seconds at high level).
+Green ammo boxes give {13} Metal.
+When you kill an enemy, {14} chance ({15} + {16} per level, up to {17}) to gain Metal equal to {18} of its max health (up to {19} per kill).
+
+Left Click opens the Pocket Constructor: spend Metal, place a unit, wait for it to finish building.
+The Welder spends Metal to repair and reload your turrets.
+A Metal Dispenser nearby reloads turrets over time.
+Upgrade+1 spends Metal to permanently boost all units of that type.
+Destroy removes one unit and refunds part of the cost.
+Infusions can be applied per unit type.]]
+
+LANGUAGE["Perk_berserker_base"] = [[
+The Berserker class is a melee-centered class that can be played both offensively and defensively.
+Complexity: HIGH
+
+{1} increased melee damage. ({2} per level, up to {3}).
+{4} increased global damage resistance. ({5} per level, up to {6}).
+
+While on the ground, jump to gain Aerial Parry.
+{7} less physical damage taken while Aerial Parry or Active Parry is active.
+Lose Aerial Parry when you land on the ground.
+
+Modifiers to Aerial Parry also apply to Active Parry.
+Modifiers to melee damage also apply to slashing and blunt damage.
+
+Shift + E to perform Active Parry while airborne or grounded.
+Active Parry lasts for {8} second.
+Duration is refreshed on successful Active Parry.
+Active Parry initially has no cooldown.
+Cooldown is increased by {9} second every unsuccessful Active Parry after the first attempt.
+Cooldown is reset after successful Active Parry.
+Cooldown is reset if you haven’t used Active Parry in the past {10} seconds.
+
+(Recommended to bind, “horde_use_perk_skill” to a key or mouse button)
+]]
+
+LANGUAGE["Perk_warden_base"] = [[
+The Warden is a support class that uses aura effects and structures to buff teammates.
+Complexity: MEDIUM
+
+{1} increased Warden Aura radius. ({2} per level, up to {3}).
+
+Players near you are affected by Warden Aura.
+Warden Aura blocks {4} damage.
+
+Press SHIFT+E while looking at one of your own Watchtowers to pack it up
+(remaining Lifetime/Charges % preserved) and place it again elsewhere — instantly, with no cooldown.]]
+
+LANGUAGE["Perk_cremator_base"] = [[
+The Cremator builds its offense and defense around Fire damage.
+Complexity: EASY
+
+{1} increased Fire damage resistance. ({2} + {3} per level, up to {4}).
+
+Attacks have {5} chance to Ignite enemies.
+Ignite base duration is {6} and deals damage over time based on hit damage.
+Fire damage has {7} Ignite chance.]]
+
+LANGUAGE["Perk_psycho_base"] = [[
+The Psycho class focuses on dealing critical damage with both melee and ranged weapons.
+
+Adds {1} Base Critical Hit chance. ({2} + {3} per level, up to {4}).
+You deal {5} more damage on Critical Hit.
+
+Gain Brutality by hitting enemies with melee attacks, up to {6} stacks.
+Each Brutality stack adds {7} Base Critical Hit chance.
+
+Press Shift + E to toggle Frenzy Mode.
+Lose {8} health every {9} seconds in Frenzy Mode, down to {10} health.
+{11} increased Critical Hit chance in Frenzy Mode.
+{12} increased health recovery in Frenzy Mode.
+
+(Recommended to bind, “horde_use_perk_skill” to a key or mouse button)
+]]
+
+LANGUAGE["Perk_overlord_base"] = [[
+The Overlord class focuses on debilitating enemies with their intimidating presence 
+causing them to take more damage and deal less damage.
+
+{1} increased damage with Shotguns ({2} per level, up to {3})
+{4} increased presence radius ({5} per level, up to {6}).
+
+Your active perk skill also has your presence.
+
+Enemies in your presence are afflicted with Fear.
+Enemies afflicted with Fear are also afflicted with Agony and Suffering
+
+Enemies afflicted with Agony take {7} more damage.
+Enemies afflicted with Suffering deal {8} less damage.
+
+Maximum Fear stacks is {9}.
+Fear lasts for {10} seconds and stacks fall off consecutively.
+Maximum Fear stacks is increased by {11} for every perk skill tier unlocked.
+
+Has access to Shotguns and Watchtower Modules that augment your presence.
+
+Shift + E to use Dark Energy Blast which fires a Combine energy ball at your enemies that 
+deals damage in an area of effect proportional to the amount of Fear stacks.
+
+Dark Energy Blast -
+Cannot headshot.
+Deals {12} physical damage per Fear stack.
+Blast radius is equal to your presence.
+Presence lingers for {13} seconds.
+Has a {14} second cooldown.
+
+(Recommended to bind, “horde_use_perk_skill” to a key or mouse button)
+]]
+
+LANGUAGE["Perk_Title_Survivor_Tier_1"] = [[Survival]]
+LANGUAGE["Perk_Title_Survivor_Tier_2"] = [[Improvise]]
+LANGUAGE["Perk_Title_Survivor_Tier_3"] = [[Defense]]
+LANGUAGE["Perk_Title_Survivor_Tier_4"] = [[Inspired Learning]]
+
+LANGUAGE["Perk_Title_Assault_Tier_1"] = [[Maneuverability]]
+LANGUAGE["Perk_Title_assault_ambush"] = [[Ambush]]
+LANGUAGE["Perk_assault_ambush"] = [[
+{1} increased headshot damage.]]
+
+LANGUAGE["Perk_Title_assault_charge"] = [[Charge]]
+LANGUAGE["Perk_assault_charge"] = [[
+Adds {1} maximum Adrenaline stacks.
+(Each Adrenaline stack increases damage and speed by {2}.)]]
+
+LANGUAGE["Perk_Title_Assault_Tier_2"] = [[Adaptability]]
+LANGUAGE["Perk_Title_assault_drain"] = [[Drain]]
+LANGUAGE["Perk_assault_drain"] = [[
+{1} increased headshot damage when on full health.
+Recover {2} health for each enemy you killed.]]
+
+LANGUAGE["Perk_Title_assault_overclock"] = [[Overclock]]
+LANGUAGE["Perk_assault_overclock"] = [[
+Adds {1} maximum Adrenaline stacks.]]
+
+LANGUAGE["Perk_Title_Assault_Tier_3"] = [[Aggression]]
+
+LANGUAGE["Perk_Title_assault_cardiac_resonance"] = [[Cardiac Resonance]]
+LANGUAGE["Perk_assault_cardiac_resonance"] = [[
+Every time you kill an enemy,
+Players near you also gain {1} Adrenaline, up to {2}.
+Adds {3} maximum Adrenaline stacks.]]
+
+LANGUAGE["Perk_Title_assault_cardiac_overload"] = [[Cardiac Overload]]
+LANGUAGE["Perk_assault_cardiac_overload"] = [[
+Adrenaline duration increased by {1}.
+Adds {2} maximum Adrenaline stacks.]]
+
+LANGUAGE["Perk_Title_Assault_Tier_4"] = [[Conditioning]]
+LANGUAGE["Perk_Title_assault_heightened_reflex"] = [[Heightened Reflex]]
+LANGUAGE["Perk_assault_heightened_reflex"] = [[
+{1} increased headshot damage.
+{2} increased global damage resistance on maximum Adrenaline.]]
+
+LANGUAGE["Perk_Title_assault_merciless_assault"] = [[Merciless Assault]]
+LANGUAGE["Perk_assault_merciless_assault"] = [[
+{1} chance to add 1 Adrenaline stack on headshot.
+Adds {2} maximum Adrenaline stacks.]]
+
+LANGUAGE["Perk_Title_Heavy_Tier_1"] = [[Suppression]]
+LANGUAGE["Perk_Title_heavy_sticky_compound"] = [[Sticky Compound]]
+LANGUAGE["Perk_heavy_sticky_compound"] = [[
+Enemies you hit with Ballistic damage are Hindered.
+Hindered enemies deal {1} reduced Physical damage.]]
+
+LANGUAGE["Perk_Title_heavy_crude_casing"] = [[Crude Casing]]
+LANGUAGE["Perk_heavy_crude_casing"] = [[
+Enemies you hit with Ballistic damage are Weakened.
+Weakened enemies receive {1} increased Physical damage.]]
+
+LANGUAGE["Perk_Title_Heavy_Tier_2"] = [[Backup]]
+LANGUAGE["Perk_Title_heavy_repair_catalyst"] = [[Repair Catalyst]]
+LANGUAGE["Perk_heavy_repair_catalyst"] = [[
+Adds {1} to maximum armor regeneration.]]
+
+LANGUAGE["Perk_Title_heavy_floating_carrier"] = [[Floating Carrier]]
+LANGUAGE["Perk_heavy_floating_carrier"] = [[
+Adds 5 to maximum weight.]]
+
+LANGUAGE["Perk_Title_Heavy_Tier_3"] = [[Armor Protection]]
+LANGUAGE["Perk_Title_heavy_liquid_armor"] = [[Liquid Armor]]
+LANGUAGE["Perk_heavy_liquid_armor"] = [[
+While you have at least {1} armor:
+  {2} less Physical damage taken.]]
+
+LANGUAGE["Perk_Title_heavy_reactive_armor"] = [[Reactive Armor]]
+LANGUAGE["Perk_heavy_reactive_armor"] = [[Gain a reactive armor that negates critical damage taken.
+Activates on taking more than {1} damage and recharges after {2} seconds.
+Uses {3} of your maximum armor when triggered.]]
+
+LANGUAGE["Perk_Title_Heavy_Tier_4"] = [[Technology]]
+LANGUAGE["Perk_Title_heavy_nanomachine"] = [[Nanomachine]]
+LANGUAGE["Perk_heavy_nanomachine"] = [[
+{1} increased armor regeneration rate.]]
+
+LANGUAGE["Perk_Title_heavy_ballistic_shock"] = [[Ballistic Shock]]
+LANGUAGE["Perk_heavy_ballistic_shock"] = [[
+{1} increased Ballistic damage.
+Debuffs you apply have {2} increased effect.]]
+
+LANGUAGE["Perk_Title_Medic_Tier_1"] = [[Medicine]]
+LANGUAGE["Perk_Title_medic_antibiotics"] = [[Antibiotics]]
+LANGUAGE["Perk_medic_antibiotics"] = [[
+Your healing is amplified by {1}.]]
+
+LANGUAGE["Perk_Title_medic_painkillers"] = [[Painkillers]]
+LANGUAGE["Perk_medic_painkillers"] = [[
+You can overheal player's health by {1}.]]
+
+LANGUAGE["Perk_Title_Medic_Tier_2"] = [[Bio-Engineering]]
+LANGUAGE["Perk_Title_medic_berserk"] = [[Berserk]]
+LANGUAGE["Perk_medic_berserk"] = [[
+Players you heal have Berserk for {1} seconds.
+{2} increased damage while you have Berserk.]]
+
+LANGUAGE["Perk_Title_medic_fortify"] = [[Fortify]]
+LANGUAGE["Perk_medic_fortify"] = [[
+Players you heal have Fortify for {1} seconds.
+{2} less damage taken while you have Fortify.]]
+
+LANGUAGE["Perk_Title_Medic_Tier_3"] = [[Enhancement]]
+LANGUAGE["Perk_Title_medic_purify"] = [[Purify]]
+LANGUAGE["Perk_medic_purify"] = [[
+Your healing directly decreases buildup for Bleeding, Break and Necrosis.]]
+
+LANGUAGE["Perk_Title_medic_haste"] = [[Haste]]
+LANGUAGE["Perk_medic_haste"] = [[
+Players you heal have Haste for {1} seconds.
+{2} increased movement speed while you have Haste.]]
+
+LANGUAGE["Perk_Title_Medic_Tier_4"] = [[Natural Selection]]
+LANGUAGE["Perk_Title_medic_cellular_implosion"] = [[Cellular Implosion]]
+LANGUAGE["Perk_medic_cellular_implosion"] = [[
+Enemies you killed have {1} chance to generate a healing cloud.]]
+
+LANGUAGE["Perk_Title_medic_xcele"] = [[Accelerated Healing Factor]]
+LANGUAGE["Perk_medic_xcele"] = [[
+Buffs you apply are {1} more effective.
+Buffs you apply have {2} increased duration.]]
+
+LANGUAGE["Perk_Title_Demolition_Tier_1"] = [[Grenade]]
+LANGUAGE["Perk_Title_demolition_frag_impact"] = [[Impact Grenade]]
+LANGUAGE["Perk_demolition_frag_impact"] = [[
+{1} increased Grenade damage on impact.
+Grenades explode on impact.
+Grenade and SLAM explosions increase Stun buildup.]]
+
+LANGUAGE["Perk_Title_demolition_frag_cluster"] = [[Cluster Grenade]]
+LANGUAGE["Perk_demolition_frag_cluster"] = [[
+Grenades and SLAMs spawn {1} mini-nades on detonation.
+Mini-nades do {2} less damage.]]
+
+LANGUAGE["Perk_Title_Demolition_Tier_2"] = [[Weaponry]]
+LANGUAGE["Perk_Title_demolition_direct_hit"] = [[Direct Hit]]
+LANGUAGE["Perk_demolition_direct_hit"] = [[
+{1} increased Blast damage against enemies close to explosions.
+{1} increased Blunt damage.]]
+
+LANGUAGE["Perk_Title_demolition_seismic_wave"] = [[Seismic Wave]]
+LANGUAGE["Perk_demolition_seismic_wave"] = [[Blast damage generates a delayed explosion.
+Delayed explosion deals {1} explosion damage as Physical damage.
+Only activates when damage is greater than {2}.]]
+
+LANGUAGE["Perk_Title_Demolition_Tier_3"] = [[Approach]]
+LANGUAGE["Perk_Title_demolition_fragmentation"] = [[Fragmentation]]
+LANGUAGE["Perk_demolition_fragmentation"] = [[
+{1} increased Blast damage.]]
+
+LANGUAGE["Perk_Title_demolition_knockout"] = [[Knockout]]
+LANGUAGE["Perk_demolition_knockout"] = [[Blast damage increases Stun buildup.
+Enemies affected by Stun is paralyzed for {1} seconds.
+Stun cooldown is {2} seconds.]]
+
+LANGUAGE["Perk_Title_Demolition_Tier_4"] = [[Destruction]]
+LANGUAGE["Perk_Title_demolition_pressurized_warhead"] = [[Pressurized Warhead]]
+LANGUAGE["Perk_demolition_pressurized_warhead"] = [[{1} increased Blast damage against elites.
+{2} more Blast and Blunt damage on headshot.]]
+
+LANGUAGE["Perk_Title_demolition_chain_reaction"] = [[Chain Reaction]]
+LANGUAGE["Perk_demolition_chain_reaction"] = [[Explosions deals up to {1} of an enemy's current health as extra Blast damage.
+Damage increase is capped at {2}.]]
+
+LANGUAGE["Perk_Title_Ghost_Tier_1"] = [[Tactics]]
+LANGUAGE["Perk_Title_ghost_headhunter"] = [[Headhunter]]
+LANGUAGE["Perk_ghost_headhunter"] = [[
+Headshot damage stacks up to 5 times.
+Each stack increases 8% headshot damage.]]
+
+LANGUAGE["Perk_Title_ghost_sniper"] = [[Sniper]]
+LANGUAGE["Perk_ghost_sniper"] = [[
+25% increased Ballistic damage while crouching.]]
+
+LANGUAGE["Perk_Title_Ghost_Tier_2"] = [[Reposition]]
+LANGUAGE["Perk_Title_ghost_phase_walk"] = [[Phase Walk]]
+LANGUAGE["Perk_ghost_phase_walk"] = [[
+Running does not cancel Camoflague.
+{1} increased movement speed when you have Camoflague.
+Adds {2} evasion when you have Camoflague.]]
+
+LANGUAGE["Perk_Title_ghost_ghost_veil"] = [[Ghost Veil]]
+LANGUAGE["Perk_ghost_ghost_veil"] = [[
+Attacking does not cancel Camoflague.
+{1} increased walk speed when you have Camoflague.
+{2} increased Ballistic damage when you have Camoflague.]]
+
+LANGUAGE["Perk_Title_Ghost_Tier_3"] = [[Trajectory]]
+LANGUAGE["Perk_Title_ghost_brain_snap"] = [[Brain Snap]]
+LANGUAGE["Perk_ghost_brain_snap"] = [[
+Headshots increases Freeze buildup based on weapon damage.
+Enemies affected by Freeze has drastically reduced action speed for {1} seconds.
+Freeze cooldown is {2} seconds.]]
+
+LANGUAGE["Perk_Title_ghost_kinetic_impact"] = [[Kinetic Impact]]
+LANGUAGE["Perk_ghost_ghost_kinetic_impact"] = [[
+Increases Ballistic damage based on distance.
+Increases {1} damage for each {2} units.
+Increase caps at {3}.]]
+
+LANGUAGE["Perk_Title_Ghost_Tier_4"] = [[Disposal]]
+LANGUAGE["Perk_Title_ghost_coup"] = [[Coup De Grace]]
+LANGUAGE["Perk_ghost_coup"] = [[
+Instantly kills enemies with less than 20% health.]]
+
+LANGUAGE["Perk_Title_ghost_decapitate"] = [[Decapitate]]
+LANGUAGE["Perk_ghost_decapitate"] = [[
+When you have Camoflague:
+  {1} increased Ballistic damage.
+  {2} increased headshot damage against elites.]]
+
+LANGUAGE["Perk_Title_Engineer_Tier_1"] = [[Craftsmanship]]
+LANGUAGE["Perk_Title_engineer_tinkerer"] = [[Tinkerer]]
+LANGUAGE["Perk_engineer_tinkerer"] = [[
+{1} more minion health.
+Metal regeneration also gives {2} of your current Metal per tick.]]
+
+LANGUAGE["Perk_Title_engineer_pioneer"] = [[Pioneer]]
+LANGUAGE["Perk_engineer_pioneer"] = [[
+{1} increased minion damage. All buildables cost {2} less Metal.]]
+
+LANGUAGE["Perk_Title_Engineer_Tier_2"] = [[Core]]
+LANGUAGE["Perk_Title_engineer_fusion"] = [[Fusion]]
+LANGUAGE["Perk_engineer_fusion"] = [[
+Your minions and structures regenerate {1} health per second.
+{2} increased minion damage while minion is on full health.]]
+
+LANGUAGE["Perk_Title_engineer_metabolism"] = [[Metabolism]]
+LANGUAGE["Perk_engineer_metabolism"] = [[
+Minions leech {1} of damage dealt, up to {2} hp per hit.
+{3} increased minion damage while leeching.]]
+
+LANGUAGE["Perk_Title_Engineer_Tier_3"] = [[Manipulation]]
+LANGUAGE["Perk_Title_engineer_antimatter_shield"] = [[Anti-Matter Shield]]
+LANGUAGE["Perk_engineer_antimatter_shield"] = [[
+Press Shift+E to deploy a shield on a targeted minion.
+The shield absorbs damage up to {1} of the minion's health.
+Shield explodes on depletion and has a cooldown of {2} seconds.]]
+
+LANGUAGE["Perk_Title_engineer_displacer"] = [[Displacer]]
+LANGUAGE["Perk_engineer_displacer"] = [[
+Press SHIFT+E on one of your constructions to pack it up
+(health and ammo % preserved) and place it again elsewhere.
+Cooldown: {1} seconds.]]
+
+LANGUAGE["Perk_Title_Engineer_Tier_4"] = [[Experimental]]
+LANGUAGE["Perk_Title_engineer_symbiosis"] = [[Symbiosis]]
+LANGUAGE["Perk_engineer_symbiosis"] = [[
+{1} more minion health on spawn.
+{2} less damage taken for each living minion (up to {4}).
+Metal regeneration also gives {3} of your current Metal per tick.]]
+
+LANGUAGE["Perk_Title_engineer_kamikaze"] = [[Kamikaze]]
+LANGUAGE["Perk_engineer_kamikaze"] = [[
+Minions deal {1} of their max health as Blast damage on death.]]
+
+LANGUAGE["Perk_Title_Berserker_Tier_1"] = [[Fundamentals]]
+LANGUAGE["Perk_Title_berserker_breathing_technique"] = [[Breathing Technique]]
+LANGUAGE["Perk_berserker_breathing_technique"] = [[
+Regenerate {1} of maximum health per second.
+Immune to poison damage and Break buildup.]]
+
+LANGUAGE["Perk_Title_berserker_bloodlust"] = [[Bloodlust]]
+LANGUAGE["Perk_berserker_bloodlust"] = [[
+Leech {1} of melee damage dealt up to {2} health per hit.
+Immune to Bleeding buildup.]]
+
+LANGUAGE["Perk_Title_Berserker_Tier_2"] = [[Technique]]
+LANGUAGE["Perk_Title_berserker_bushido"] = [[Bushido]]
+LANGUAGE["Perk_berserker_bushido"] = [[
+{1} increased movement speed.
+{2} increased melee damage.]]
+
+LANGUAGE["Perk_Title_berserker_savagery"] = [[Savagery]]
+LANGUAGE["Perk_berserker_savagery"] = [[
+{1} increased maximum health.
+{2} increased melee damage.]]
+
+LANGUAGE["Perk_Title_Berserker_Tier_3"] = [[Parry]]
+LANGUAGE["Perk_Title_berserker_graceful_guard"] = [[Graceful Guard]]
+LANGUAGE["Perk_berserker_graceful_guard"] = [[
+Removes all debuffs and debuff buildups on successful Aerial Parry.
+Recover {1} health and regenerate {2} of maximum health per second 
+for {3} seconds on successful Aerial Parry.]]
+
+LANGUAGE["Perk_Title_berserker_unwavering_guard"] = [[Unwavering Guard]]
+LANGUAGE["Perk_berserker_unwavering_guard"] = [[
+Your Aerial Parry works against all damage types.
+{1} increased melee damage for {2} seconds on successful Aerial Parry.
+{3} less damage taken for {4} seconds on successful Aerial Parry.]]
+
+LANGUAGE["Perk_Title_Berserker_Tier_4"] = [[Combat Arts]]
+LANGUAGE["Perk_Title_berserker_phalanx"] = [[Phalanx]]
+LANGUAGE["Perk_berserker_phalanx"] = [[
+Gain {1} Phalanx stack when you hit an enemy, up to {2} stacks.
+Each stack increases global damage resistance by {3}.
+Each stack lasts {4} seconds and falls off consecutively.]]
+
+LANGUAGE["Perk_Title_berserker_rip_and_tear"] = [[Rip and Tear]]
+LANGUAGE["Perk_berserker_rip_and_tear"] = [[
+{1} more melee damage.
+Melee hits deal {2} damage to surrounding targets.]]
+
+LANGUAGE["Perk_Title_Warden_Tier_1"] = [[Sustain]]
+LANGUAGE["Perk_Title_warden_bulwark"] = [[Bulwark]]
+LANGUAGE["Perk_warden_bulwark"] = [[
+Watchtowers generate 1 armor battery every {1} seconds.]]
+
+LANGUAGE["Perk_Title_warden_vitality"] = [[Vitality]]
+LANGUAGE["Perk_warden_vitality"] = [[
+Aura provides {1} health regeneration per second.]]
+
+LANGUAGE["Perk_Title_Warden_Tier_2"] = [[Resource Utilization]]
+LANGUAGE["Perk_Title_warden_restock"] = [[Quick Restock]]
+LANGUAGE["Perk_warden_restock"] = [[
+Watchtowers restock cooldown decreased by {1}.]]
+
+LANGUAGE["Perk_Title_warden_energize"] = [[Energize]]
+LANGUAGE["Perk_warden_energize"] =  [[Aura adds {1} base damage to attacks.
+Only applies to base damage that is at least {1}.]]
+
+LANGUAGE["Perk_Title_Warden_Tier_3"] = [[Escort]]
+LANGUAGE["Perk_Title_warden_rejection_pulse"] = [[Rejection Pulse]]
+LANGUAGE["Perk_warden_rejection_pulse"] = [[
+Watchtowers generate a shockwave every {1} seconds.
+Shockwave deals {2} Lightning damage.]]
+
+LANGUAGE["Perk_Title_warden_inoculation"] = [[Inoculation]]
+LANGUAGE["Perk_warden_inoculation"] = [[
+Aura reduces {1} buildups taken from Ignite, Shock and Frostbite.]]
+
+LANGUAGE["Perk_Title_Warden_Tier_4"] = [[Coverage]]
+LANGUAGE["Perk_Title_warden_ex_machina"] = [[Deus Ex Machina]]
+LANGUAGE["Perk_warden_ex_machina"] = [[
+Watchtowers have Warden Aura.]]
+
+LANGUAGE["Perk_Title_warden_resonance_cascade"] = [[Resonance Cascade]]
+LANGUAGE["Perk_warden_resonance_cascade"] = [[
+Aura effect increased by {1}.
+Aura radius increased by {2}.]]
+
+LANGUAGE["Perk_Title_Cremator_Tier_1"] = [[Chemicals]]
+LANGUAGE["Perk_Title_cremator_methane"] = [[Methane]]
+LANGUAGE["Perk_cremator_methane"] = [[
+{1} increased Fire damage against Ignited enemies.]]
+
+LANGUAGE["Perk_Title_cremator_napalm"] = [[Napalm]]
+LANGUAGE["Perk_cremator_napalm"] = [[
+{1} increased Ignite duration.]]
+
+LANGUAGE["Perk_Title_Cremator_Tier_2"] = [[Energy Absorption]]
+LANGUAGE["Perk_Title_cremator_positron_array"] = [[Positron Array]]
+LANGUAGE["Perk_cremator_positron_array"] = [[
+Immune to Fire damage.
+Absorb {1} of Fire damage taken as health.]]
+
+LANGUAGE["Perk_Title_cremator_entropy_shield"] = [[Entropy Shield]]
+LANGUAGE["Perk_cremator_entropy_shield"] = [[Gain an Entropy Shield that reduces damage taken on hit.
+Provides {1} damage resistance and deals Fire damage around you.
+Lasts for {2} seconds and recharges in {3} seconds.]]
+
+LANGUAGE["Perk_Title_Cremator_Tier_3"] = [[Heat Manipulation]]
+LANGUAGE["Perk_Title_cremator_hyperthermia"] = [[Hyperthermia]]
+LANGUAGE["Perk_cremator_hyperthermia"] = [[
+Increase Fire damage based on enemy proximity to you.
+Increase caps at {1}.]]
+
+LANGUAGE["Perk_Title_cremator_ionization"] = [[Ionization]]
+LANGUAGE["Perk_cremator_ionization"] = [[
+{1} increased Ignite damage.
+Fire damage ignores enemy Fire resistance.]]
+
+LANGUAGE["Perk_Title_Cremator_Tier_4"] = [[Energy Discharge]]
+LANGUAGE["Perk_Title_cremator_firestorm"] = [[Firestorm]]
+LANGUAGE["Perk_cremator_firestorm"] = [[
+Fire damage increases Burst buildup in enemies.
+Creates an explosion when Burst buildup is full.
+Explosion deals {1} Blast damage.]]
+
+LANGUAGE["Perk_Title_cremator_incineration"] = [[Incineration]]
+LANGUAGE["Perk_cremator_incineration"] = [[
+{1} increased Ignite damage.]]
+
+LANGUAGE["Perk_Title_Psycho_Tier_1"] = [[Sadism]]
+LANGUAGE["Perk_Title_psycho_bloodbath"] = [[Bloodbath]]
+LANGUAGE["Perk_psycho_bloodbath"] = [[
+Adds {1} Base Critical Hit chance.
+Leech 1 health on Critical Hit.]]
+
+LANGUAGE["Perk_Title_psycho_savor"] = [[Savor]]
+LANGUAGE["Perk_psycho_savor"] = [[
+{1} increased Critical Hit damage.
+Leech {2} of damage dealt when you land a Melee hit.
+Leech caps at {3} health per hit or {4} health per Critical Hit.]]
+
+LANGUAGE["Perk_Title_Psycho_Tier_2"] = [[Violence]]
+LANGUAGE["Perk_Title_psycho_ferocity"] = [[Ferocity]]
+LANGUAGE["Perk_psycho_ferocity"] = [[
+Adds {1} Base Critical Hit chance.
+{2} increased Critical Hit chance per {3} health missing.]]
+
+LANGUAGE["Perk_Title_psycho_disembowel"] = [[Disembowel]]
+LANGUAGE["Perk_psycho_disembowel"] = [[
+{1} increased Critical Hit damage.
+Melee attacks remove Nemesis mutation from enemies.]]
+
+LANGUAGE["Perk_Title_Psycho_Tier_3"] = [[Fatality]]
+LANGUAGE["Perk_Title_psycho_skewering"] = [[Skewering]]
+LANGUAGE["Perk_psycho_skewering"] = [[
+Enemies you hit with headshots are Skewered.
+Players have +{1} Base Critical Hit chance when they hit Skewered enemies.]]
+
+LANGUAGE["Perk_Title_psycho_brutality"] = [[Brutality]]
+LANGUAGE["Perk_psycho_brutality"] = [[
+Brutality adds an additional {1} Base Critical Hit chance.
+Brutality also increases Critical Hit damage by {2}.
+Brutality stacks decay {3} slower.]]
+
+LANGUAGE["Perk_Title_Psycho_Tier_4"] = [[Psychosis]]
+LANGUAGE["Perk_Title_psycho_grudge"] = [[Grudge]]
+LANGUAGE["Perk_psycho_grudge"] = [[
+{1} increased movement speed per {2} health missing, up to {3}.
+{4} increased Critical Hit damage per {5} health missing. Tripled with melee crits.
+You are considered at {6} health while above {7} health.]]
+
+LANGUAGE["Perk_Title_psycho_bestial_wrath"] = [[Bestial Wrath]]
+LANGUAGE["Perk_psycho_bestial_wrath"] = [[
+{1} increased Critical Hit damage.
+Melee hits deal {2} damage to surrounding targets.
+{3} slower health decay in Frenzy Mode.]]
+
+LANGUAGE["Perk_Title_Overlord_Tier_1"] = [[Buildup]]
+LANGUAGE["Perk_Title_overlord_inverse_filter"] = [[Inverse Filter]]
+LANGUAGE["Perk_overlord_inverse_filter"] = [[
+{1} less debuff buildup received.
+Restores {2} health whenever you receive any debuff buildup.]]
+
+LANGUAGE["Perk_Title_overlord_dispersion"] = [[Dispersion]]
+LANGUAGE["Perk_overlord_dispersion"] = [[
+Applying Fear reduces your debuff buildup by {1}.]]
+
+LANGUAGE["Perk_Title_Overlord_Tier_2"] = [[Presence]]
+LANGUAGE["Perk_Title_overlord_militant"] = [[Militant]]
+LANGUAGE["Perk_overlord_militant"] = [[
+{1} increased effectiveness of Agony.]]
+
+LANGUAGE["Perk_Title_overlord_oppressor"] = [[Oppressor]]
+LANGUAGE["Perk_overlord_oppressor"] = [[
+{1} increased effectiveness of Suffering.]]
+
+LANGUAGE["Perk_Title_Overlord_Tier_3"] = [[Spatial Manipulation]]
+LANGUAGE["Perk_Title_overlord_dark_energy_blast"] = [[Dark Energy Blast]]
+LANGUAGE["Perk_overlord_dark_energy_blast"] = [[
+Dark Energy Blast deals {1} more damage.
+Dark Energy Blast has {2} reduced cooldown.]]
+
+LANGUAGE["Perk_Title_overlord_juxtapose"] = [[Juxtapose]]
+LANGUAGE["Perk_overlord_juxtapose"] = [[
+Dark Energy Blast Perk skill is replaced with Summon Projection Clone.
+Projection Clone has {1} health and uses a pump shotgun.
+Projection Clone lasts for {2} seconds and has a {3} second cooldown.]]
+
+LANGUAGE["Perk_Title_Overlord_Tier_4"] = [[Requiem]]
+LANGUAGE["Perk_Title_overlord_doomed_presence"] = [[Doomed Presence]]
+LANGUAGE["Perk_overlord_doomed_presence"] = [[
+Fear duration is infinite.
+Enemies you hit gain {1} Fear stack.]]
+
+LANGUAGE["Perk_Title_overlord_deatheater"] = [[Deatheater]]
+LANGUAGE["Perk_overlord_deatheater"] = [[
+Enemies in your presence are always at maximum Fear.]]
+
+LANGUAGE["Item_Combat Knife"] = [[Combat Knife]]
+LANGUAGE["Item_Desc_Combat_Knife"] = [[
+A reliable bayonet.
+
+25% more movement speed while wielding this weapon.
+Movement speed scales down relative to your remaining weight to maximum weight.
+Caps at 5% more movement speed.
+
+LMB - Light attack
+Cleave - 1
+
+RMB - Heavy attack
+Cleave - 1
+]]
+
+LANGUAGE["Item_Crowbar"] = [[Crowbar]]
+LANGUAGE["Item_Desc_Crowbar"] = [[
+A rusty crowbar.
+
+LMB - Light attack
+Cleave - 2
+
+RMB - Heavy attack
+Cleave - 2
+]]
+
+LANGUAGE["Item_Stunstick"] = [[Stunstick]]
+LANGUAGE["Item_Desc_Stunstick"] = [[
+Electric baton.
+
+Deals extra lightning damage.
+80% of extra lightning damage dealt contributes to shock buildup.
+
+LMB - Light attack
+Cleave - 1
+Lightning damage - 25
+
+RMB - Heavy attack
+Cleave - 2
+Lightning damage - 35
+]]
+
+LANGUAGE["Item_Machete"] = [[Machete]]
+LANGUAGE["Item_Desc_Machete"] = [[
+A large machete.
+
+Heavy attack has a wider cleaving area.
+
+LMB - Light attack
+Cleave - 2
+
+RMB - Heavy attack
+Cleave - 3
+]]
+
+LANGUAGE["Item_Fire Axe"] = [[Fire Axe]]
+LANGUAGE["Item_Desc_Fireaxe"] = [[
+A fire axe. Heavy, but can chops most enemies in half.
+
+Heavy attack headshot always stuns the enemy for the 
+first time it has ever been stunned by the fire axe.
+
+LMB - Light attack
+Cleave - 2
+
+RMB - Heavy attack
+Cleave - 2
+]]
+
+LANGUAGE["Item_Bat"] = [[Bat]]
+LANGUAGE["Item_Desc_Bat"] = [[
+A sturdy baseball bat. Hits like a truck.
+
+LMB - Light attack
+Cleave - 3
+
+RMB - Heavy attack
+Cleave - 3
+]]
+
+LANGUAGE["Item_Katana"] = [[Katana]]
+LANGUAGE["Item_Desc_Katana"] = [[
+Ninja sword. Long attack range and fast attack speed.
+
+LMB - Light attack
+Cleave - 3
+
+RMB - Heavy attack
+Cleave - 5
+]]
+
+LANGUAGE["Item_Chainsaw"] = [[Chainsaw]]
+LANGUAGE["Item_Desc_Chainsaw"] = [[
+Brrrrrrrrrrrrrrrr. 
+
+Deals more damage when consuming ammo.
+Heavy attacks require ammo to use.
+
+LMB - Light attack
+Cleave - 3
+
+RMB - Heavy attack
+Cleave - 3
+]]
+
+LANGUAGE["Item_Inferno Blade"] = [[Inferno Blade]]
+LANGUAGE["Item_Desc_Inferno"] = [[
+A blazing curved sword with hidden power.
+
+While toggled on: 
+You take 1 fire damage per second.
+Weapon deals extra fire damage.
+Weapon hits emits a fire blast hitting nearby enemies.
+
+LMB - Light attack
+Cleave - 3
+
+RMB - Toggle charge effect
+Fire damage - 50
+]]
+
+LANGUAGE["Item_Jotunn"] = [[Jötunn]]
+LANGUAGE["Item_Desc_Jotunn"] = [[
+A cursed spiked mace forged with permafrost material.
+
+Weapon deals extra cold damage.
+Heavy attacks emit an ice blast hitting nearby enemies.
+15% of extra cold damage dealt contributes to Frostbite buildup with heavy attacks.
+You take 15 Frostbite buildup whenever an ice blast is emitted.
+
+LMB - Light attack
+Cleave - 3
+Cold damage - 35
+
+RMB - Heavy attack
+Cleave - 3
+Cold damage - 150
+]]
+
+LANGUAGE["Item_Mjolnir"] = [[Mjölnir]]
+LANGUAGE["Item_Desc_Mjolnir"] = [[
+A warhammer imbued with electric energy.
+
+While charged: 
+Weapon deals extra lightning damage.
+Weapon hit emits a lightning storm hitting nearby enemies.
+
+LMB - Light attack
+Cleave - 3
+
+RMB - Activate charge effect
+Lightning damage - 150
+]]
+
+LANGUAGE["Item_Zweihander"] = [[Zweihänder]]
+LANGUAGE["Item_Desc_Zweihander"] = [[
+A heavy, large two-handed longsword. Can easily decapitate enemies in a full swing.
+
+LMB - Light attack
+Cleave - 10
+
+RMB - Heavy attack
+Cleave - 10
+]]
+
+LANGUAGE["Item_9mm"] = [[9mm]]
+LANGUAGE["Item_Desc_9mm"] = [[
+Combine standard sidearm.
+]]
+
+LANGUAGE["Item_357"] = [[357]]
+LANGUAGE["Item_Desc_357"] = [[
+Colt python magnum pistol.
+Used by Black Mesa security guards.
+]]
+
+LANGUAGE["Item_Glock"] = [[Glock]]
+LANGUAGE["Item_Desc_Glock"] = [[
+Glock 18.
+Semi-automatic pistols manufactured in Austrian.
+]]
+
+LANGUAGE["Item_USP"] = [[USP]]
+LANGUAGE["Item_Desc_USP"] = [[
+Universelle Selbstladepistole.
+A semi-automatic pistol developed in Germany by H&K.
+]]
+
+LANGUAGE["Item_P2000"] = [[P2000]]
+LANGUAGE["Item_Desc_P2000"] = [[
+Heckler & Koch P2000.
+A serviceable first-round pistol made by H&K.
+]]
+
+LANGUAGE["Item_P250"] = [[P250]]
+LANGUAGE["Item_Desc_P250"] = [[
+SIG Sauer P250.
+A low-recoil sidearm with a high rate of fire.
+]]
+
+LANGUAGE["Item_R8"] = [[R8]]
+LANGUAGE["Item_Desc_R8"] = [[
+R8 Revolver.
+Delivers a highly accurate and powerful round,
+at the expense of a lengthy trigger-pull.
+]]
+
+LANGUAGE["Item_Deagle"] = [[Deagle]]
+LANGUAGE["Item_Desc_Deagle"] = [[
+Night Hawk .50C.
+An iconic pistol that is diffcult to master.
+]]
+
+LANGUAGE["Item_M1911"] = [[M1911]]
+LANGUAGE["Item_Desc_M1911"] = [[
+Colt 1911.
+Standard-issue sidearm for the United States Armed Forces.
+]]
+
+LANGUAGE["Item_FiveSeven"] = [[FiveSeven]]
+LANGUAGE["Item_Desc_FiveSeven"] = [[
+ES Five-seven.
+A Belgian semi-automatic pistol made by FN Herstal.
+]]
+
+LANGUAGE["Item_CZ75"] = [[CZ75]]
+LANGUAGE["Item_Desc_CZ75"] = [[
+CZ 75.
+A semi-automatic pistol manufactured in Czech Republic.
+]]
+
+LANGUAGE["Item_M9"] = [[M9]]
+LANGUAGE["Item_Desc_M9"] = [[
+Beretta M9.
+Sidearm used by the United States Armed Forces.
+]]
+
+LANGUAGE["Item_Tec-9"] = [[Tec-9]]
+LANGUAGE["Item_Desc_Tec-9"] = [[
+A Swedish-made semi-automatic pistol.
+Lethal in close quarters.
+]]
+
+LANGUAGE["Item_TMP"] = [[TMP]]
+LANGUAGE["Item_Desc_TMP"] = [[
+Steyr TMP.
+A select-fire 9×19mm Parabellum caliber machine pistol.
+]]
+
+LANGUAGE["Item_Flare Gun"] = [[Flare Gun]]
+LANGUAGE["Item_Desc_Flare Gun"] = [[
+Orion Safety Flare Gun.
+Ignites enemies and deals Fire damage.
+]]
+
+LANGUAGE["Item_Anaconda"] = [[Anaconda]]
+LANGUAGE["Item_Desc_Anaconda"] = [[
+Colt Anaconda.
+Chambered for the powerful .44 Magnum.
+]]
+
+LANGUAGE["Item_SMG1"] = [[SMG1]]
+LANGUAGE["Item_Desc_SMG1"] = [[
+A compact, fully automatic firearm.
+]]
+
+LANGUAGE["Item_Mac10"] = [[Mac10]]
+LANGUAGE["Item_Desc_Mac10"] = [[
+Military Armament Corporation Model 10.
+Boasts a high rate of fire,
+with poor spread accuracy and high recoil as trade-offs.
+]]
+
+LANGUAGE["Item_MP9"] = [[MP9]]
+LANGUAGE["Item_Desc_MP9"] = [[
+Brügger & Thomet MP9.
+Manufactured in Switzerland,
+the MP9 is favored by private security firms world-wide.
+]]
+
+LANGUAGE["Item_MP5K"] = [[MP5K]]
+LANGUAGE["Item_Desc_MP5K"] = [[
+Heckler & Koch MP5K.
+A more convert and mobile version of the MP5.
+]]
+
+LANGUAGE["Item_MP5"] = [[MP5]]
+LANGUAGE["Item_Desc_MP5"] = [[
+Heckler & Koch MP5.
+Often imitated but never equaled,
+the MP5 is perhaps the most versatile SMG in the world.
+]]
+
+LANGUAGE["Item_UMP45"] = [[UMP45]]
+LANGUAGE["Item_Desc_UMP45"] = [[
+KM UMP45.
+A lighter and cheaper successor to the MP5.
+]]
+
+LANGUAGE["Item_PP Bizon"] = [[PP Bizon]]
+LANGUAGE["Item_Desc_PP Bizon"] = [[
+PP-19 Bizon.
+Offers a high-capacity magazine that reloads quickly.
+]]
+
+LANGUAGE["Item_P90"] = [[P90]]
+LANGUAGE["Item_Desc_P90"] = [[
+ES C90.
+A Belgian bullpup PDW with a magazine of 50 rounds.
+]]
+
+LANGUAGE["Item_Vector"] = [[Vector]]
+LANGUAGE["Item_Desc_Vector"] = [[
+KRISS Vector Gen I.
+Uses an unconventional blowback system that results in its high firerate.
+]]
+
+LANGUAGE["Item_Pump-Action"] = [[Pump-Action]]
+LANGUAGE["Item_Desc_Pump-Action"] = [[
+A standard 12-gauge shotgun.
+]]
+
+LANGUAGE["Item_Nova"] = [[Nova]]
+LANGUAGE["Item_Desc_Nova"] = [[
+Benelli Nova.
+Italian pump-action 12-gauge shotgun.
+]]
+
+LANGUAGE["Item_M870"] = [[M870]]
+LANGUAGE["Item_Desc_M870"] = [[
+Remington 870 Shotgun.
+Manufactured in the United States.
+]]
+
+LANGUAGE["Item_MAG7"] = [[MAG7]]
+LANGUAGE["Item_Desc_MAG7"] = [[
+Techno Arms MAG-7.
+Fires a specialized 60mm 12 gauge shell.
+]]
+
+LANGUAGE["Item_XM1014"] = [[XM1014]]
+LANGUAGE["Item_Desc_XM1014"] = [[
+Benelli M4 Super 90.
+Fully automatic shotgun.
+]]
+
+LANGUAGE["Item_Trench Gun"] = [[Trench Gun]]
+LANGUAGE["Item_Desc_Trench Gun"] = [[
+Winchester Model 1200.
+Shoots incendiary pellets.
+]]
+
+LANGUAGE["Item_SPAS-12"] = [[SPAS-12]]
+LANGUAGE["Item_Desc_SPAS-12"] = [[
+Franchi SPAS-12.
+A combat shotgun manufactured by Italian firearms company Franchi.
+]]
+
+LANGUAGE["Item_Striker"] = [[Striker]]
+LANGUAGE["Item_Desc_Striker"] = [[
+Armsel Striker.
+A 12-gauge shotgun with a revolving cylinder from South Africa.
+]]
+
+LANGUAGE["Item_AA12"] = [[AA12]]
+LANGUAGE["Item_Desc_AA12"] = [[
+Atchisson Assault Shotgun.
+Devastating firepower at close to medium range.
+]]
+
+LANGUAGE["Item_AR15"] = [[AR15]]
+LANGUAGE["Item_Desc_AR15"] = [[
+AR-15 Style Rifle.
+A lightweight semi-automatic rifle based on ArmaLite AR-15 design.
+]]
+
+LANGUAGE["Item_FAMAS"] = [[FAMAS]]
+LANGUAGE["Item_Desc_FAMAS"] = [[
+FAMAS bullpup assault rifle.
+Recognised for its high rate of fire.
+]]
+
+LANGUAGE["Item_Galil"] = [[Galil]]
+LANGUAGE["Item_Desc_Galil"] = [[
+Galil ACE 22.
+Developed and originally manufactured by IMI.
+]]
+
+LANGUAGE["Item_AK47"] = [[AK47]]
+LANGUAGE["Item_Desc_AK47"] = [[
+Avtomat Kalashnikova.
+A gas-operated, 7.62×39mm assault rifle developed in the Soviet Union.
+]]
+
+LANGUAGE["Item_M4A1"] = [[M4A1]]
+LANGUAGE["Item_Desc_M4A1"] = [[
+Colt M4.
+A 5.56×45mm NATO, air-cooled, gas-operated, select fire carbine.
+]]
+
+LANGUAGE["Item_SG556"] = [[SG556]]
+LANGUAGE["Item_Desc_SG556"] = [[
+SIG SG 550.
+An assault rifle manufactured by Swiss Arms AG.
+]]
+
+LANGUAGE["Item_AUG"] = [[AUG]]
+LANGUAGE["Item_Desc_AUG"] = [[
+Steyr AUG.
+An Austrian bullpup assault rifle.
+]]
+
+LANGUAGE["Item_F2000"] = [[F2000]]
+LANGUAGE["Item_Desc_F2000"] = [[
+FN F2000.
+An ambidextrous bullpup rifle developed by FN.
+]]
+
+LANGUAGE["Item_Tavor"] = [[Tavor]]
+LANGUAGE["Item_Desc_Tavor"] = [[
+IWI Tavor-21.
+Designed to maximize reliability, durability, and simplicity.
+]]
+
+LANGUAGE["Item_ACR"] = [[ACR]]
+LANGUAGE["Item_Desc_ACR"] = [[
+Remington Adaptive Combat Rifle.
+A modular semi-Auto rifle.
+]]
+
+LANGUAGE["Item_AWP"] = [[AWP]]
+LANGUAGE["Item_Desc_AWP"] = [[
+Magnum Ghost Rifle.
+A series of sniper rifles manufactured by the United Kingdom.
+]]
+
+LANGUAGE["Item_SCAR"] = [[SCAR]]
+LANGUAGE["Item_Desc_SCAR"] = [[
+FN SCAR.
+An assault rifle developed by Belgian manufacturer FN Herstal.
+]]
+
+LANGUAGE["Item_G3"] = [[G3]]
+LANGUAGE["Item_Desc_G3"] = [[
+G3 Battle Rifle.
+A 7.62×51mm NATO, select-fire battle rifle developed by H&K.
+]]
+
+LANGUAGE["Item_Barret AMR"] = [[Barret AMR]]
+LANGUAGE["Item_Desc_Barret AMR"] = [[
+.50 Cal Anti-Material Sniper Rifle.
+Does huge amounts of ballistic damage.
+]]
+
+LANGUAGE["Item_SSG08 Medic SR"] = [[SSG08 Medic SR]]
+LANGUAGE["Item_Desc_SSG08 Medic SR"] = [[
+A medic sniper rifle that shoots healing darts.
+Damages enemies and heals players.
+]]
+
+LANGUAGE["Item_Negev"] = [[Negev]]
+LANGUAGE["Item_Desc_Negev"] = [[
+IWI Negev.
+A 5.56×45mm NATO light machine gun developed by the IWI.
+]]
+
+LANGUAGE["Item_M249"] = [[M249]]
+LANGUAGE["Item_Desc_M249"] = [[
+M249 light machine gun.
+A gas operated and air-cooled weapon of destruction.
+]]
+
+LANGUAGE["Item_MG4"] = [[MG4]]
+LANGUAGE["Item_Desc_MG4"] = [[
+Heckler & Koch MG4.
+A belt-fed 5.56 mm light machine gun that replaced MG3.
+]]
+
+LANGUAGE["Item_Frag Grenade"] = [[Frag Grenade]]
+LANGUAGE["Item_Desc_Frag Grenade"] = [[
+A standard frag grenade.
+Good for crowd control.
+]]
+
+LANGUAGE["Item_DamageResistance RPG"] = [[Resistance RPG]]
+LANGUAGE["Item_Desc_DamageResistance RPG"] = [[
+Laser-guided rocket propulsion device.
+]]
+
+LANGUAGE["Item_M79 GL"] = [[M79 GL]]
+LANGUAGE["Item_Desc_M79 GL"] = [[
+M79 Grenade Launcher.
+Shoots 40x46mm grenades the explodes on impact.
+]]
+
+LANGUAGE["Item_M32 GL"] = [[M32 GL]]
+LANGUAGE["Item_Desc_M32 GL"] = [[
+Milkor Multiple Grenade Launcher.
+A lightweight 40mm six-shot revolver grenade launcher.
+]]
+
+LANGUAGE["Item_RPG-7"] = [[RPG-7]]
+LANGUAGE["Item_Desc_RPG-7"] = [[
+Ruchnoy Protivotankoviy Granatomyot.
+Anti-tank rocket launcher developed by Soviet Union.
+]]
+
+LANGUAGE["Item_SLAM"] = [[SLAM]]
+LANGUAGE["Item_Desc_SLAM"] = [[
+Selectable Lightweight Attack Munition.
+RMB to detonate. Attach to wall to active laser mode.
+
+You can plant at most 4 active SLAM.]]
+
+LANGUAGE["Item_Incendiary Grenade"] = [[Incendiary Grenade]]
+LANGUAGE["Item_Desc_Incendiary Grenade"] = [[
+Generates a pool of fire after some delay.
+Sets everything on fire within its effect.
+]]
+
+LANGUAGE["Item_Molotov"] = [[Molotov]]
+LANGUAGE["Item_Desc_Molotov"] = [[
+Generates a pool of fire on impact.
+Sets everything on fire within its effect.
+]]
+
+LANGUAGE["Item_Incendiary Launcher"] = [[Incendiary Launcher]]
+LANGUAGE["Item_Desc_Incendiary Launcher"] = [[
+Incendiary Grenade Launcher.
+Shoots incendiary grenades the erupt into flames on impact.
+]]
+
+LANGUAGE["Item_Heat Crossbow"] = [[Heat Crossbow]]
+LANGUAGE["Item_Desc_Heat Crossbow"] = [[
+Improvised sniper weapon.
+Has two firemodes (Ballistic/Impact).
+
+Deals 300% headshot damage.
+]]
+
+LANGUAGE["Item_Turret"] = [[Turret]]
+LANGUAGE["Item_Desc_Turret"] = [[
+Combine Overwatch turret.
+Used to guard chocke points and vital areas.
+]]
+
+LANGUAGE["Item_Medic Grenade"] = [[Medic Grenade]]
+LANGUAGE["Item_Desc_Medic Grenade"] = [[
+A grenade that releases contiuous bursts of detoxication clouds.
+Heals players and damages enemies.
+]]
+
+LANGUAGE["Item_Throwing Knives"] = [[Throwing Knives]]
+LANGUAGE["Item_Desc_Throwing_Knives"] = [[
+Throwing knives that deal slashing damage and are considered melee weapons.
+Can be picked up again upon hitting surfaces and doesn't stick to walls or ceilings.
+Enemies drop all impaled throwing knives upon defeating them.
+]]
+
+LANGUAGE["Item_Watchtower"] = [[Watchtower]]
+LANGUAGE["Item_Desc_Watchtower"] = [[
+A watchtower that provides resupply.
+Generates 1 ammobox every 30 seconds.
+(Entity Class: horde_watchtower)
+]]
+
+LANGUAGE["Item_M2 Flamethrower"] = [[M2 Flamethrower]]
+LANGUAGE["Item_Desc_M2 Flamethrower"] = [[
+M2-2 Flamethrower.
+An American man-portable backpack flamethrower.
+]]
+
+LANGUAGE["Item_Medkit"] = [[Medkit]]
+LANGUAGE["Item_Desc_Medkit"] = [[
+Rechargeble medkit.
+RMB to self-heal, LMB to heal others.
+]]
+
+LANGUAGE["Item_Health Vial"] = [[Health Vial]]
+LANGUAGE["Item_Desc_Health Vial"] = [[
+A capsule filled with sticky green liquid.
+Heals instantly when picked up.
+]]
+
+LANGUAGE["Item_Kevlar Armor Battery"] = [[Kevlar Armor Battery]]
+LANGUAGE["Item_Desc_Kevlar Armor Battery"] = [[
+Armor battery.
+Each one provides 15 armor. Personal use only.
+]]
+
+LANGUAGE["Item_Full Kevlar Armor"] = [[Full Kevlar Armor]]
+LANGUAGE["Item_Desc_Full Kevlar Armor"] = [[
+Full kevlar armor set.
+Fills up 100% of your armor bar.
+]]
+
+LANGUAGE["Item_Watchtower MKII"] = [[Watchtower MKII]]
+LANGUAGE["Item_Desc_Watchtower MKII"] = [[
+A watchtower that provides resupply.
+Generates 1 health vial every 30 seconds.
+(Entity Class: horde_watchtower_mk2)
+]]
+
+LANGUAGE["Item_Watchtower MKIII"] = [[Watchtower MKIII]]
+LANGUAGE["Item_Desc_Watchtower MKIII"] = [[
+A watchtower that deters enemies.
+Shocks 1 nearby enemy every 1 second.
+Does 80 Lightning damage.
+(Entity Class: horde_watchtower_mk3)
+]]
+
+LANGUAGE["Item_Tau Cannon"] = [[Tau Cannon]]
+LANGUAGE["Item_Desc_Tau Cannon"] = [[
+A device that uses electromagnetism to ionize particles.
+Hold RMB to charge and release a powerful shot.
+Deals more damage as you charge.
+Device explodes if you overcharge.
+]]
+
+LANGUAGE["Item_MP7A1 Medic PDW"] = [[MP7A1 Medic PDW]]
+LANGUAGE["Item_Desc_MP7A1 Medic PDW"] = [[
+A modified version of MP7A1 for medical purposes.
+
+Press B or ZOOM to fire healing darts.
+Healing dart heals 10 health and has a 1 second cooldown.
+]]
+
+LANGUAGE["Item_Vector Medic PDW"] = [[Vector Medic PDW]]
+LANGUAGE["Item_Desc_Vector Medic PDW"] = [[
+KRISS Vector Gen I equipped with a medical dart launcher.
+Uses an unconventional blowback system that results in its high firerate.
+
+Press B or ZOOM to fire healing darts.
+Healing dart heals 12 health and has a 1.5 second cooldown.
+]]
+
+LANGUAGE["Item_Double Barrel"] = [[Double Barrel]]
+LANGUAGE["Item_Desc_Double Barrel"] = [[
+Double Barrel Shotgun.
+Devastating power at close range.
+]]
+
+LANGUAGE["Item_FN FAL"] = [[FN FAL]]
+LANGUAGE["Item_Desc_FN FAL"] = [[
+FN FAL.
+A battle rifle designed by Belgian and manufactured by FN Herstal.
+]]
+
+LANGUAGE["Item_AUG HBAR"] = [[AUG HBAR]]
+LANGUAGE["Item_Desc_AUG HBAR"] = [[
+Steyr AUG HBAR.
+A light-support machine gun variant of the AUG assault rifle.
+]]
+
+LANGUAGE["Item_Manhack"] = [[Manhack]]
+LANGUAGE["Item_Desc_Manhack"] = [[
+Manhack that regenerates on death.
+Manhack deals its health as damage to enemies.
+Manhack dies on impact.
+]]
+
+LANGUAGE["Item_Vortigaunt"] = [[Vortigaunt]]
+LANGUAGE["Item_Desc_Vortigaunt"] = [[
+Xen Vortigaunts that can conjure concentrated shock energy blasts.
+The energy blasts have long range and deal splash damage.
+]]
+
+LANGUAGE["Item_Combat Bot"] = [[Combat Bot]]
+LANGUAGE["Item_Desc_Combat Bot"] = [[
+A resilient humanoid robot designed to engage enemies head-on.
+Uses powerful melee attacks and ranged boulder attacks.
+]]
+
+LANGUAGE["Item_Advanced Kevlar Armor"] = [[Advanced Kevlar Armor]]
+LANGUAGE["Item_Desc_Advanced Kevlar Armor"] = [[
+Distinguished Survivor armor.
+
+Fills up 100% of your armor bar.
+Provides 5% increased damage resistance.
+]]
+
+LANGUAGE["Item_Assault Vest"] = [[Assault Vest]]
+LANGUAGE["Item_Desc_Assault Vest"] = [[
+Distinguished Assault armor.
+
+Fills up 100% of your armor bar.
+Provides 8% increased Ballistic damage resistance.
+]]
+
+LANGUAGE["Item_Bulldozer Suit"] = [[Bulldozer Suit]]
+LANGUAGE["Item_Desc_Bulldozer Suit"] = [[
+Distinguished Heavy armor.
+
+Fills up 125% of your armor bar.
+]]
+
+LANGUAGE["Item_Hazmat Suit"] = [[Hazmat Suit]]
+LANGUAGE["Item_Desc_Hazmat Suit"] = [[
+Distinguished Medic armor.
+
+Fills up 100% of your armor bar.
+Provides 8% increased Poison damage resistance.
+]]
+
+LANGUAGE["Item_Bomb Suit"] = [[Bomb Suit]]
+LANGUAGE["Item_Desc_Bomb Suit"] = [[
+Distinguished Demolition armor.
+
+Fills up 100% of your armor bar.
+Provides 8% increased Blast damage resistance.
+]]
+
+LANGUAGE["Item_Assassin's Cloak"] = [[Assassin's Cloak]]
+LANGUAGE["Item_Desc_Assassin's Cloak"] = [[
+Distinguished Ghost armor.
+
+Fills up 100% of your armor bar.
+Provides 5% increased evasion.
+]]
+
+LANGUAGE["Item_Defense Matrix"] = [[Defense Matrix]]
+LANGUAGE["Item_Desc_Defense Matrix"] = [[
+Distinguished Engineer armor.
+
+Fills up 100% of your armor bar.
+Provides 5% increased damage resistance.
+]]
+
+LANGUAGE["Item_Riot Armor"] = [[Riot Armor]]
+LANGUAGE["Item_Desc_Riot Armor"] = [[
+Distinguished Warden armor.
+
+Fills up 100% of your armor bar.
+Provides 8% increased Shock and Sonic damage resistance.
+]]
+
+LANGUAGE["Item_Molten Armor"] = [[Molten Armor]]
+LANGUAGE["Item_Desc_Molten Armor"] = [[
+Distinguished Cremator armor.
+
+Fills up 100% of your armor bar.
+Provides 8% increased Fire damage resistance.
+]]
+
+LANGUAGE["Item_Battle Vest"] = [[Battle Vest]]
+LANGUAGE["Item_Desc_Battle Vest"] = [[
+Distinguished Berserker armor.
+
+Fills up 100% of your armor bar.
+Provides 8% increased Slashing and Blunt damage resistance.
+]]
+
+LANGUAGE["Gadget_gadget_blast_plating"] = [[Blast Plating]]
+LANGUAGE["Gadget_Desc_gadget_blast_plating"] = [[
+20% increased Blast damage resistance.
+]]
+
+LANGUAGE["Gadget_gadget_shock_plating"] = [[Shock Plating]]
+LANGUAGE["Gadget_Desc_gadget_shock_plating"] = [[
+20% increased Lightning damage resistance.
+]]
+
+LANGUAGE["Gadget_gadget_heat_plating"] = [[Heat Plating]]
+LANGUAGE["Gadget_Desc_gadget_heat_plating"] = [[
+20% increased Fire damage resistance.
+]]
+
+LANGUAGE["Gadget_gadget_detoxifier"] = [[Detoxifier]]
+LANGUAGE["Gadget_Desc_gadget_detoxifier"] = [[
+20% increased Poison damage resistance.
+]]
+
+LANGUAGE["Gadget_gadget_diamond_plating"] = [[Diamond Plating]]
+LANGUAGE["Gadget_Desc_gadget_diamond_plating"] = [[
+15% increased Physical damage resistance.
+]]
+
+LANGUAGE["Gadget_gadget_corporate_mindset"] = [[Corporate Mindset]]
+LANGUAGE["Gadget_Desc_gadget_corporate_mindset"] = [[
+"Set goals. Have a ten year plan. Invest. Wake up Early. CEO Mindset."
+
+Greatly increases skull tokens drop chance.
+]]
+
+LANGUAGE["Gadget_gadget_vitality_booster"] = [[Vitality Booster]]
+LANGUAGE["Gadget_Desc_gadget_vitality_booster"] = [[
++25 to maximum health.
+]]
+
+LANGUAGE["Gadget_gadget_damage_booster"] = [[Damage Booster]]
+LANGUAGE["Gadget_Desc_gadget_damage_booster"] = [[
+25% increased Global damage.
+]]
+
+LANGUAGE["Gadget_gadget_iv_injection"] = [[IV Injection]]
+LANGUAGE["Gadget_Desc_iv_injection"] = [[
+Recover 25 health.
+]]
+
+LANGUAGE["Gadget_gadget_cortex"] = [[Cortex Stimulator]]
+LANGUAGE["Gadget_Desc_gadget_cortex"] = [[
+For each enemy near you, gain 1 Adrenaline stack.
+Elite enemies grant 2 stacks.
+]]
+
+LANGUAGE["Gadget_gadget_neuro_amplifier"] = [[Neuro Amplifier]]
+LANGUAGE["Gadget_Desc_neuro_amplifier"] = [[
+Adrenaline also increases 6% evasion.
+]]
+
+LANGUAGE["Gadget_ouroboros"] = [[Ouroboros]]
+LANGUAGE["Gadget_Desc_ouroboros"] = [[
+Ouroboros nervous system assistant.
+Removes body regulations to increase combat capabilities.
+
+When you have more than 50% health, you lose 1 health per second.
+When you have less than 50% health, you gain 2 health per second.
+For each 1% health missing, increase your damage by 0.8%.
+]]
+
+LANGUAGE["Gadget_gadget_energy_shield"] = [[Energy Shield]]
+LANGUAGE["Gadget_Desc_energy_shield"] = [[
+Gain 15 armor, up to maximum armor regen limit.
+]]
+
+LANGUAGE["Gadget_gadget_hardening_injection"] = [[Hardening Injection]]
+LANGUAGE["Gadget_Desc_hardening_injection"] = [[
+Movespeed reduced by 50%.
+25% increased Global damage resistance.
+25% increased Physical damage resistance.
+]]
+
+LANGUAGE["Gadget_exoskeleton"] = [[Exoskeleton]]
+LANGUAGE["Gadget_Desc_exoskeleton"] = [[
+Using the active ability activates a short boost.
+
+You cannot run.
+Passively provides 20% increased Global damage resistance.
+]]
+
+LANGUAGE["Gadget_t_virus"] = [[T-Virus]]
+LANGUAGE["Gadget_Desc_t_virus"] = [[
+Converts your armor to health.
+Cannot convert pass 250% health.
+]]
+
+LANGUAGE["Gadget_gadget_life_diffuser"] = [[Life Diffuser]]
+LANGUAGE["Gadget_Desc_gadget_life_diffuser"] = [[
+Triggers a pulse that heals nearby players.
+Heals 20 health.
+]]
+
+LANGUAGE["Gadget_gadget_projectile_launcher_heal"] = [[Projectile Launcher (Heal)]]
+LANGUAGE["Gadget_Desc_gadget_projectile_launcher_heal"] = [[
+Shoots a chemical projectile.
+Projectile deals 75 Poison damage.
+Projectile heals 25 health to nearby players.
+]]
+
+LANGUAGE["Gadget_healing_beam"] = [[Healing Beam]]
+LANGUAGE["Gadget_Desc_gadget_healing_beam"] = [[
+Connects a healing beam between the user and target.
+If the target is an enemy, leeches health from the target.
+If the target is an ally, restores health to the ally.
+]]
+
+LANGUAGE["Gadget_gadget_optical_camouflage"] = [[Optical Camouflage]]
+LANGUAGE["Gadget_Desc_optical_camouflage"] = [[
+Grants Camouflage for 5 seconds.
+50% increased evasion during Camouflage.
+]]
+
+LANGUAGE["Gadget_gadget_projectile_launcher_ballistic"] = [[Projectile Launcher (Ballistic)]]
+LANGUAGE["Gadget_Desc_gadget_projectile_launcher_ballistic"] = [[
+Shoots a ballistic projectile.
+Projectile deals 150 Ballistic damage.
+Stuns enemy on hit.
+]]
+
+LANGUAGE["Gadget_death_mark"] = [[Death Mark]]
+LANGUAGE["Gadget_Desc_gadget_death_mark"] = [[
+Places a mark on the targeted enemy.
+Marked enemy takes 15% increased damage.
+Marked enemy explodes on death, dealing damage based on its health.
+The mark lasts for 10 seconds.
+You can only mark 1 enemy at a time.
+]]
+
+LANGUAGE["Gadget_gunslinger"] = [[Gunslinger]]
+LANGUAGE["Gadget_Desc_gadget_gunslinger"] = [[
+25% more Pistol damage.
+25% more Pistol headshot damage.
+]]
+
+LANGUAGE["Gadget_gadget_proximity_defense"] = [[Proximity Defense]]
+LANGUAGE["Gadget_Desc_proximity_defense"] = [[
+Triggers an explosion that Stuns nearby enemies.
+]]
+
+LANGUAGE["Gadget_gadget_projectile_launcher_blast"] = [[Projectile Launcher (Blast)]]
+LANGUAGE["Gadget_Desc_gadget_projectile_launcher_blast"] = [[
+Shoots an explosive projectile.
+Projectile deals 100 Blast damage.
+Generates 3 extra explosions after a short delay.
+]]
+
+LANGUAGE["Gadget_nitrous_propellor"] = [[Nitrous Propellor]]
+LANGUAGE["Gadget_Desc_gadget_nitrous_propellor"] = [[
+Propells you forward and upward with a chemical explosion.
+]]
+
+LANGUAGE["Gadget_ied"] = [[IED]]
+LANGUAGE["Gadget_Desc_gadget_ied"] = [[
+Drops an Improvised Explosive Device on the ground.
+IED explodes when an enemy comes in range.
+You have 5 IED charges.
+IED recharges after detonation.
+]]
+
+LANGUAGE["Gadget_displacer"] = [[Displacer]]
+LANGUAGE["Gadget_Desc_gadget_displacer"] = [[
+Instantly moves the targeted minion to your side.
+]]
+
+LANGUAGE["Gadget_gadget_turret_pack"] = [[Turret Pack]]
+LANGUAGE["Gadget_Desc_gadget_turret_pack"] = [[
+Deploys a temporary turret.
+Turret has 50% less health.
+Turret is destroyed when duration expires.
+]]
+
+LANGUAGE["Gadget_gadget_e_parasite"] = [[E-Parasite]]
+LANGUAGE["Gadget_Desc_gadget_e_parasite"] = [[
+Projects an E-Parasite capsule that infects enemies on contact.
+E-Parasite counts as a minion.
+E-Parasite deals continuous damage to enemies.
+You leech health from damage dealt by E-Parasite.
+Enemies killed while infected by E-Parasite explode on death.
+]]
+
+LANGUAGE["Gadget_gadget_berserk_armor"] = [[Berserker Armor]]
+LANGUAGE["Gadget_Desc_gadget_berserk_armor"] = [[
+25% increased damage.
+25% increased Global damage resistance.
+25% increased move speed.
+]]
+
+LANGUAGE["Gadget_gadget_flash"] = [[Flash]]
+LANGUAGE["Gadget_Desc_flash"] = [[
+Dashes forward, dealing 100 Slashing damage to all enemies on the path.
+Provides a short invincibility frame.
+]]
+
+LANGUAGE["Gadget_gadget_aerial_guard"] = [[Aerial Guard]]
+LANGUAGE["Gadget_Desc_aerial_guard"] = [[
+While in air, take 65% less Physical damage.
+]]
+
+LANGUAGE["Gadget_gadget_hemocannon"] = [[Hemocannon]]
+LANGUAGE["Gadget_Desc_hemocannon"] = [[
+Shoots a projectile at the cost of 10 health.
+The projectile travels for a short distance and explodes.
+The explosion deals 100 Slashing damage.
+Has a maximum of 5 charges.
+Recharges after 5 seconds.
+]]
+
+LANGUAGE["Gadget_gadget_solar_array"] = [[Solar Array]]
+LANGUAGE["Gadget_Desc_gadget_solar_array"] = [[
+Drops an armor battery.
+]]
+
+LANGUAGE["Gadget_gadget_projectile_launcher_shock"] = [[Projectile Launcher (Shock)]]
+LANGUAGE["Gadget_Desc_gadget_projectile_launcher_shock"] = [[
+Shoots a magnetic projectile that pierces enemies.
+Generates a shockwave each time the projectile hits an enemy.
+Shockwave deals 125 Lightning damage.
+]]
+
+LANGUAGE["Gadget_watchtower_pack"] = [[Watchtower Pack]]
+LANGUAGE["Gadget_Desc_gadget_watchtower_pack"] = [[
+Deploys an extra watchtower.
+]]
+
+LANGUAGE["Gadget_shock_nova"] = [[Shock Nova]]
+LANGUAGE["Gadget_Desc_gadget_shock_nova"] = [[
+Warden Aura rapidly generates a series of shockwaves.
+Each shockwave deals 50 Lightning damage.
+]]
+
+LANGUAGE["Gadget_gadget_butane_can"] = [[Butane Can]]
+LANGUAGE["Gadget_Desc_gadget_butane_can"] = [[
+Drops a Butane Can that explodes on physical impact.
+Explosion deals 375 Fire damage.
+Only 1 Butane Can can be spawned at a time.
+]]
+
+LANGUAGE["Gadget_gadget_projectile_launcher_fire"] = [[Projectile Launcher (Fire)]]
+LANGUAGE["Gadget_Desc_gadget_projectile_launcher_fire"] = [[
+Shoots a flaming projectile.
+Ignites all enemies caught in the explosion.
+Deals 20 base Ignite damage.
+]]
+
+LANGUAGE["Gadget_barbeque"] = [[Barbeque]]
+LANGUAGE["Gadget_Desc_gadget_barbeque"] = [[
+Ignited enemies killed by you drop edible gibs.
+Each gib restores 5 health.
+]]
+
+LANGUAGE["Item_Watchtower Module: Agony"] = [[Watchtower Module: Agony]]
+LANGUAGE["Module_Desc_WM_Agony"] = [[
+25% increased effectiveness of Agony.
+]]
+
+LANGUAGE["Item_Watchtower Module: Suffering"] = [[Watchtower Module: Suffering]]
+LANGUAGE["Module_Desc_WM_Suffering"] = [[
+25% increased effectiveness of Suffering.
+]]
+
+LANGUAGE["Item_Watchtower Module: Terror"] = [[Watchtower Module: Terror]]
+LANGUAGE["Module_Desc_WM_Terror"] = [[
+Fear causes enemies to receive 16% stun buildup or 40 stun buildup, whichever is less.
+Stun buildup cannot be shotgunned.
+50% less effective against bosses.
+]]
+
+LANGUAGE["Item_Watchtower Module: Paranoia"] = [[Watchtower Module: Paranoia]]
+LANGUAGE["Module_Desc_WM_Paranoia"] = [[
+50% more presence radius.
+]]
+
+LANGUAGE["Item_Watchtower Module: Nightmare"] = [[Watchtower Module: Nightmare]]
+LANGUAGE["Module_Desc_WM_Nightmare"] = [[
+Fear causes enemies to take 8% of their maximum health as true damage, once.
+Fear causes enemies to be culled while below 10% health.
+]]
+
+LANGUAGE["Item_Watchtower Module: Hysteria"] = [[Watchtower Module: Hysteria]]
+LANGUAGE["Module_Desc_WM_Hysteria"] = [[
+You and your allies in your presence are afflicted with Hysteria.
+Hysteria grants 10% less debuff buildup per stack up to 50%.
+Gain Hysteria no more than once every 3 seconds.
+Hysteria lasts for 5 seconds and falls off consecutively.
+]]
+
+LANGUAGE["Gadget_gadget_shotgun_surgeon"] = [[Shotgun Surgeon]]
+LANGUAGE["Gadget_Desc_gadget_shotgun_surgeon"] = [[
+Active Gadget:
+Throw a healing vial in front of you.
+Healing vial restores {1} health.
+Healing vial expires after {2} seconds.
+
+Passive Effect:
+Dark Energy Blast restores {3} health to you and your allies in its blast radius.
+Dark Energy Blast also detonates on allies and minions.
+
+While you have a Projection Clone active:
+You and your allies restore {4} of their own maximum health per second while in your presence.
+]]
+
+LANGUAGE["Gadget_gadget_twinned_underbarrel"] = [[Twinned Underbarrel]]
+LANGUAGE["Gadget_Desc_gadget_twinned_underbarrel"] = [[
+Active Gadget:
+Fires a Lesser Combine energy ball in front of you.
+
+Inherits properties from Dark Energy Blast perk skill.
+Deals {1} less damage if you have Dark Energy Blast perk skill.
+Cooldown is fixed.
+]]
+
+LANGUAGE["Gadget_gadget_reinforcements"] = [[Reinforcements]]
+LANGUAGE["Gadget_Desc_gadget_reinforcements"] = [[
+Active Gadget:
+Summons a lesser Projection Clone with a pump shotgun.
+
+Inherits properties from Juxtaposition perk skill.
+Lesser Projection Clone has {1} less health.
+]]
+
+LANGUAGE["Gadget_gadget_emergency_reload"] = [[Emergency Reload]]
+LANGUAGE["Gadget_Desc_gadget_emergency_reload"] = [[
+Active Gadget:
+Instantly reloads your held weapon to maximum magazine capacity.
+Also instantly reloads any secondary attachments to maximum magazine capacity.
+]]
+
+LANGUAGE["Gadget_gadget_death_incarnate"] = [[Death Incarnate]]
+LANGUAGE["Gadget_Desc_gadget_death_incarnate"] = [[
+Active Gadget:
+Your presence ignores line of sight.
+Fear causes enemies to receive Necrosis.
+
+Passive Effect:
+Immune to Necrosis.
+]]
+
+LANGUAGE["Game_Dank_Patch_Notes"] = [[Dank Update 2.1.1]]
+LANGUAGE["Game_Dank_Patch_Notes_Info"] = [[
+Horde 2.1.1 mini update
+
+Secondary Ammo Purchasing and bug fixes
+• Was graciously donated code and yoinked them by The1337Gh0st and .kkrill
+• You can now buy 10x ammo for secondary weapons.
+
+Spell Caster Flashlight Power Creep
+• Warlock, Necromancer, and Artificer are now able to conjure light by using the grenade key which will fire a projectile at your crosshair. Upon hitting a surface, it will light a large area for 30 seconds.
+• Spellcasters will get looked at in the future cuz they’re way too dank. For now, these changes are aimed to make them less painful to play.
+
+Warlock
+• Meteor now goes through players and minions.
+• Meteor self damage is capped at 10 damage from 70 damage.
+• Meteor now does direct damage and explosion damage. The direct damage does blunt damage and can headshot. The explosion damage now utilizes the new dank aoe system.
+• Neutron Beam now follows you and tracks your crosshair.
+• Neutron Beam now spawns on the top right of the screen so it doesn’t blind you. Piercing hitbox is the same despite it looking visually different. 
+
+Necromancer
+• Void projectile and Ice Arrow now goes through players and minions.
+
+Artificer
+• Solar Orb and Dank Orb now goes through players and minions.
+
+Carcass
+• Increased melee range from 75 units to 90 units.
+• Fists are now fully automatic and will perform combo attacks while you’re in range of an enemy.
+• Charged attacks will automatically release their charge attack when in range and distance scales depending on how fast you’re moving.
+• Fists now deals full damage and isn’t affected by limb damage penalties.
+• You can’t reep yourself by overusing Grappendix or Bio Thruster.
+• Grappendix can now pull non elite enemies towards you if you walk backwards first before pulling.
+• Twin Heart will automatically turn off when you’re at full health
+
+Nearby Explosions
+• No longer makes your ears become way too dank.
+
+Combat Knife
+• Now scales movement speed based off of your remaining weight relative to your maximum weight, scaling from 25% more movement speed down to 5% more movement speed.
+
+• Psycho Bestial Wrath and Berserker Rip and Tear
+• Melee splash now works with cleaving but cannot splash hit the same targets or splash hit any cleaved targets.
+
+Overlord Terror Module
+• Fixed the scaling on the stun buildup per second. It now deals 16% of the enemy’s buildup threshold or 40 flat stun buildup per second whichever is less. It also has 50% less effectiveness vs bosses.
+• Non elites take 6.25 seconds to stun, nerfed from 2.5 seconds
+• Elites take 12.5 seconds to stun, buffed from 25 seconds.
+• Bosses remain unchanged taking 25 seconds to stun.
+
+Medic ACR
+• Underbarrel grenade launcher projectile now goes through players, preventing you from getting stuck on it.
+• Underbarrel grenade now heals the correct values.
+• Increased velocity for underbarrel grenades.
+
+M16 m203
+• Is now fully automatic instead of burst fire.
+• Lowered fire rate from 1200 RPM to 800 RPM.
+• Fixed it not being able to use ammo related attachments.
+• Increased velocity for underbarrel grenades.
+
+1911
+• Now has attachment support for ammo and perks.
+
+
+
+-----------------------------------------------------------------------------------------
+Dank Update 2.1.0
+
+TL:DR
+• Dank skip trader by pressing Alt + F4, Perk skill queueing and buffering, Melee weapon base changes, ArcCW attachments menu, Overlord overhauled, Warden, Shotguns, Berserker, Psycho, Hatcher, Engineer, Gunslinger, VDank update for zambies and bosses, fixed joining other servers potentially deranking your single player save if your rank was lower.
+
+Gameplay Changes
+Perk skill and Gadget queueing and buffering
+• Players can now queue up or buffer their next Perk skill or Gadget if used while on cooldown. If used 0.5 second too early, the game will wait until it’s off cooldown to use said Perk skill or Gadget.
+• Players can now hold down their key/button to queue up their next Perk skill or Gadget. As long as the player is holding down their key/button, the game will immediately use said Perk skill or Gadget whenever it’s off cooldown.
+• Queueing and buffering doesn’t work on Perk skills or Gadgets that have less than 1 second cooldown.
+
+Dank Skip Timer
+• Players can now skip trader time by hitting F4, typing “!skip” or “!ready”, or typing in the console, “horde_skip_trader” (you can also bind it to a key or button too if).
+
+Remaining Enemies
+• Last 10 remaining enemies no longer display a glowing halo and now instead display them in full solid color. This is a million times more performance friendly and shouldn’t need to be turned off, hopefully.
+
+Single Player Save File
+• Your local single player rank save file will no longer incorrectly sync subclasses levels when joining other servers (You can still potentially derank subclasses if you play on a server with an older version of Horde, so be sure to copy your rank file if you play single player).
+
+ArcCW Attachments Shop Changes
+• Players can now buy Horde attachments through the ArcCW attachments window. Players can also still buy attachments through the Horde attachments shop.
+• Fixed and removed all default whitelist for ArcCW attachments making it so players can now buy certain attachments that were previously not available before.
+• Players can use, “horde_testing_attachment_copy“ and right click the attachments in the ArcCW attachments window to copy the correct ArcCW attachment name to make their own whitelist if they’re crazy enough to do so.
+
+Hit Groups
+• Player’s minions will now always do 100% of their damage no matter the body part they hit (headshots still do 200% of their damage). This makes it so things like turrets aren’t punished for shooting at zombie’s legs or arms dealing 25% of their damage due to only being able to aim center mass.
+• Melee Weapons will now always do 100% of their damage vs limbs. This makes it so meleeing enemies doesn’t feel like hot doo doo as you actually did more damage by missing the enemy to not get penalized by the 25% limb damage. Headshots still do 200% damage.
+• Shotguns will now deal 75% of their damage vs arms and 50% of their damage vs legs. This change only affects default Horde shotguns and not new shotguns added in via item config.
+
+Melee Weapon Framework Changes
+• Melee weapons now use their own hitbox system fixing multiple bugs and unintended interactions.
+• Slightly fixed phantom hits from happening whenever players would hit at the edge of the enemy’s hull box (It’s still there but a lot less common now).
+• Fixed the omega dank sniper rifle melee bug. May you rest in pepperonis, my dank bug.
+• Melee weapons can now cleave multiple enemies depending on their weapon type and have different hitbox and reach distances.
+• Melee weapons now have durability and will deal half damage when at zero durability. (This only affects Horde melee weapons)
+• One durability is consumed per enemy hit with that melee weapon. Special effects do not consume durability (example: Mjolnir’s right click charged attack).
+• Power attacks (right mouse click) will consume double the durability.
+• Durability can be restored by opening up the Horde shop or picking up ammo boxes which will restore 20% of the weapon’s max durability.
+• If you have Horde ammo boxes disabled, melee weapon durability will also be disabled.
+
+Skull tokens
+• Notification is now sent to the player when they pick up a skull token
+• Skull tokens now spawn on top of the player rather than at the enemy’s location.
+
+General
+• Players will no longer drop their weapons at the end of each wave due to being over default maximum carry weight.
+• Gadgets are now taken into account for maximum carry weight from weight modification skills.
+• Item sell value is increased from 25% to 75% of the original price value.
+• Players can no longer gain money from healing other players while the game has not started or during break time.
+
+
+Perks
+Overlord
+• Overlord has been slightly reworked/improved.
+• Fixed base Perk levels not being calculated.
+• Overlord now gains +1 Fear stack for every wave that unlocks a new perk tier. This also removes all perk skills that increase Fear stacks to accommodate this change.
+• Fixed a lot of internal things that nobody will care about (This is mainly how your presence works).
+• Enemies and allies now immediately get debuffed or buffed the moment they go into your presence instead of once every 0.5 second.
+• Overlord now starts with Dark Energy Blast but has a 30 second cooldown.
+• Fixed Dark Energy Blast being way too dank, hitting and exploding multiple times.
+• Overlord now has a faint sphere rendered around the player to display their presence area.
+• Overlord now has their own special array of Gadgets and special upgrades that can be viewed from the shop.
+• Fixed and removed Militant having leftover code causing you to heal 1 health whenever you receive any debuff buildup. 
+• Inverse Filter now heals 3 health instead of 2 health whenever you receive any buildup (Moved the health gained on debuff buildup from Militant to Inverse Filter).
+• Fixed Dispersion not working at all.
+• Militant has new effects.
+• Oppressor has new effects.
+• Dark Energy Blast perk skill has new effects.
+• Juxtaposition has new effects. It now instead creates a Combine minion with its own shotgun and will only shoot at enemies equal to your presence range. This also fixes weapons that can’t be duplicated to make custom configs more friendly.
+• Doomed Presence has new effects.
+• Death Eater has new effects.
+
+Warden
+• Warden Aura now uses a different base (similar to Overlord) for aura effect and should fix some rare scenarios where it doesn’t get applied to players.
+• Warden Aura is now a sphere rather than a cube.
+• Warden now has a faint sphere rendered around the player to display their aura.
+• Warden Aura units increased from 160 to 205 to compensate for the loss of area.
+• Fixed Warden’s block not adding to existing block value.
+
+Hatcher
+• Fixed Antlion AI from breaking causing them to stop attacking and just staring at you.
+• Antlions now follow you a lot better and will teleport to you if multiple Antlions get stuck on each other.
+• Fixed Antlion’s hitbox allowing you to target it (example: healing it with medkit or target it with gadgets). This also fixes Antlions clumping up together due to not having a collision bounding box.
+• Fixed Antlions not adjusting their stats when upgrading your Pheropod while they are alive.
+• Antlions can no longer use melee attacks and will only use ranged attacks.
+• Antlions now lead enemies with their ranged attacks.
+• Fix a bug where Antlions would continue evolving at max evolution, resetting their health back to maximum health.
+• Antlions are now immune to all status effects.
+• Fixed Antlion’s ranged attacks not healing themselves. Ranged attacks now heal themselves for 5% of their max health (this healing doesn’t evolve them and is similar to their Bug Pulse healing).
+• Antlion’s evolution value will carry over to the next evolution if any.
+• Added Hatcher’s Pheropods the ability to regenerate charges while holstered at 1/4th the regeneration speed (1 ammo every 1 second).
+• Fixed Antlion’s ranged attacks not being affected by their owner’s outgoing healing effects (Example: Amplified healing).
+• Antlions now use the new dank explosion code for their ranged attacks. This allows them to do their full damage adding a minimum damage range formula. This roughly gives them 25% more damage. It also fixes the number damage position too.
+• Increased Antlion Guardian (Stage 4) maximum health from 800 to 900.
+• HUD now shows Antlion's health while not in single player (Similar to SpecOps or Medic HUD).
+
+SpecOps
+• Fixed Neuron Stabilizer being able to transfer to other perks. Rest in pepperonis, Neuron Stabilizer. My favorite unintended interaction, you were too beautiful for this world.
+
+Berserker
+• Now has a perk skill, Active Parry, which will perform a parry that is similar to Aerial Parry.
+• Updated Berserker’s base description to be slightly more confusing.
+• Bloodlust now correctly calculates headshot damage for leeching values
+• Bushido increases all melee damage instead of only slashing damage.
+• Savagery increases all melee damage instead of only blunt damage.
+• Graceful Guard tooltip fixed to display the correct healing value.
+• Graceful Guard now also heals 10 health over 10 seconds but does not stack.
+• Unwavering Guard now applies the damage resistance buff for the hit that triggered it.
+• Increased Unwavering Guard buff duration from 5 seconds to 10 seconds.
+• Phalanx reworked.
+• Rip and Tear splash damage now only works for weapons that don’t innately use the new melee cleave mechanic.
+• Rip and Tear now uses a new dank aoe damage formula.
+• Fixed Rip and Tear tooltip value.
+
+Psycho
+• Updated Psycho’s base description to be slightly more confusing.
+• Changed Frenzy to be a Perk skill rather than a flashlight skill so you can toggle it on or off independently from the flashlight.
+• Frenzy now uses the new screen effect to prevent you from self blinding yourself while in Frenzy mode.
+• Added half of Brutality as a base skill.
+• Changed the position of Bloodbath.
+• Savor can now also leech partial health on non critical hits.
+• Ferocity position changed and reworked.
+• Fixed Brutality having tooltip errors.
+• Grudge reworked.
+• Bestial Wrath now also slows down Frenzy’s health drain.
+• Bestial Wrath splash damage now only works for weapons that don’t innately use the new melee cleave mechanic.
+• Bestial Wrath now uses a new dank aoe damage formula.
+
+Engineer
+• (I’ll fix Engineer later when I do a deeper dive into Engineer. Most of these are band aid fixes or indirect fixes due to fixing other perks or adding new features.)
+• Displacer perk skill now requires a target in order to be used. (This skill is still very buggy, don’t use it.)
+• Quantum Tunnel Gadget now requires a target in order to be used.
+• All default turrets and minions are now immune to all status buildups.
+
+Gunslinger
+• Money dropped from Hunter’s Mark now drops on top of you instead of at the enemy’s location.
+
+Samurai
+• Flesh Bloom now applies its bleed buildup in an area of effect on entities hit rather than around the user.
+
+
+Weapons
+Shotguns
+• All shotguns have their own unique range profile and identity. Can be viewed by inspecting your weapon through the ArcCW attachments window on the right side.
+• Removed reload penalty from any shotgun that has the extended tube attachment (magazine fed shotguns are unaffected).
+• Shotguns that can reduce their magazine capacity can cycle 10% faster.
+• All shotgun ammo cost has been reduced to 1 dollar per shotgun shell similar to the starter shotgun.
+
+ArcCW Shotgun Ammo attachments
+• All shotgun ammo attachments have been changed. Can be viewed by inspecting your weapon through the ArcCW attachments window and selecting ammo type or through Horde’s attachments shop tab.
+
+Pump Shotgun
+• Improved recoil control and reloading speed (reloading speed changes allows players to instantly reload the first shell rather than having to wait).
+• Fixed pump sound effect for immersion.
+
+Nova Shotgun
+• Improved recoil control and removed recoil kick.
+
+Swag7 Shotgun
+• Damage increased from (15 to 5) x 10 to (18 to 9) x 10
+• Improved recoil control and removed recoil kick.
+• Faster pump cycle time by 26%.
+• Moving and jumping no longer reduces its accuracy.
+
+870 Pump Shotgun
+• Damage increased from (14 to 5) x 8 to (18 to 13) x 8.
+• Improved recoil control and removed recoil kick.
+• Tighter pellets spread from 45 moa to 35 moa.
+
+M1014 Shotgun
+• Damage increased from (13 to 6) x 8 to (18 to 13) x 8.
+• Improved recoil control, hip fire spread, and removed recoil kick.
+• Significantly improved the reload speed and responsiveness for reloading.
+• Tighter pellets spread from 50 moa to 25 moa.
+
+Double Barrel Shotgun
+• Damage improved from (50 to 25) x 6 to (40 to 20) x 8.
+• Double Shot firing mode will now truly fire both barrels.
+• Improved horizontal recoil control and hip fire control.
+• Tighter pellets spread from 100 moa to 80 moa.
+• Spread will always be 80 moa no matter the firing mode instead of being 200 moa in Double Shot mode.
+
+Trench Shotgun
+• Damage improved from (33 to 10) x 8 to (33 to 11) x 8.
+• Increased magazine capacity from 6 to 8.
+• Improved hip fire control.
+• Tighter pellets spread from 80 moa to 50 moa.
+• Fixed pump animation from playing for immersion.
+
+Spas-12 Pump Shotgun
+• Improved horizontal recoil control and hip fire control.
+• Tighter pellets spread from 100 moa to 50 moa.
+• Faster pump cycle time by 10%.
+
+Striker Shotgun
+• Damage improved from (25 to 15) x 6 to (25 to 15) x 8.
+• Improved horizontal recoil control and hip fire control.
+• Tighter pellets spread from 125 moa to 75 moa.
+• Significantly improved the responsiveness for reloading.
+
+AA-12 Shotgun
+• Improved hip fire control and significantly improved horizontal recoil control to not be omega cringe.
+• Tighter pellets spread from 100 moa to 50 moa.
+
+Lockpick Shotgun
+• Added a new 10 weight double barrel shotgun that is mega dank but slows you down by 20%.
+
+
+Explosives
+• Javelin Rocket Launcher
+• Mouse sensitivity reduced by half whenever scoped in
+• Locking on doesn’t require pixel perfect aim and now locks onto the target’s hull instead of the model.
+• Reduced recoil by 80%.
+• Rocket speed increased by 1000%
+
+Spore Launcher
+• Changed Spore Launcher from SWEP slot 5 to 3
+
+
+Melee Weapons
+• All melee weapons have had their damage changed to accommodate for the durability mechanic. This makes it so melee weapons can feel more impactful without just blatantly adding more zeros at the end of everything.
+• All melee weapons have their own hurtbox. It’s hard to describe how it works since I fine tuned it, so if any weapon feels bad, just scream.
+
+Knife
+• Increased heavy attack damage from 50 to 60.
+• Holding the knife out now gives you 25% more movement speed. For the Counter Strike and Killing Floor enjoyers.
+
+Crowbar
+• Increased heavy attack damage from 90 to 120.
+
+Machete
+• Increased heavy attack damage from 105 to 110.
+
+Stunstick
+• Normal attack shock damage reduced from 35 to 25
+• Heavy attack shock damage increased from 25 to 35
+• Extra shock damage from direct hits is now affected by headshots.
+• Extra shock damage can now inflict shock buildup at 80% of its damage dealt.
+
+Fire axe
+• Increased heavy attack damage from 140 to 160.
+• Power attack headshot now always stun the enemy for the first time it has ever been stunned by the Fire axe as long as the enemy’s stun buildup isn’t on cooldown. For the Killing Floor enjoyers.
+
+Bat
+• Increased heavy attack damage from 160 to 240.
+
+Katana
+• Increased heavy attack damage from 150 to 200.
+• Power attack headshot now always mini stun the enemy for the first time it has ever been mini stunned by the Katana (0.5 second stun if the enemy isn’t stunned and bypasses all stun cooldowns). For the Killing Floor enjoyers.
+
+Inferno Blade
+• Can now cleave multiple enemies to create multiple explosions from charged attacks to extend area of effect range but does not overlap damage.
+• No longer deals 1 fire damage to the user and now instead removes 1 health as non lethal damage from the user.
+
+Chainsaw
+• Doesn’t use the new durability system.
+
+Jotuun
+• Extra frost damage from direct hits is now affected by headshots.
+• Extra frost damage can now inflict frostbite buildup at 15% of its damage dealt.
+• Can now cleave multiple enemies to create multiple explosions from power attacks to extend area of effect range but does not overlap damage.
+
+Mjolnir
+• Extra shock damage from charged attacks is now combined into one hit instead of three separate hits.
+• Extra shock damage from charged attacks from direct hits is now affected by headshots.
+• Can now cleave multiple enemies to create multiple explosions from charged attacks to extend area of effect range but does not overlap damage.
+
+Zweihander
+• Has the largest hurtbox range and can cleave up to 10 enemies.
+
+
+Pistols
+Throwing Knife
+• Added a new weapon for Berserker, Samurai, Survivor, Psycho, and Gunslinger.
+
+Dual M9
+• Now has an additional fully automatic firing mode which will fire both pistols by holding your primary fire button (default: left mouse button).
+• Fixed the Dual M9 not having attachments for perks or ammo.
+
+Dual Glocks
+• Now has an additional fully automatic firing mode which will fire both pistols by holding your primary fire button (default: left mouse button).
+
+Dual Deagles
+• Now has an additional fully automatic firing mode which will fire both pistols by holding your primary fire button (default: left mouse button).
+
+
+Machine guns
+Gau
+• Vertical recoil reduced from 0.8 to 0.2
+• Horizontal recoil reduced from 0.5 to 0.3
+• SWEP slot moved from 4 to 3
+• Movement speed multiplier while holding this weapon changed from 0.875 to 0.8.
+
+
+Special
+Pheropod
+• Reduced weight from 11 to 0.
+• Moved from SWEP slot position 2 to 3 
+• Hatcher no longer has access to these weapons (Hatcher never could use these weapons due to the old weight limit)
+    MP5K Medic PDW
+    MP7A1 Medic PDW
+    MP9 Medic PDW
+    Vector Medic PDW
+    AR15
+    SSG Medic SR
+    ACR Medic AR
+    Spore Launcher 
+
+Welder
+• Reduced weight from 2 to 0.
+
+
+Gadgets
+Omnislash
+• Fixed the gadget so that it returns you in the direction you’re facing instead of it always facing you south.
+• Reduced the activation range from 95 meters to 6 meters (no more Omnislash sniping).
+• Fixed the dankest bug to ever exist in the history of Horde.
+
+Ultimate Booster
+• Fixed rounding errors for health so now you’ll have 115 health instead of 114 health.
+
+
+Spells
+Floating Chaos
+• Added a new icon for it.
+
+Ice Coffin
+• Fixed the spell so that it returns you in the direction you’re facing instead of it always facing you south.
+
+
+Debuff Buildups
+Frostbite
+• Players - No longer halves the player’s run speed while sprinting while afflicted with Frostbite (It was better to walk instead of sprint to move faster, which seems unintuitive).
+• Enemies - Now also slows their movement speed by roughly 30%
+
+
+Enemies
+VJ Base Zambies
+• VJ Base got updated and everything got bricked. Scream if something is bricked.
+• All enemies and elites are affected in some way due to the VJ base update changing their AI, but should be roughly the same. I’ll only mention the most noticeable changes.
+
+Vomitter
+• Now lobs their meatballs and is affected by gravity instead of it being a straight shot
+• Now has a deadzone while within melee range (200 units) where it will not use its ranged attacks.
+
+Scorcher
+• Now lobs their meatballs and is affected by gravity instead of it being a straight shot
+• Now has a deadzone while within melee range (200 units) where it will not use its ranged attacks.
+• Meatballs now have aoe damage dropoff.
+
+Weeper
+• No longer can melee attack
+
+Hulk
+• VDank base has gifted us with a sick running animation that will be used while it’s raged.
+
+Lesion
+• When raged, Lesion will now only use their leap attack if you’re not in melee range (250 units)
+• Leap attack cooldown reduced from 10 seconds to 3 seconds.
+
+Plague Solder
+• Fixed a bug where their SMG or Shotgun projectiles can hit the player multiple times causing players to take more damage than intended.
+• Removed prop damage dealt from the projectiles they shoot causing them to deal potentially additional damage to the player (their props did 10 non scalable damage if they collided fast enough to the player, which was mostly all the time).
+
+Plague Elite
+• Fixed a bug where their AR2 and Combine Ball projectiles can hit the player multiple times causing players to take more damage than intended.
+• Removed prop damage dealt from the projectiles they shoot causing them to deal potentially additional damage to the player (their props did 10 non scalable damage if they collided fast enough to the player, which was mostly all the time).
+• Combine Ball no longer does direct hit damage and only does area of effect damage to also prevent the issue described from above.
+• These fixes make the meatball blast deal only 114 on Apocalypse difficulty if you directly get hit by it. Before it could potentially do up to 437 damage on direct hit.
+
+Bosses
+General
+• All bosses are affected in some way due to the VJ base update changing their AI, but should be roughly the same. I’ll only mention the most noticeable changes.
+
+Hell Knight
+• When raged, Lesion will now only use their leap attack if you’re not in melee range (250 units)
+• Leap attack cooldown reduced from 10 seconds to 3 seconds.
+
+Mutated Hulk
+• VDank base has gifted us with a sick running animation that will be used while it’s raged.
+
+Xen Host Unit
+• Baby spooders now deal 1 damage
+
+Plague Demolition
+• RPG now has aoe damage dropoff.
+
+Gamma Gonome
+• Meatballs now have aoe damage dropoff
+
+Alpha Gonome
+• Meatballs now have aoe damage dropoff
+• Reduced animation speed from 1.75 times to 1.4 times while it is raged.
+• Increased movement speed from 1.5 times to 1.8 times while it is raged.
+
+Xen Destroyer Unit
+• Now properly cancels its flamethrower attack while in its deadzone
+
+]]
+
+LANGUAGE["HordeGameTips_0000"] = "Head to the trader zone to open shop"
+LANGUAGE["HordeGameTips_0001"] = "Press F3 to open shop"
+
+LANGUAGE["Shop_UI_Shop"] = "Shop"
+LANGUAGE["Shop_UI_Perks"] = "Perks"
+LANGUAGE["Shop_UI_Back"] = "Back"
+LANGUAGE["Shop_UI_Cancel"] = "Cancel"
+LANGUAGE["Shop_UI_Description"] = "Description"
+LANGUAGE["Shop_UI_Complexity"] = "Complexity"
+LANGUAGE["Shop_UI_Exp"] = "EXP"
+LANGUAGE["Shop_UI_Locked"] = "Locked"
+LANGUAGE["Shop_UI_Tier"] = "Tier"
+LANGUAGE["Shop_UI_UnlockClass"] = "Unlock Class"
+LANGUAGE["Shop_UI_UnlockAsk"] = "Unlock this class permanently?"
+LANGUAGE["Shop_UI_Price"] = "Price:"
+LANGUAGE["Shop_UI_Skulls"] = "Skulls"
+LANGUAGE["Shop_UI_Balance"] = "Your balance: %s skulls"
+LANGUAGE["Shop_UI_Unlock"] = "Unlock"
+LANGUAGE["Shop_UI_NeedMore"] = "Need %s more"
+LANGUAGE["Shop_UI_ChangeClass"] = "Change Class"
+LANGUAGE["Shop_UI_ChangeClassAsk"] = "Switch to this class?"
+LANGUAGE["Shop_UI_ItemsRemoved"] = "Your items will be removed!"
+LANGUAGE["Shop_UI_Select"] = "Select"
+LANGUAGE["Shop_UI_Enable"] = "Enable this Perk"
+LANGUAGE["Shop_UI_Enabled"] = "Enabled (Active)"
+LANGUAGE["Shop_UI_NoPerks"] = "This class has no perks."
+LANGUAGE["Shop_UI_DamageType"] = "Damage Type:"
+LANGUAGE["Shop_UI_Requires"] = "Requires:"
+LANGUAGE["Shop_UI_RankNotMet"] = "Rank Requirement(s) Not Met"
+LANGUAGE["Shop_UI_Dead"] = "You are dead."
+LANGUAGE["Shop_UI_Limit"] = "Limit reached"
+LANGUAGE["Shop_UI_Sell"] = "Sell"
+LANGUAGE["Shop_UI_SellAsk"] = "Sell this item?"
+LANGUAGE["Shop_UI_SellFor"] = "Sell for:"
+LANGUAGE["Shop_UI_UpgradeTo"] = "Upgrade to +%s (%s$)"
+LANGUAGE["Shop_UI_NoItems"] = "Nothing here yet."
+LANGUAGE["Shop_UI_SelectItem"] = "Select an item"
+LANGUAGE["Shop_UI_NoInfusion"] = "No infusion selected."
+LANGUAGE["Shop_UI_InfNeed"] = "Not enough money (Need %s$)"
+LANGUAGE["Shop_UI_InfApply"] = "Apply %s (%s$)"
+LANGUAGE["Shop_UI_RemoveInfusion"] = "Remove Infusion"
+LANGUAGE["Shop_UI_Pros"] = "Pros:"
+LANGUAGE["Shop_UI_Cons"] = "Cons:"
+LANGUAGE["Shop_UI_EquipC"] = "Equip by Pressing C."
+LANGUAGE["Shop_Cat_Offense"] = "Offense"
+LANGUAGE["Shop_Cat_Defense"] = "Defense"
+LANGUAGE["Shop_Cat_Support"] = "Support"
+LANGUAGE["Shop_Cat_Hybrid"] = "Hybrid"
+LANGUAGE["Shop_Cat_Other"] = "Unassigned"
+LANGUAGE["Shop_CatDesc_Offense"] = "Pressures the enemy and breaks through their defenses."
+LANGUAGE["Shop_CatDesc_Defense"] = "Takes damage and protects allies."
+LANGUAGE["Shop_CatDesc_Support"] = "Empowers allies and helps them in combat."
+LANGUAGE["Shop_CatDesc_Hybrid"] = "Combines the traits of several roles."
+
+LANGUAGE["QuickChat_MenuTitle"] = "Quick chat"
+LANGUAGE["QuickChat_Phrase_1"] = "Hello!"
+LANGUAGE["QuickChat_Phrase_2"] = "Bye!"
+LANGUAGE["QuickChat_Phrase_3"] = "Help!"
+LANGUAGE["QuickChat_Phrase_4"] = "Behind you!"
+LANGUAGE["QuickChat_Phrase_5"] = "Heal me!"
+LANGUAGE["QuickChat_Phrase_6"] = "Give me money!"
+LANGUAGE["QuickChat_Phrase_7"] = "Thanks!"
+LANGUAGE["QuickChat_Phrase_8"] = "Let's go!"
+LANGUAGE["QuickChat_Phrase_9"] = "Nice!"
+
+LANGUAGE["Class_Sapper"] = "Sapper"
+LANGUAGE["SubClass_Title_Sapper"] = "Sapper"
+LANGUAGE["Sapper_Description"] = "A demolition expert specializing in area denial and explosive traps."
+
+LANGUAGE["Perk_Title_sapper_base"] = "Sapper Base"
+LANGUAGE["Perk_sapper_base"] = [[
+The Sapper class is a crowd-control class that can also provide high single target damage.
+This class doesn't use any weapons except mines & traps.
+
+Complexity: SLIGHTLY EASY
+
+{1} increased Blast damage. ({2} per level, up to {3}).
+{4} immunity to explosion damage.
+25% increased debuff buildup from non-explosive sources.
+
+Regenerate {6} sticky mine every {7} seconds, if you have 0 ammo.
+Press SHIFT+E to deploy Houndeye. Cooldown: 30s.]]
+
+LANGUAGE["Item_Soul Rebooter"] = "Soul Rebooter"
+LANGUAGE["Item_Desc_Soul Rebooter"] = [[Opens the Resurrection menu. Choose 1 fallen ally to bring back to life.
+
+Place a Soul Rebooter pylon on the ground.
+When the timer finishes, the ally is revived at the pylon.
+If the pylon is destroyed before the timer ends, resurrection fails.
+
+Each placement consumes 1 charge.
+Charges are shop-only and cannot be replenished by Ammo Boxes.]]
+LANGUAGE["SoulRebooter_MenuTitle"] = "Soul Rebooter"
+LANGUAGE["SoulRebooter_SelectHint"] = "Select a fallen ally"
+LANGUAGE["SoulRebooter_Confirm"] = "Resurrect"
+LANGUAGE["SoulRebooter_SelectFirst"] = "Select a player"
+LANGUAGE["SoulRebooter_UnknownPlayer"] = "Unknown player"
+LANGUAGE["SoulRebooter_PlaceHint"] = "PLACEMENT MODE — LMB: place  |  RMB: cancel"
+LANGUAGE["SoulRebooter_Target"] = "Target: "
+LANGUAGE["SoulRebooter_NoPlayers"] = "No players available for resurrection."
+LANGUAGE["SoulRebooter_NoTarget"] = "No target selected."
+LANGUAGE["SoulRebooter_Equip"] = "Equip Soul Rebooter and try again."
+LANGUAGE["SoulRebooter_AlreadyPlacing"] = "Placement already in progress."
+LANGUAGE["SoulRebooter_NoCharges"] = "No charges remaining."
+LANGUAGE["SoulRebooter_InvalidTarget"] = "Invalid resurrection target."
+LANGUAGE["SoulRebooter_InternalError"] = "Internal error (StartPlacement missing)."
+LANGUAGE["SoulRebooter_AimPlace"] = "Aim at the ground and press LMB to place. RMB to cancel."
+LANGUAGE["SoulRebooter_TargetInvalid"] = "Selected player is no longer available."
+LANGUAGE["SoulRebooter_Cancelled"] = "Placement cancelled."
+
+LANGUAGE["Horde_Guide_H_Survive"] = "HORDE: REDUX — survive the waves"
+LANGUAGE["Horde_Guide_B_Survive"] = "Clear every wave of the run. The last wave is a boss wave: kill the boss to win."
+LANGUAGE["Horde_Guide_B_Money"] = "You earn money for kills. Spend it in the Shop (default F3): weapons, ammo, perks and gadgets."
+LANGUAGE["Horde_Guide_H_Classes"] = "Classes & progression"
+LANGUAGE["Horde_Guide_B_Classes"] = "Pick a class and subclass at spawn. Each subclass has its own starter loadout and its own perk tree."
+LANGUAGE["Horde_Guide_B_Perks"] = "Perks unlock by tier as you gain levels during a run — choose the ones that fit your build."
+LANGUAGE["Horde_Guide_B_Gadgets"] = "Gadgets are active abilities; use them with the Gadget key (default T)."
+LANGUAGE["Horde_Guide_B_Spells"] = "Magic subclasses cast a Utility Spell (default F) and an Ultimate Spell (default R)."
+LANGUAGE["Horde_Guide_H_Enemies"] = "Enemies"
+LANGUAGE["Horde_Guide_B_Elites"] = "Elites and mutated enemies glow and have extra stats — focus them down first."
+LANGUAGE["Horde_Guide_B_Bosses"] = "Bosses have a lot of health and their own music; killing one ends a boss wave."
+LANGUAGE["Horde_Guide_B_Ammo"] = "Ammo boxes refill your weapons. Corpses and pickups can matter — watch the ground."
+LANGUAGE["Horde_Guide_H_Break"] = "Between waves"
+LANGUAGE["Horde_Guide_B_Break"] = "There is a break to shop. Press Ready (default F4) to start the next wave sooner."
+LANGUAGE["Horde_Guide_B_Difficulty"] = "Difficulty is chosen by vote — higher difficulty means more and stronger enemies."
+LANGUAGE["Horde_Guide_H_Controls"] = "Controls"
+LANGUAGE["Horde_Guide_B_Keys"] = "F1 Stats   ·   F2 This menu   ·   F3 Shop   ·   F4 Ready"
+
+LANGUAGE["Spell_Raise Fire God"] = "Raise Fire God"
+LANGUAGE["Spell_raise_scorcher_spectre"] = "Raise Fire God"
+LANGUAGE["Spell_Desc_raise_scorcher_spectre"] = [[Summons the God of Fire, woven from solar fire.
+It bites in melee and breathes a cone of flame that ignites the enemies in front of it.
+Fixed 1024 HP and no upgrades. You can summon up to 2 at once, and they do not take up the Spectre limit.]]
+LANGUAGE["Spell_Raise Lightning God"] = "Raise Lightning God"
+LANGUAGE["Spell_raise_screecher_spectre"] = "Raise Lightning God"
+LANGUAGE["Spell_Desc_raise_screecher_spectre"] = [[Summons the God of Lightning, charged with solar lightning.
+It has no melee attack: instead it discharges a shock blast around itself, damaging nearby enemies and building up Shock on them.
+Fixed 2048 HP and no upgrades. You can summon only 1 at a time, and it does not take up the Spectre limit.]]
+LANGUAGE["Horde_Guide_B_Rebind"] = "Rebind any Horde key in the Controls tab (saved locally on this PC)."
+LANGUAGE["Horde_Guide_H_Tips"] = "Tips"
+LANGUAGE["Horde_Guide_B_Tips"] = "Stay with your team, heal with the Medkit, and don't let enemies pile up around you."
+
+LANGUAGE["F1_TabGuide"] = "Guide"
+LANGUAGE["F1_TabKeyboard"] = "Keyboard"
+LANGUAGE["F1_TabAlmanac"] = "Almanac"
+LANGUAGE["F1_TabAchievements"] = "Achievements"
+LANGUAGE["F1_AutoOpen"] = "Open on join"
+LANGUAGE["F1_GuideWelcome"] = "Welcome to the \"%s\" server!"
+LANGUAGE["F1_GuideTip"] = "Tip:"
+LANGUAGE["F1_KbEvent"] = "Event"
+LANGUAGE["F1_KbKeys"] = "Keys"
+LANGUAGE["F1_KbUnbindAll"] = "Unbind All"
+LANGUAGE["F1_KbReset"] = "Reset to Defaults"
+LANGUAGE["F1_KbSave"] = "Save Settings"
+LANGUAGE["F1_KbSaved"] = "Saved"
+LANGUAGE["F1_KbPress"] = "press..."
+LANGUAGE["F1_KbNone"] = "—"
+LANGUAGE["F1_AlEnemies"] = "Enemies"
+LANGUAGE["F1_AlDifficulties"] = "Difficulties"
+LANGUAGE["F1_AlDescription"] = "Description"
+LANGUAGE["F1_CatDefault"] = "Default"
+LANGUAGE["F1_CatElites"] = "Elites"
+LANGUAGE["F1_CatBosses"] = "Bosses"
+LANGUAGE["F1_CatBase"] = "Difficulty"
+LANGUAGE["F1_CatMods"] = "Modifiers"
+LANGUAGE["F1_Health"] = "Health:"
+LANGUAGE["F1_Damage"] = "Damage:"
+LANGUAGE["F1_Move"] = "Movement Type:"
+LANGUAGE["F1_AtkSpeed"] = "Base Attack Speed:"
+LANGUAGE["F1_Abilities"] = "Special abilities:"
+LANGUAGE["F1_Resist"] = "Resistances:"
+LANGUAGE["F1_Variants"] = "Variants:"
+LANGUAGE["F1_DefAppear"] = "Default Appearance:"
+LANGUAGE["F1_AppearRange"] = "Appears mostly on Wave %d-%d"
+LANGUAGE["F1_AppearOne"] = "Appears on Wave %d"
+LANGUAGE["F1_AppearW666"] = "Appears on Wave 666"
+LANGUAGE["F1_AppearAlso666"] = "%s (and Wave 666)"
+LANGUAGE["F1_AtkEvery"] = "Every %s s"
+LANGUAGE["F1_NoDesc"] = "No description yet."
+LANGUAGE["F1_NoEnemies"] = "No enemy data yet."
+LANGUAGE["F1_NoDiffs"] = "No difficulties available."
+LANGUAGE["F1_Fire"] = "Fire"
+LANGUAGE["F1_Cold"] = "Cold"
+LANGUAGE["F1_Lightning"] = "Lightning"
+LANGUAGE["F1_Poison"] = "Poison"
+LANGUAGE["F1_Blast"] = "Blast"
+LANGUAGE["F1_DiffRewards"] = "Rewards:"
+LANGUAGE["F1_DiffCount"] = "Enemy count:"
+LANGUAGE["F1_DiffWaves"] = "Waves:"
+LANGUAGE["F1_AchTitle"] = "Achievements"
+LANGUAGE["F1_AchProgress"] = "Progress"
+LANGUAGE["F1_Completed"] = "Completed: %d%% / 100%%"
+LANGUAGE["F1_OwnedBy"] = "This achievement is held by %s%% of players."
+LANGUAGE["F1_Reward"] = "Reward:"
+LANGUAGE["F1_Exp"] = "EXP"
+LANGUAGE["F1_AchEmpty"] = "No achievements yet."
+LANGUAGE["F1_AchUnlocked"] = "Achievement unlocked: %s"
+LANGUAGE["F1_Ctl_attack"] = "Primary Attack"
+LANGUAGE["F1_Ctl_attack2"] = "Secondary Attack"
+LANGUAGE["F1_Ctl_spell_f"] = "Cast Utility Spell"
+LANGUAGE["F1_Ctl_spell_r"] = "Cast Ultimate Spell"
+LANGUAGE["F1_Ctl_reload"] = "Reload"
+LANGUAGE["F1_Ctl_perk"] = "Use Perk Skill"
+LANGUAGE["F1_Ctl_gadget"] = "Use Gadget"
+LANGUAGE["F1_Ctl_kick"] = "Use Kick"
+LANGUAGE["F1_Ctl_drop"] = "Drop Item"
+LANGUAGE["F1_Ctl_money"] = "Throw Money"
+LANGUAGE["F1_Ctl_secondary_ammo"] = "Secondary Ammo"
+LANGUAGE["F1_Ctl_grenade"] = "Throw Grenade"
+LANGUAGE["F1_Ctl_stats"] = "Start Menu"
+LANGUAGE["F1_Ctl_control_menu"] = "Control Menu"
+LANGUAGE["F1_Ctl_shop"] = "Shop"
+LANGUAGE["F1_Ctl_ready"] = "Get Ready"
+LANGUAGE["F1_Ctl_ping"] = "Ping"
+
+LANGUAGE["F1_GuideText"] = [==[
+# Horde: REDUX - Wave Survival
+Survive every wave in the game and kill the bosses to win.
+Killing enemies earns you money. Spend it in the shop ({shop} by default) on weapons, ammo, gadgets and much more. The shop can usually be found by a special icon on the map.
+
+# Classes and Progression
+You can pick a class in the shop. Every class has its own starting kit and its own skill tree.
+Perks unlock by tier as your level grows during the match. Pick the ones that fit
+your build best.
+
+Some classes have a base ability ({perk} by default) - use it wisely.
+Gadgets are activatable bonus abilities, bought in the shop or dropped by bosses
+({gadget} by default)
+Magic classes cast a utility spell ({spell_f} by default) and an ultimate spell ({spell_r} by default).
+
+# Enemies
+Enemies spawn when a wave starts; each of them gives experience and money when killed.
+Enemies are split into 3 categories: Normal, Elite and Boss.
+Elite enemies are stronger than normal ones: they have more health and special abilities. Killing them gives more experience and a small chance to drop skulls.
+A boss is a special enemy that usually appears every fifth wave. It is an elite enemy with an exceptional amount of health, and killing it finishes the wave/match.
+Almost every enemy can have mutations - special bonuses that make enemies stronger against you.
+
+# Waves
+Before the game starts and between waves there is a break for shopping. Press "Ready" ({ready} by default) to start the next wave sooner.
+The number of waves is set by the modifier.
+Modifiers and Difficulties are chosen by vote - the higher the difficulty, the more waves and enemies. (Type !rtv in chat to change the map.)
+
+# Controls
+{stats} - Start menu.
+{control_menu} - Configurator (admins only).
+{shop} - Shop.
+{ready} - Ready.
+Any Horde key can be rebound on the "Keyboard" tab (saved locally).
+]==]
+
+LANGUAGE["F1_Tip01"] = "Your weapons can drop when you die. Be careful!"
+LANGUAGE["F1_Tip02"] = "An elite enemy's health scales with player counts."
+LANGUAGE["F1_Tip03"] = "Share money with your teammates by pressing {money}."
+LANGUAGE["F1_Tip04"] = "Perks are unlocked as waves progress."
+LANGUAGE["F1_Tip05"] = "You can only change class once per wave."
+LANGUAGE["F1_Tip06"] = "Remember to refill ammo."
+LANGUAGE["F1_Tip07"] = "Mutated enemies have special particle effects."
+LANGUAGE["F1_Tip08"] = "A headshot deals 2x base damage."
+LANGUAGE["F1_Tip09"] = "Buy a Medkit to heal yourself."
+LANGUAGE["F1_Tip10"] = "Buy Armor for extra protection."
+LANGUAGE["F1_Tip11"] = "Bosses have increased headshot resistance."
+LANGUAGE["F1_Tip12"] = "Choose your Perks depending on the situation."
+LANGUAGE["F1_Tip13"] = "Turrets can be used to distract enemies."
+LANGUAGE["F1_Tip14"] = "Stay with your team and don't let enemies pile up around you."
+
+LANGUAGE["F1_Diff_CASUAL"] = "A relaxed mode for newcomers and small groups. Baseline enemy health, damage and rewards."
+LANGUAGE["F1_Diff_NIGHTMARE"] = "Severe enemy scaling and heavy mutation rates. Elites are dangerous. Only for coordinated teams."
+LANGUAGE["F1_Diff_APOCALYPSE"] = "Maximum chaos: mutated hordes, massive enemy counts and minimal resources. The ultimate survival challenge."
+LANGUAGE["F1_Diff_CHAOS"] = "An extreme mode, 1.15x harder than Apocalypse."
+LANGUAGE["F1_Diff_BOSS_RUSH"] = "Apocalypse balance with bosses scheduled across the waves."
+LANGUAGE["F1_Diff_HUNDRED"] = "100 waves. Normal breaks with a timer, except after every 10th wave (10, 20 ... 90): the next wave starts only when all players press Ready."
+LANGUAGE["F1_Diff_PURISM"] = "10 waves. A purist mode with its own rules for economy, perks, infusions and gadgets. Apocalypse stats."
+LANGUAGE["F1_Diff_UNARMED"] = "15 waves. The shop is available during the break before each wave; weapons spawn on the map. From wave 10 the experience multiplier grows with every wave."
+LANGUAGE["F1_Diff_WAVE_666"] = "A single wave: kill 1024 elite enemies, +256 for each additional player. Based on Chaos, with 4x enemy health."
+LANGUAGE["F1_Diff_BUDGET"] = "A shared money bank: all players spend from one account. Income comes ONLY from drops that fallen enemies leave behind — pick one up and the money goes to the team bank, while skull tokens are granted to everyone at once. Drops disappear if not collected in time. No money for kills and no wave bonus. Boss grants all players $1000-1500."
+
+LANGUAGE["F1_Enemy_Walker_Desc"] = "Slow-moving zombies that come in hordes."
+LANGUAGE["F1_Enemy_Sprinter_Desc"] = "Zombies with moderate speed that come in hordes."
+LANGUAGE["F1_Enemy_Crawler_Desc"] = "Fast zombies that come in hordes and are easy to dispose of."
+LANGUAGE["F1_Enemy_Fast_Zombie_Desc"] = "Zombies that roam around City-17."
+LANGUAGE["F1_Enemy_Poison_Zombie_Desc"] = "Zombies that roam around City-17."
+LANGUAGE["F1_Enemy_Zombine_Desc"] = "Zombies that roam around City-17. Self-destruct on low health."
+LANGUAGE["F1_Enemy_Charred_Zombine_Desc"] = "Zombine covered in flames that is more suicidal."
+LANGUAGE["F1_Enemy_Exploder_Desc"] = "Explodes on death, dealing Poison damage. Does not explode when decapitated. Weak to headshots."
+LANGUAGE["F1_Enemy_Vomitter_Desc"] = "Ranged attacker that spits flesh at enemies. Inflicts Bleeding."
+LANGUAGE["F1_Enemy_Scorcher_Desc"] = "Vomitters covered in flames. Spits burning flesh that deals Fire damage. Has a flamethrower attack."
+LANGUAGE["F1_Enemy_Screecher_Desc"] = "Emits screaming shockwaves when approached. Deals Lightning damage."
+LANGUAGE["F1_Enemy_Blight_Desc"] = "Increases Necrosis buildup to nearby players when shot in the torso. Weak to headshots."
+LANGUAGE["F1_Enemy_Weeper_Desc"] = "Emits growling shockwaves when approached. Deals Cold damage."
+LANGUAGE["F1_Enemy_Hulk_Desc"] = "Dangerous enemy with high health. Rages when health drops below 50%."
+LANGUAGE["F1_Enemy_Yeti_Desc"] = "Hulks that are experimented with dangerous mutations."
+LANGUAGE["F1_Enemy_Lesion_Desc"] = [==[
+A terrifying creature from the depths of secret military laboratories.
+It mercilessly destroys absolutely everything in its path, you wouldn't wish an encounter with such a creature on anyone...]==]
+LANGUAGE["F1_Enemy_Lesion_Abil"] = [==[
+Charges into player and deals a lot of damage.
+Can Jump and Crawl.]==]
+LANGUAGE["F1_Enemy_Plague_Elite_Desc"] = "Dangerous enemy with high health. Can fire devastating energy balls and summon minions."
+LANGUAGE["F1_Enemy_Alpha_Gonome_Desc"] = "An aged gonome that gained increased endurance and power."
+LANGUAGE["F1_Enemy_Alpha_Gonome_Abil"] = [==[
+Corruption Aura: Inflicts Bleeding to players nearby.
+Claw Attack: Deals Slashing damage. Inflicts Bleeding.
+Acid Throw: Ranged attack that deals Poison damage.
+Frenzy (Phase 2): Passively increases movement speed and action speed.]==]
+LANGUAGE["F1_Enemy_Gamma_Gonome_Desc"] = "A gonome infused with cryo-engine that provides minor camouflage."
+LANGUAGE["F1_Enemy_Gamma_Gonome_Abil"] = [==[
+Claw Attack: Deals Slashing damage. Inflicts Frostbite.
+Icicle Throw: Ranged attack that deals Cold damage.
+Icestorm (Phase 2): Creates a large icestorm near itself, dealing massive Cold damage to nearby units.]==]
+LANGUAGE["F1_Enemy_Subject__Wallace_Breen_Desc"] = "A gonome infused with a human subject to increase cognitive capabilities."
+LANGUAGE["F1_Enemy_Subject__Wallace_Breen_Abil"] = [==[
+Claw Attack: Deals Slashing damage. Inflicts Haemorrhage.
+Particle Cannon: An accurate ranged cannon that deals massive Physical and Blast damage. Inflicts Decay.
+Particle Cannon (Phase 2): Generates continuous explosions post detonation.
+Shockwave: Generates a shockwave when it receives a certain amount of damage. Inflicts Haemorrhage.
+Haemorrhage: A strong Bleeding debuff that builds up slowly on its own. Removes health once the bar is full.]==]
+LANGUAGE["F1_Enemy_Xen_Host_Unit_Desc"] = "Experimental unit made from Gonarch."
+LANGUAGE["F1_Enemy_Xen_Host_Unit_Abil"] = [==[
+Claw Attack: Deals Slash damage.
+Acid Mortar: Spits acid from above acting like a mortar.
+Spawn Baby Headcrab: Spawns a swarm of baby headcrabs.]==]
+LANGUAGE["F1_Enemy_Xen_Destroyer_Unit_Desc"] = "Experimental unit made from Xen Gargantua. Dropping heavy armor and focuses on offense capabilities."
+LANGUAGE["F1_Enemy_Xen_Destroyer_Unit_Abil"] = [==[
+Slam Attack: Deals Blunt damage.
+Fumethrower: Creates streams of dark flame that deals Fire damage and inflicts Necrosis.
+Earthshatter: Stomps the ground and generates a tracing shockwave towards the target. Deals Physical damage.
+Sonic Blast (Phase 2): Accumulates energy over time, indicated by its red light. When full, blinds players and blasts the area with Physical damage.]==]
+LANGUAGE["F1_Enemy_Xen_Psychic_Unit_Desc"] = "Experimental unit made from Xen Kingpin. Has enhanced psychic and physical capabilities."
+LANGUAGE["F1_Enemy_Xen_Psychic_Unit_Abil"] = [==[
+Claw Attack: Deals Slashing damage.
+Lightning Beam: Projects a lightning beam, dealing heavy Lightning damage in an area.
+Lightning Beam (Phase 2): Lightning Beam leaves behind ground flames that last for a long time.
+Lightning Orb: Creates homing lightning orbs that follow players. Explodes after delay on contact, dealing Lightning damage.
+Melee Mode (Phase 2): Greatly increases speed and focuses on Melee attacks.
+Psionic Shield (Phase 2): Melee Mode only. When the shield is active, reduces damage taken by 50%.]==]
+LANGUAGE["F1_Enemy_Plague_Platoon_Desc"] = [==[
+Combine commanders that have been converted into biological weapons using parasites.
+While their brains are fully infested, they retain a low level of sentience.]==]
+LANGUAGE["F1_Enemy_Plague_Heavy_Desc"] = "Armed with an M249 machine gun. Can throw shrapnel grenades."
+LANGUAGE["F1_Enemy_Plague_Demolition_Desc"] = "Armed with an RPG-7. Can throw M67 grenades with mini-cluster nades."
+LANGUAGE["F1_Enemy_Plague_Berserker_Desc"] = "Armed with a katana and inflicts Bleeding buildup on you."
+LANGUAGE["F1_Enemy_Build_Buster_Desc"] = "Lesion variant that spawns when a base-class Engineer is alive."
+LANGUAGE["F1_Enemy_Build_Buster_Abil"] = "Spawn chance: 20% with one Engineer, +5% for each additional one, up to 33%."
+LANGUAGE["F1_Enemy_Blue_Prince_Desc"] = "A blue Lesion in a top hat with twice the health. Does not jump."
+LANGUAGE["F1_Enemy_Blue_Prince_Abil"] = [==[
+At half health it howls and summons four blue Fast Zombies in top hats.
+Spawn chance: 20%. Appears only on chaos-tier difficulties and late waves of Hundred / Unarmed.]==]
+LANGUAGE["F1_Enemy_Winter_Knight_Desc"] = "Hell Knight variant that emits ice smoke instead of burning."
+LANGUAGE["F1_Enemy_Winter_Knight_Abil"] = "Inflicts Frostbite (10 per second) to players and allied NPCs within 256 units."
+LANGUAGE["F1_Enemy_Plague_Sentry_Desc"] = "Plague Elite variant with twice the health and a small enemy turret mounted on its head."
+LANGUAGE["F1_Enemy_Plague_Sentry_Abil"] = [==[
+The turret fires at players constantly, regardless of distance. Does not summon minions.
+Spawn chance: 10% (20% from wave 10 on Hundred / Unarmed / Wave 666).]==]
+LANGUAGE["F1_Enemy_Plague_Watchtower_Desc"] = "Melee Plague Elite variant that chases players and carries a hostile Warden tower on its head. Has +25% health over a regular Plague Elite."
+LANGUAGE["F1_Enemy_Plague_Watchtower_Abil"] = [==[
+Hits without stopping and can jump.
+Spawn chance: 10% (20% from wave 10 on Hundred / Unarmed / Wave 666).]==]

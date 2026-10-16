@@ -1,0 +1,7 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/hordeshg/BrightLight"
+                "$nocull" 1
+                "$selfillum" 1
+                "$nodecal" 1
+}

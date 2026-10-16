@@ -1,0 +1,8 @@
+"SpriteCard"
+{
+	"$basetexture" "effects/animated_distort_smoke128"
+	"$blendframes" 	1
+	"$vertexcolor"	1
+	"$translucent"	1
+	"$depthblend"	0
+}

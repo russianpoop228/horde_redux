@@ -1,0 +1,7 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\hl2beta\houndeye\individualhairs"
+	"$translucent" 1
+	"$nocull" 1
+	"$model" 1
+}

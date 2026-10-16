@@ -1,0 +1,19 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\hl2beta\houndeye\houndside2"
+	"$bumpmap" "models\hl2beta\houndeye\houndside2_normal"
+	"$model" 1
+
+	"$normalmapalphaenvmapmask" "1"
+	"$phong" "1"
+	"$phongboost" "2"
+	"$phongexponent" "100"
+	"$phongfresnelranges" "[1 0.5 0]"
+	"$halflambert" "0"
+	"$phongwarptexture"  "models\hl2beta\houndeye\iridescence009"
+
+	// Rim lighting parameters
+	"$rimlight" "1"				// To enable rim lighting (requires phong)
+	"$rimlightexponent" "60"             // Exponent for phong component of rim lighting
+	"$rimlightboost" ".5"	               // Boost for ambient cube component of rim lighting
+}

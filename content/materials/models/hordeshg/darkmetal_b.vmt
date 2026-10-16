@@ -1,0 +1,7 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/hordeshg/DarkMetal_b"
+	"$normalmap" "models/hordeshg/DarkMetal_b_nrm"
+                "$envmap" "env_cubemap"
+                "$envmaptint" 0.15 0.15 0.15
+}

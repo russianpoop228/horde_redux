@@ -1,0 +1,81 @@
+AddCSLuaFile("shared.lua")
+include('shared.lua')
+ENT.StartHealth = 30
+ENT.HullType = HULL_HUMAN
+ENT.VJ_NPC_Class = {"CLASS_ZOMBIE", "CLASS_XEN"}
+ENT.BloodColor = "Red"
+ENT.HasMeleeAttack = true
+ENT.AnimTbl_MeleeAttack = {"vjseq_melee"}
+ENT.MeleeAttackDistance = 32
+ENT.MeleeAttackDamageDistance = 85
+ENT.TimeUntilMeleeAttackDamage = false
+ENT.MeleeAttackDamage = 10
+ENT.TimeUntilMeleeAttackDamage = 0.2
+ENT.NextAnyAttackTime_Melee = 0.6
+ENT.HasLeapAttack = false
+ENT.HasExtraMeleeAttackSounds = true
+ENT.AnimTbl_Run = ACT_WALK
+
+ENT.GeneralSoundPitch1 = 60
+ENT.GeneralSoundPitch2 = 60
+ENT.CanFlinch = 1
+function ENT:CustomOnInitialize()
+	self:AddRelationship("npc_headcrab_poison D_LI 99")
+	self:AddRelationship("npc_headcrab_fast D_LI 99")
+end
+
+ENT.SoundTbl_FootStep = {"npc/zombie/foot1.wav", "npc/zombie/foot2.wav", "npc/zombie/foot3.wav"}
+ENT.SoundTbl_Idle = {"vj_zombies/fast/fzombie_idle1.wav", "vj_zombies/fast/fzombie_idle2.wav", "vj_zombies/fast/fzombie_idle3.wav", "vj_zombies/fast/fzombie_idle4.wav", "vj_zombies/fast/fzombie_idle5.wav"}
+ENT.SoundTbl_Alert = {"vj_zombies/fast/fzombie_alert1.wav", "vj_zombies/fast/fzombie_alert2.wav", "vj_zombies/fast/fzombie_alert3.wav"}
+ENT.SoundTbl_MeleeAttack = {"vj_zombies/fast/attack1.wav", "vj_zombies/fast/attack2.wav", "vj_zombies/fast/attack3.wav"}
+ENT.SoundTbl_MeleeAttackExtra = {"npc/zombie/claw_strike1.wav", "npc/zombie/claw_strike2.wav", "npc/zombie/claw_strike3.wav"}
+ENT.SoundTbl_MeleeAttackMiss = {"vj_zombies/slow/miss1.wav", "vj_zombies/slow/miss2.wav", "vj_zombies/slow/miss3.wav", "vj_zombies/slow/miss4.wav"}
+ENT.SoundTbl_LeapAttackJump = {"vj_zombies/fast/hunter_attackmix_01.wav", "vj_zombies/fast/hunter_attackmix_02.wav", "vj_zombies/fast/hunter_attackmix_03.wav"}
+ENT.SoundTbl_LeapAttackDamage = {"npc/zombie/claw_strike1.wav", "npc/zombie/claw_strike2.wav", "npc/zombie/claw_strike3.wav"}
+ENT.SoundTbl_Pain = {"vj_zombies/fast/fzombie_pain1.wav", "vj_zombies/fast/fzombie_pain2.wav", "vj_zombies/fast/fzombie_pain3.wav"}
+ENT.SoundTbl_Death = {"vj_zombies/fast/fzombie_die1.wav", "vj_zombies/fast/fzombie_die2.wav"}
+
+function ENT:PreInit()
+	if !self.Model then
+		local randModel = math.random(1, 7)
+		if randModel == 1 then
+			self.Model = "models/vj_zombies/fast1.mdl"
+		elseif randModel == 2 then
+			self.Model = "models/vj_zombies/fast2.mdl"
+		elseif randModel == 3 then
+			self.Model = "models/vj_zombies/fast3.mdl"
+		elseif randModel == 4 then
+			self.Model = "models/vj_zombies/fast4.mdl"
+			self:SetSkin(1)
+		elseif randModel == 5 then
+			self.Model = "models/vj_zombies/fast4.mdl"
+			self:SetSkin(2)
+		elseif randModel == 6 then
+			self.Model = "models/vj_zombies/fast4.mdl"
+			self:SetSkin(3)
+		else
+			self.Model = "models/vj_zombies/fast4.mdl"
+		end
+	end
+end
+function ENT:Init()
+	self:SetCollisionBounds(Vector(13, 13, 50), Vector(-13, -13, 0))
+end
+function ENT:TranslateActivity(act)
+	if act == ACT_IDLE then
+		if !self:OnGround() && !self:IsMoving() then
+			return ACT_GLIDE
+		elseif self:IsOnFire() then
+			return ACT_IDLE_ON_FIRE
+		end
+	elseif act == ACT_CLIMB_DOWN then
+		return ACT_CLIMB_UP
+	end
+	return self.BaseClass.TranslateActivity(self, act)
+end
+function ENT:OnLeapAttack(status, enemy)
+	if status == "Jump" then
+		return VJ.CalculateTrajectory(self, enemy, "Curve", self:GetPos() + self:OBBCenter(), enemy:GetPos() + enemy:OBBCenter(), 25) + self:GetForward() * 80
+	end
+end
+VJ.AddNPC("Crawler","npc_vj_horde_crawler", "Zombies")

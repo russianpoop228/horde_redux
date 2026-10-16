@@ -1,0 +1,7 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/sapper/SeaBomb"
+                "$envmap" "env_cubemap"
+                "$envmaptint" 0.90 0.90 0.90
+                "$nocull" 1
+}

@@ -1,0 +1,8 @@
+VertexLitGeneric
+{
+	$basetexture "models/horde/buddyfinder/v_buddyfinder"
+	$bumpmap "dev/bump_normal"
+
+	$halflambert 1
+	$ambientocclusion 1
+}

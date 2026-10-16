@@ -1,0 +1,17 @@
+SUBCLASS.PrintName = "Carcass"
+SUBCLASS.Category = 1
+SUBCLASS.SortOrder = 9
+SUBCLASS.UnlockCost = 100
+SUBCLASS.ParentClass = HORDE.Class_Heavy
+SUBCLASS.Icon = "subclasses/carcass.png"
+SUBCLASS.Description = [[
+An abomination with high health and mobility.
+A melee only based class that uses their 
+body to pummel enemies at high speed.]]
+SUBCLASS.BasePerk = "carcass_base"
+SUBCLASS.Perks = {
+    [1] = {title = "Bowel", choices = {"carcass_grappendix", "carcass_bio_thruster"}},
+    [2] = {title = "Secretion", choices = {"carcass_tactical_spleen", "carcass_anabolic_gland"}},
+    [3] = {title = "Limbs", choices = {"carcass_reinforced_arms", "carcass_pneumatic_legs"}},
+    [4] = {title = "Core", choices = {"carcass_twin_heart", "carcass_aas_perfume"}},
+}
