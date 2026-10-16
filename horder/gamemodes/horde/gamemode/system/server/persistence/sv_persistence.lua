@@ -211,7 +211,7 @@ end
 concommand.Add("horde_migrate_saves", function(ply)
     if IsValid(ply) and not ply:IsSuperAdmin() then return end
     if HORDE.RunBatchMigration then
-        HORDE:RunBatchMigration()
+        HORDE:RunBatchMigration(true)
         if IsValid(ply) then
             HORDE:SendNotification("Legacy save migration finished. Check server console.", 0, ply)
         end
