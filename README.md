@@ -16,7 +16,7 @@ Protected under BY-NC-SA 3.0
 3. For server owners, this means that you are free to generate revenue through addons that will not affect gameplay (e.g. cosmetics).
 4. In short, be reasonable and don't be a jerk. If you have any questions, contact me directly.
 
-LICENSE COPIED FROM ORIGINAL GITHUB REPOSITORY OF GAMEMODE
+LICENSE COPIED FROM GITHUB REPOSITORY OF ORIGINAL GAMEMODE
 
 ## Translators
 Spanish: Archi, Bishy
