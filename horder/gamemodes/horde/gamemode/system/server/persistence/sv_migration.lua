@@ -74,6 +74,11 @@ local function ParseRankFile(path)
         return v
     end
 
+    local max_level = HORDE.max_level or 100
+    local function Plausible(level, exp)
+        return level <= max_level and to_signed(exp) >= 0
+    end
+
     local function parse_alignment(k)
         local off = 0
         local result = {}
@@ -85,6 +90,7 @@ local function ParseRankFile(path)
             local level = read_uint_le(off + 6, 2)
             if not order or not exp or not level then return nil end
             local name = ClassNameFromOrder(order)
+            if name and not Plausible(level, exp) then return nil end
             if name and not IsIgnoredMigrationClass(name) then
                 result[name] = { level = level, exp = to_signed(exp) }
                 score = score + 1
@@ -97,6 +103,7 @@ local function ParseRankFile(path)
             local level = read_uint_le(off + 8, 2)
             if not crc or not exp or not level then return nil end
             local name = SubclassNameFromCRC(crc) or SubclassNameFromCRC(to_signed(crc))
+            if name and not Plausible(level, exp) then return nil end
             if name and not IsIgnoredMigrationClass(name) then
                 result[name] = { level = level, exp = to_signed(exp) }
                 score = score + 1
@@ -109,19 +116,34 @@ local function ParseRankFile(path)
     end
 
     local current_count = table.Count(HORDE.classes or {})
-    local max_k = math.min(math.floor(body_len / 8), current_count + 32)
-    local best, best_score, best_diff, best_unknown
-    for k = 0, max_k do
-        if (body_len - k * 8) % 10 == 0 then
-            local result, score, unknown = parse_alignment(k)
-            if result then
-                local diff = math.abs(k - current_count)
-                if not best
-                    or score > best_score
-                    or (score == best_score and diff < best_diff) then
-                    best, best_score, best_diff, best_unknown = result, score, diff, unknown
+    local function search()
+        local max_k = math.min(math.floor(body_len / 8), current_count + 32)
+        local best, best_score, best_diff, best_unknown
+        for k = 0, max_k do
+            if (body_len - k * 8) % 10 == 0 then
+                local result, score, unknown = parse_alignment(k)
+                if result then
+                    local diff = math.abs(k - current_count)
+                    if not best
+                        or score > best_score
+                        or (score == best_score and diff < best_diff) then
+                        best, best_score, best_diff, best_unknown = result, score, diff, unknown
+                    end
                 end
             end
+        end
+        return best, best_unknown, best_score
+    end
+
+    local best, best_unknown, best_score = search()
+    if body:find("\r\n", 1, true) then
+        local raw = body
+        body = raw:gsub("\r\n", "\n")
+        body_len = #body
+        local fixed, fixed_unknown, fixed_score = search()
+        if fixed and (not best or fixed_score > best_score) then
+            best, best_unknown = fixed, fixed_unknown
+            log("NOTE: repaired CRLF-corrupted rank file " .. path)
         end
     end
     if not best then
@@ -149,30 +171,42 @@ local function ParseTokenFile(path)
     return tokens
 end
 
-local function ParseUnlockFile(path)
-    local result = {}
-    if not file.Exists(path, "DATA") then return nil, "file missing: " .. path end
-    local size = file.Size(path, "DATA")
-    if not size or size % 5 ~= 0 then return nil, "truncated unlock file: " .. path end
-    local strm = file.Open(path, "rb", "DATA")
-    if not strm then return nil, "could not open: " .. path end
-
-    while not strm:EndOfFile() do
-        local crc    = strm:ReadULong()
-        if crc == nil then break end
-        local status = strm:ReadBool()
-        if status == nil then
-            strm:Close()
-            return nil, "truncated unlock record: " .. path
-        end
+local function DecodeUnlocks(data)
+    if #data % 5 ~= 0 then return nil end
+    local result, unknown, score = {}, {}, 0
+    for i = 1, #data, 5 do
+        local a, b, c, d, status = string.byte(data, i, i + 4)
+        if status > 1 then return nil end
+        local crc = a + b * 256 + c * 65536 + d * 16777216
         local name = SubclassNameFromCRC(crc)
+        if name then score = score + 1 end
         if name and not IsIgnoredMigrationClass(name) then
-            result[name] = status and true or false
-        elseif not name and status then
-            log("WARNING: " .. path .. ": unknown unlocked subclass CRC skipped: " .. crc)
+            result[name] = status == 1
+        elseif not name and status == 1 then
+            unknown[#unknown + 1] = crc
         end
     end
-    strm:Close()
+    return result, unknown, score
+end
+
+local function ParseUnlockFile(path)
+    if not file.Exists(path, "DATA") then return nil, "file missing: " .. path end
+    local data = file.Read(path, "DATA")
+    if not data then return nil, "could not read: " .. path end
+
+    local result, unknown, score = DecodeUnlocks(data)
+    if data:find("\r\n", 1, true) then
+        local fixed, fixed_unknown, fixed_score = DecodeUnlocks((data:gsub("\r\n", "\n")))
+        if fixed and (not result or fixed_score > score) then
+            result, unknown = fixed, fixed_unknown
+            log("NOTE: repaired CRLF-corrupted unlock file " .. path)
+        end
+    end
+    if not result then return nil, "truncated unlock file: " .. path end
+
+    if #unknown > 0 then
+        log("WARNING: " .. path .. ": unknown unlocked subclass CRC skipped: " .. table.concat(unknown, ", "))
+    end
     return result
 end
 
