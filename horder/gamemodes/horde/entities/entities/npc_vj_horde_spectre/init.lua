@@ -356,7 +356,6 @@ function ENT:ExecuteMeleeAttack(isPropAttack)
 			if self:OnMeleeAttackExecute("PreDamage", ent, isProp) == true then continue end
 			local dmgAmount = self:ScaleByDifficulty(selfData.MeleeAttackDamage)
 			local propBehavior = selfData.PropInteraction
-			print("dmg")
             local applyDmg = DamageInfo()
             applyDmg:SetDamage(self.MeleeAttackDamage)
             applyDmg:SetDamageType(self.MeleeAttackDamageType)
