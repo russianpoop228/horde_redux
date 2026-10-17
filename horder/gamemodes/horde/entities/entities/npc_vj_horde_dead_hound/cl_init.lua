@@ -1,7 +1,6 @@
 include("shared.lua")
 
 function ENT:Initialize()
-    print("[Dead Hound] Client Initialize called")
     self.CurrentAura = nil
     self.CurrentAuraEffect = nil
 end

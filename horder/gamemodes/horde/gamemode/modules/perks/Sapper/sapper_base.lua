@@ -1,5 +1,3 @@
-print("FIXED VERSION IS LOADED")
-
 if not HORDE.Status_Sapper_Base then
     HORDE:RegisterStatus("Sapper_Base", "materials/items/houndeye.png", nil, nil, true)
 end

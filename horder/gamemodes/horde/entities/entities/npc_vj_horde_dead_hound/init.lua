@@ -622,10 +622,8 @@ function meta:SetHorde_Stunned(value)
         local phase2 = self:GetNWBool("Phase2", false) or self.Phase2
         local phase3 = self:GetNWBool("Phase3", false) or self.Phase3
 
-        print("[STUN] SetHorde_Stunned called with value =", value, "Phase2 =", phase2, "Phase3 =", phase3)
 
         if (phase2 or phase3) and value == true then
-            print("[STUN] SetHorde_Stunned BLOCKED!")
             return
         end
     end

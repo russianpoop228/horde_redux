@@ -49,4 +49,3 @@ PERK.OwnerHooks.Horde_OnUnsetPerk = function(ply, perk)
     end
 end
 
-print("Pyromaniac loaded with OnUnsetPerk")

@@ -58,9 +58,7 @@ end
 PERK.OwnerHooks.Horde_OnPlayerDamage = function (ply, npc, bonus, hitgroup, dmginfo)
     if not ply:Horde_GetPerk("sapper_sulfur_armor") then return end
     if HORDE:IsBlastDamage(dmginfo) then
-        print(dmginfo:GetDamage())
         bonus.increase = bonus.increase + 0.15
-        print(bonus.increase )
     end
 end
 
