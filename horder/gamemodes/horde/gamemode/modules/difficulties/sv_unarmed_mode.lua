@@ -132,17 +132,11 @@ local function Jitter(pos, r)
     return pos + Vector(math.random(-r, r), math.random(-r, r), 0)
 end
 
+local ammo_pool, spawn_pool = {}, {}
+
 local function PickAmmoboxSpot()
-    local pool = {}
-    if HORDE.ammobox_nodes and not table.IsEmpty(HORDE.ammobox_nodes) then
-        for _, pos in pairs(HORDE.ammobox_nodes) do pool[#pool + 1] = pos end
-    elseif HORDE.ai_nodes then
-        for _, node in pairs(HORDE.ai_nodes) do
-            if node and node["pos"] then pool[#pool + 1] = node["pos"] end
-        end
-    end
-    if #pool == 0 then return nil end
-    return pool[math.random(#pool)], 48
+    if #ammo_pool == 0 then return nil end
+    return ammo_pool[math.random(#ammo_pool)], 48
 end
 
 local PLAYER_SPAWN_CLASSES = {
@@ -150,14 +144,26 @@ local PLAYER_SPAWN_CLASSES = {
     "info_player_terrorist", "info_player_combine", "info_player_rebel",
     "info_player_teamspawn",
 }
-local function PickPlayerSpawnSpot()
-    local pool = {}
-    for _, cls in ipairs(PLAYER_SPAWN_CLASSES) do
-        for _, sp in ipairs(ents.FindByClass(cls)) do
-            if IsValid(sp) then pool[#pool + 1] = sp:GetPos() end
+local function BuildSpotPools()
+    ammo_pool, spawn_pool = {}, {}
+    if HORDE.ammobox_nodes and not table.IsEmpty(HORDE.ammobox_nodes) then
+        for _, pos in pairs(HORDE.ammobox_nodes) do ammo_pool[#ammo_pool + 1] = pos end
+    elseif HORDE.ai_nodes then
+        for _, node in pairs(HORDE.ai_nodes) do
+            if node and node["pos"] then ammo_pool[#ammo_pool + 1] = node["pos"] end
         end
     end
+    for _, cls in ipairs(PLAYER_SPAWN_CLASSES) do
+        for _, sp in ipairs(ents.FindByClass(cls)) do
+            if IsValid(sp) then spawn_pool[#spawn_pool + 1] = sp:GetPos() end
+        end
+    end
+end
+
+local function PickPlayerSpawnSpot()
+    local pool = spawn_pool
     if #pool == 0 then
+        pool = {}
         for _, ply in ipairs(player.GetAll()) do
             if IsValid(ply) and ply:Alive() then pool[#pool + 1] = ply:GetPos() end
         end
@@ -321,6 +327,7 @@ function HORDE:Unarmed_SpawnWaveWeapons()
         print("[Horde Unarmed] No weapon classes found in HORDE.items!")
         return
     end
+    BuildSpotPools()
     local target = math.min(MAX_DROPS, SPAWN_PER_PLAYER * math.max(1, player.GetCount()))
     wave_spawn = {
         target       = target,
@@ -391,7 +398,7 @@ hook.Add("HordeWaveEnd", "Horde_Unarmed_WaveEnd", function()
 end)
 
 local function IsKeptClass(class)
-    return class == "weapon_horde_medkit"
+    return (HORDE.unarmed_kept_weapons and HORDE.unarmed_kept_weapons[class])
         or (HORDE.relic_weapon_subclass and HORDE.relic_weapon_subclass[class] ~= nil)
 end
 
@@ -425,7 +432,7 @@ end)
 hook.Add("Horde_OnPlayerSelectClass", "Horde_Unarmed_ClassStrip", function(ply)
     if not HORDE.unarmed_mode or not IsValid(ply) then return end
     for _, wpn in ipairs(ply:GetWeapons()) do
-        if IsValid(wpn) and wpn:GetClass() ~= "weapon_horde_medkit" then
+        if IsValid(wpn) and not (HORDE.unarmed_kept_weapons and HORDE.unarmed_kept_weapons[wpn:GetClass()]) then
             ply:StripWeapon(wpn:GetClass())
         end
     end
@@ -450,7 +457,7 @@ local function DropWeaponClass(ply, class)
     local function is_protected(wpn)
         if not IsValid(wpn) then return true end
         local c = wpn:GetClass()
-        if c == "weapon_horde_medkit" then return true end
+        if HORDE.unarmed_kept_weapons and HORDE.unarmed_kept_weapons[c] then return true end
         if HORDE.relic_weapon_subclass and HORDE.relic_weapon_subclass[c] then return true end
         return false
     end
