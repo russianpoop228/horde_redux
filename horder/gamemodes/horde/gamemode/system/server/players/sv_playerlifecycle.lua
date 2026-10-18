@@ -1,4 +1,5 @@
 util.AddNetworkString("Horde_Votemap")
+util.AddNetworkString("Horde_SpectatorGhosts")
 util.AddNetworkString("Horde_Votediff")
 util.AddNetworkString("Horde_VotemapSync")
 util.AddNetworkString("Horde_VotediffSync")
@@ -959,19 +960,23 @@ HORDE.VoteChangeMap = function (ply)
     end
 end
 
+function HORDE:ClearSpectatorState(ply)
+    if not IsValid(ply) then return end
+    ply:SetCollisionGroup(15)
+    ply:SetCanZoom(false)
+    ply:SetMoveType(MOVETYPE_WALK)
+
+    ply:SetNoDraw(false)
+    ply:DrawShadow(true)
+    ply.Horde_SpectatorGhost = nil
+    ply.Horde_DebuffImmune = nil
+    if ply.SetNoTarget then ply:SetNoTarget(false) end
+end
+
 hook.Add("PlayerSpawn", "Horde_PlayerInitialSpawn", function(ply)
     if ply.Horde_Fake_Respawn == true then return end
     if ply:IsValid() then
-        ply:SetCollisionGroup(15)
-        ply:SetCanZoom(false)
-        ply:SetMoveType(MOVETYPE_WALK)
-
-        ply:SetNoDraw(false)
-        ply:DrawShadow(true)
-        ply.Horde_SpectatorGhost = nil
-        ply.Horde_DebuffImmune = nil
-        if ply.SetNoTarget then ply:SetNoTarget(false) end
-
+        HORDE:ClearSpectatorState(ply)
         net.Start("Horde_ForceCloseShop")
         net.Send(ply)
     end
@@ -996,6 +1001,23 @@ hook.Add("Horde_PlayerMoveBonus", "Horde_PlayerPayloadMove", function (ply, bonu
             bonus_run.more = bonus_run.more * (1 - math.max(0.1, mass/100))
         end
     end
+end)
+
+local ghosts_sent = false
+timer.Create("Horde_SpectatorGhosts", 0.1, 0, function()
+    local list = {}
+    for _, ply in ipairs(player.GetAll()) do
+        if ply.Horde_SpectatorGhost and not ply:Alive() then list[#list + 1] = ply end
+    end
+    if #list == 0 and not ghosts_sent then return end
+    ghosts_sent = #list > 0
+    net.Start("Horde_SpectatorGhosts", true)
+    net.WriteUInt(#list, 8)
+    for _, ply in ipairs(list) do
+        net.WriteUInt(ply:EntIndex(), 8)
+        net.WriteVector(ply:EyePos())
+    end
+    net.Broadcast()
 end)
 
 local function Horde_DeathSpectatingFunction(victim, inflictor, attacker)

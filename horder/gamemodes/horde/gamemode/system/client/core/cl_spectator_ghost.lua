@@ -3,59 +3,53 @@ if SERVER then return end
 local GHOST_MAT = Material("sprites/blueflare1")
 local GHOST_COLOR = Color(140, 190, 255, 255)
 local GHOST_SIZE = 32
+local INTERVAL = 0.1
+local STALE = 0.5
 
-local SMOOTH_SPEED  = 20
-local SNAP_DIST_SQR = 160 * 160
+local ghosts = {}
 
-local ghostPos = {}
-local lastGhostFrame = RealTime()
+net.Receive("Horde_SpectatorGhosts", function()
+    local now = RealTime()
+    local seen = {}
+    for _ = 1, net.ReadUInt(8) do
+        local idx = net.ReadUInt(8)
+        local pos = net.ReadVector()
+        seen[idx] = true
+        local g = ghosts[idx]
+        if not g then
+            ghosts[idx] = { prev = pos, cur = pos, t = now }
+        else
+            g.prev = g.prev and LerpVector(math.Clamp((now - g.t) / INTERVAL, 0, 1), g.prev, g.cur) or pos
+            g.cur = pos
+            g.t = now
+        end
+    end
+    for idx in pairs(ghosts) do
+        if not seen[idx] then ghosts[idx] = nil end
+    end
+end)
 
 hook.Add("PostDrawTranslucentRenderables", "Horde_SpectatorGhost", function(depth, skybox)
-    if skybox then return end
+    if skybox or next(ghosts) == nil then return end
     if not IsValid(MySelf) then return end
     if not GHOST_MAT or GHOST_MAT:IsError() then return end
 
     local now = RealTime()
-    local dt = math.Clamp(now - lastGhostFrame, 0, 0.1)
-    lastGhostFrame = now
-    local t = 1 - math.exp(-SMOOTH_SPEED * dt)
+    local my_idx = MySelf:EntIndex()
 
     render.SuppressEngineLighting(true)
     render.OverrideBlend(true,
         BLEND_SRC_ALPHA, BLEND_ONE, BLENDFUNC_ADD,
         BLEND_ONE, BLEND_ZERO, BLENDFUNC_ADD)
+    render.SetMaterial(GHOST_MAT)
 
-    for _, ply in ipairs(player.GetAll()) do
-        if not IsValid(ply) then
-            ghostPos[ply] = nil
-            continue
+    for idx, g in pairs(ghosts) do
+        if idx ~= my_idx and now - g.t < STALE then
+            local pos = LerpVector(math.Clamp((now - g.t) / INTERVAL, 0, 1), g.prev, g.cur)
+            render.DrawSprite(pos, GHOST_SIZE, GHOST_SIZE, GHOST_COLOR)
         end
-        if ply:Alive() or ply == MySelf then
-            ghostPos[ply] = nil
-            continue
-        end
-
-        local target = ply:EyePos()
-        if not target or target:IsZero() then
-            target = ply:GetPos() + Vector(0, 0, 36)
-        end
-
-        local cur = ghostPos[ply]
-        if not cur or cur:DistToSqr(target) > SNAP_DIST_SQR then
-            cur = target
-        elseif t > 0 then
-            cur = LerpVector(t, cur, target)
-        end
-        ghostPos[ply] = cur
-
-        render.SetMaterial(GHOST_MAT)
-        render.DrawSprite(cur, GHOST_SIZE, GHOST_SIZE, GHOST_COLOR)
     end
 
     render.OverrideBlend(false)
     render.SuppressEngineLighting(false)
-end)
-
-hook.Add("EntityRemoved", "Horde_SpectatorGhostCleanup", function(ent)
-    ghostPos[ent] = nil
 end)
