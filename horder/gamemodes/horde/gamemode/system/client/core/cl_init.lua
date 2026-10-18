@@ -487,3 +487,13 @@ killicon.Add("npc_turret_floor", "vgui/hud/npc_turret_floor", Color(0, 0, 0, 255
 killicon.AddAlias("npc_vj_horde_shotgun_turret", "npc_turret_floor")
 killicon.AddAlias("npc_vj_horde_sniper_turret", "npc_turret_floor")
 killicon.AddAlias("npc_vj_horde_rebel_turret", "npc_turret_floor")
+
+local next_decal_cleanup = 0
+timer.Create("Horde_DecalCleanup", 5, 0, function()
+    local cv = GetConVar("horde_decal_cleanup_interval")
+    local interval = cv and cv:GetInt() or 0
+    if interval <= 0 then return end
+    if CurTime() < next_decal_cleanup then return end
+    next_decal_cleanup = CurTime() + interval
+    RunConsoleCommand("r_cleardecals")
+end)

@@ -124,6 +124,10 @@ function ENT:SoulThink()
     end
 end
 
+hook.Add("Horde_OnPlayerShouldRespawnDuringWave", "Horde_SoulRebooterRespawnAllowed", function(ply)
+    if IsValid(ply) and ply.Horde_SoulRebooterRespawning then return true end
+end)
+
 function ENT:SoulResurrect()
     if self._SoulRemoving then return end
     local target = self:GetNWEntity("HordeSoulTarget")
@@ -169,13 +173,12 @@ function ENT:SoulResurrect()
         end
     end
 
-    target.Horde_Fake_Respawn = true
+    target:UnSpectate()
+    target.Horde_SoulRebooterRespawning = true
     target:Spawn()
-    target.Horde_Fake_Respawn = nil
+    target.Horde_SoulRebooterRespawning = nil
 
-    if IsValid(target) then
-        if HORDE and HORDE.ClearSpectatorState then HORDE:ClearSpectatorState(target) end
-        target:UnSpectate()
+    if IsValid(target) and target:Alive() then
         target:SetPos(pos)
         target:SetAngles(ang)
         target:SetVelocity(vector_origin)
