@@ -98,14 +98,38 @@ function HORDE:Budget_SpawnDrop(victim)
     return drop
 end
 
+local drops_this_wave = 0
+
+hook.Add("HordeWaveStart", "Horde_Budget_ResetDrops", function()
+    drops_this_wave = 0
+end)
+
 hook.Add("Horde_OnEnemyKilled", "Horde_Budget_Drop", function(victim)
     if not HORDE.budget_mode then return end
     if not IsValid(victim) or not victim:IsNPC() then return end
     if (HORDE.current_wave or 0) <= 0 or GetConVar("sv_cheats"):GetInt() == 1 then return end
     if victim.Horde_NoReward then return end
+    if (HORDE.current_break_time or 0) > 0 then return end
+
+    local cap = tonumber(HORDE.total_enemies_this_wave_fixed) or 0
+    if cap > 0 and drops_this_wave >= cap then return end
+    drops_this_wave = drops_this_wave + 1
 
     HORDE:Budget_SpawnDrop(victim)
 end)
+
+hook.Add("Horde_PlayerDropMoney", "Horde_Budget_NoDropMoney", function(ply)
+    if not HORDE.budget_mode then return end
+    HORDE:SendNotification("You can't drop money in Budget mode.", 1, ply)
+    return true
+end)
+
+local pending_money, pending_drops = 0, 0
+local function FlushBudgetNotice()
+    if pending_money <= 0 then return end
+    HORDE:SendNotification(string.format("Team budget: +$%d (%d)", pending_money, pending_drops), 0)
+    pending_money, pending_drops = 0, 0
+end
 
 function HORDE:Budget_Collect(ply, drop)
     if not IsValid(drop) then return end
@@ -119,10 +143,14 @@ function HORDE:Budget_Collect(ply, drop)
 
     if money > 0 then
         HORDE:Budget_AddToBank(money)
-        HORDE:SendNotification(string.format("Team budget: +$%d", money), 0)
+        pending_money = pending_money + money
+        pending_drops = pending_drops + 1
+        if not timer.Exists("Horde_BudgetNotice") then
+            timer.Create("Horde_BudgetNotice", 3, 1, FlushBudgetNotice)
+        end
     end
-    if skulls > 0 then
-        HORDE:Budget_GrantSkulls(skulls)
-        HORDE:SendNotification(string.format("Skull tokens for everyone: +%d", skulls), 0)
+    if skulls > 0 and IsValid(ply) and not ply:IsBot() then
+        ply:Horde_AddSkullTokens(skulls)
+        HORDE:SendNotification(string.format("Skull tokens: +%d", skulls), 0, ply)
     end
 end
