@@ -668,7 +668,7 @@ function HORDE:ValidateClassTransition(ply, class_name, subclass_name, initializ
     end
     if not initializing then
         if not ply.Horde_Init_Complete then return nil, "Player initialization is not complete." end
-        if HORDE.start_game and (HORDE.current_break_time or 0) <= 0 then
+        if HORDE.start_game and (HORDE.current_break_time or 0) <= 0 and ply:Alive() then
             return nil, "You cannot change class after a wave has started."
         end
         if ply:Horde_GetClass() and ply:Horde_GetClass().name == class_name
