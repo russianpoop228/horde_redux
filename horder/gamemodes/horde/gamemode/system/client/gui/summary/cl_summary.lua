@@ -377,7 +377,7 @@ end
 
 local Icons = {}
 do
-    local ICON_DIR      = "horde/mapicons"
+    local ICON_DIR      = "horde/mapicons_v2"
     local ICON_SIZE     = 256
     local STEP_TIMEOUT  = 10
     local MAX_ACTIVE    = 2
@@ -533,7 +533,18 @@ do
         return ok and data or nil
     end
 
+    local function ForeignPopupOpen()
+        for _, p in ipairs(vgui.GetWorldPanel():GetChildren()) do
+            if IsValid(p) and p:IsVisible() then
+                local n = string.lower(tostring(p.ClassName or ""))
+                if string.find(n, "pointshop", 1, true) or string.find(n, "ps2", 1, true) then return true end
+            end
+        end
+        return false
+    end
+
     local function OnPostRender()
+        if ForeignPopupOpen() then return end
         local job = table.remove(capture_queue, 1)
         if job then
             local ok, data = pcall(RenderPng, job.mat)
@@ -1876,7 +1887,20 @@ local TABS = {
     { id = "leaderboard", key = "Leaderboard" },
 }
 
+local function CloseForeignMenus()
+    if Pointshop2 and isfunction(Pointshop2.CloseMenu) then pcall(Pointshop2.CloseMenu, Pointshop2) end
+    for _, p in ipairs(vgui.GetWorldPanel():GetChildren()) do
+        if IsValid(p) and p:IsVisible() then
+            local n = string.lower(tostring(p.ClassName or ""))
+            if string.find(n, "pointshop", 1, true) or string.find(n, "ps2", 1, true) then
+                p:SetVisible(false)
+            end
+        end
+    end
+end
+
 function PANEL:Init()
+    CloseForeignMenus()
     if IsValid(HORDE.SummaryPanel) then HORDE.SummaryPanel:Remove() end
     HORDE.SummaryPanel = self
 
