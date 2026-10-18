@@ -1010,7 +1010,9 @@ local ghosts_sent = false
 timer.Create("Horde_SpectatorGhosts", 0.1, 0, function()
     local list = {}
     for _, ply in ipairs(player.GetAll()) do
-        if ply.Horde_SpectatorGhost and not ply:Alive() then list[#list + 1] = ply end
+        if ply.Horde_SpectatorGhost and not ply:Alive() and not IsValid(ply:GetObserverTarget()) then
+            list[#list + 1] = ply
+        end
     end
     if #list == 0 and not ghosts_sent then return end
     ghosts_sent = #list > 0
