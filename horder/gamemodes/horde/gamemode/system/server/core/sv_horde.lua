@@ -1372,15 +1372,17 @@ function HORDE:WaveStart()
 
     local has_boss = HORDE.bosses_normalized[current_wave] and not table.IsEmpty(HORDE.bosses_normalized[current_wave])
     if has_boss then
-        local p = math.random()
+        local p = HORDE:Random()
         local p_cum = 0
+        local picked
         for name, weight in pairs(HORDE.bosses_normalized[current_wave]) do
             p_cum = p_cum + weight
             if p <= p_cum then
-                HORDE.horde_boss_name = name
+                picked = name
                 break
             end
         end
+        HORDE.horde_boss_name = picked or next(HORDE.bosses_normalized[current_wave])
 
         horde_boss_properties = HORDE.bosses[HORDE.horde_boss_name .. current_wave].boss_properties
         if horde_boss_properties.enemies_spawn_threshold <= 0 and horde_boss_properties.end_wave == true then
@@ -1752,7 +1754,7 @@ function HORDE:Direct()
             and HORDE.killed_enemies_this_wave >= (HORDE.wave666_kill_quota or math.huge) then
             local pool = HORDE.bosses_normalized[10]
             if pool and not table.IsEmpty(pool) then
-                local roll, cumulative = math.random(), 0
+                local roll, cumulative = HORDE:Random(), 0
                 for name, weight in pairs(pool) do
                     cumulative = cumulative + weight
                     if roll <= cumulative then

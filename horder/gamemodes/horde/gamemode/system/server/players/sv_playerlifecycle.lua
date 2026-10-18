@@ -92,7 +92,7 @@ function HORDE:GameEnd(status)
         if not map_list then
             map_list = {game.GetMapNext()}
         end
-        timer.Simple(0, function() RunConsoleCommand("changelevel", table.Random(map_list)) end)
+        timer.Simple(0, function() RunConsoleCommand("changelevel", map_list[HORDE:Random(#map_list)]) end)
     end)
 
     if status == "DEFEAT" then
@@ -133,7 +133,7 @@ function HORDE:GameEnd(status)
         if not map_list then
             map_list = {game.GetMapNext()}
         end
-        timer.Simple(0, function() RunConsoleCommand("changelevel", table.Random(map_list)) end)
+        timer.Simple(0, function() RunConsoleCommand("changelevel", map_list[HORDE:Random(#map_list)]) end)
         return
     end
     local randomplayer = player.GetHumans()[1]
@@ -284,10 +284,7 @@ function HORDE:GameEnd(status)
         end
     end
 
-    for i = #map_list, 2, -1 do
-        local j = math.random(i)
-        map_list[i], map_list[j] = map_list[j], map_list[i]
-    end
+    HORDE:Shuffle(map_list)
     while #map_list > 8 do table.remove(map_list) end
     table.insert(map_list, math.min(5, #map_list + 1), current_name)
 

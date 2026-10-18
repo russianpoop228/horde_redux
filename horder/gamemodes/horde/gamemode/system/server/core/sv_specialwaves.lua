@@ -25,7 +25,35 @@ local state = {
     presets = {},
     active  = nil,
     used    = 0,
+    excluded_waves = { [1] = true },
+    exclude_boss_waves = true,
 }
+
+local function ReadWaveRules(decoded)
+    local missing = decoded.excluded_waves == nil or decoded.exclude_boss_waves == nil
+    state.excluded_waves = {}
+    if istable(decoded.excluded_waves) then
+        for _, w in pairs(decoded.excluded_waves) do
+            w = math.floor(tonumber(w) or 0)
+            if w > 0 then state.excluded_waves[w] = true end
+        end
+    elseif decoded.excluded_waves == nil then
+        state.excluded_waves[1] = true
+    end
+    if decoded.exclude_boss_waves == nil then
+        state.exclude_boss_waves = true
+    else
+        state.exclude_boss_waves = decoded.exclude_boss_waves == true
+    end
+    return missing
+end
+
+local function WaveRulesList()
+    local list = {}
+    for w in pairs(state.excluded_waves) do list[#list + 1] = w end
+    table.sort(list)
+    return list
+end
 
 function SW.LoadPresets()
     local raw = file.Read(CONFIG_FILE, "DATA")
@@ -33,6 +61,7 @@ function SW.LoadPresets()
         local decoded = util.JSONToTable(raw)
         if istable(decoded) and istable(decoded.presets) then
             state.presets = SW.SanitizeList(decoded.presets)
+            if ReadWaveRules(decoded) then SW.SavePresets() end
             print("[Horde] Special Waves: загружено пресетов — " .. #state.presets)
             return
         end
@@ -48,7 +77,11 @@ end
 
 function SW.SavePresets()
     if not file.IsDir("horde", "DATA") then file.CreateDir("horde") end
-    file.Write(CONFIG_FILE, util.TableToJSON({ presets = state.presets }, true))
+    file.Write(CONFIG_FILE, util.TableToJSON({
+        excluded_waves = WaveRulesList(),
+        exclude_boss_waves = state.exclude_boss_waves,
+        presets = state.presets,
+    }, true))
 end
 
 function SW.GetPresets() return state.presets end
@@ -178,19 +211,24 @@ local function TryInject(enemies, waveIdx)
 
     local cur = tonumber(HORDE.current_wave) or 0
     if cur <= 1 then state.used = 0 end
+    if state.excluded_waves[cur] then return false end
+    if state.exclude_boss_waves then
+        local bosses = HORDE.bosses_normalized and HORDE.bosses_normalized[waveIdx]
+        if (bosses and next(bosses) ~= nil) or HORDE.wave666_mode then return false end
+    end
 
     local diffname = (HORDE.difficulty_text or {})[HORDE.difficulty]
     local max_count, chance = HORDE:GetSpecialWaveSettings(diffname)
     if max_count <= 0 or chance <= 0 then return false end
     if state.used >= max_count then return false end
-    if math.random() > chance then return false end
+    if HORDE:Random() > chance then return false end
 
     local pool = {}
     for _, p in ipairs(state.presets) do
         if (tonumber(p.min_wave) or 1) <= cur then pool[#pool + 1] = p end
     end
     if #pool == 0 then return false end
-    local preset = pool[math.random(#pool)]
+    local preset = pool[HORDE:Random(#pool)]
     local mods = istable(preset.mods) and preset.mods or {}
 
     local chosen, seen = {}, {}
@@ -214,7 +252,7 @@ local function TryInject(enemies, waveIdx)
             for _, w in pairs(poolw) do total = total + w end
             if total <= 0 then break end
 
-            local roll = math.random() * total
+            local roll = HORDE:Random() * total
             local cum, pick = 0, nil
             for name, w in pairs(poolw) do
                 cum = cum + w
