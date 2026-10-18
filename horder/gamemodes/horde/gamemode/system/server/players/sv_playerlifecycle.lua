@@ -285,8 +285,11 @@ function HORDE:GameEnd(status)
         end
     end
 
+    local pool_size = #map_list
     HORDE:Shuffle(map_list)
     while #map_list > 8 do table.remove(map_list) end
+    print(string.format("[Horde Vote] map pool %d (installed %d): %s", pool_size,
+        #installed_map_list, table.concat(map_list, ", ")))
     table.insert(map_list, math.min(5, #map_list + 1), current_name)
 
     net.WriteTable(map_list)
