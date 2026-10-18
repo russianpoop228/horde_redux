@@ -31,6 +31,10 @@ HORDE.relic_weapon_subclass = {
     horde_wardenstaff    = "Warden",
     horde_ghoul_claws    = "Ghoul" }
 
+HORDE.unarmed_kept_weapons = {
+    weapon_horde_medkit = true,
+    horde_welder        = true }
+
 HORDE.relic_no_upgrade = {
     horde_engiwrench   = true,
     horde_wardenstaff  = true,

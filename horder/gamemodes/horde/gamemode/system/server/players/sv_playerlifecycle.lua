@@ -46,7 +46,7 @@ function plymeta:Horde_GetGivenStarterWeapons()
 end
 
 local function UnarmedStarterAllowed(wpn_class)
-    if wpn_class == "weapon_horde_medkit" then return true end
+    if HORDE.unarmed_kept_weapons and HORDE.unarmed_kept_weapons[wpn_class] then return true end
     return HORDE.relic_weapon_subclass and HORDE.relic_weapon_subclass[wpn_class] ~= nil
 end
 
