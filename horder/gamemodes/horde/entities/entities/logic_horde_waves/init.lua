@@ -42,5 +42,6 @@ function ENT:KeyValue(key, value)
 		self:AddOnOutput(key, value)
 	elseif key == "wave" then
 		self.Wave = tonumber(value) or -1
+		if self.Wave == 0 then self.Wave = -1 end
 	end
 end
