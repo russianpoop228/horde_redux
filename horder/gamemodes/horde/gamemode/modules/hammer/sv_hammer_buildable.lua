@@ -50,6 +50,8 @@ function HORDE:Horde_GetBuildableOwner(ent)
     if not IsValid(ent) then return nil end
     local own = ent.Horde_Owner
     if IsValid(own) and own:IsPlayer() then return own end
+    own = ent:GetNWEntity("HordeOwner")
+    if IsValid(own) and own:IsPlayer() then return own end
     return nil
 end
 
