@@ -1,18 +1,18 @@
 @BaseClass = HordeTargetname
 [
-	targetname(string) : "Name" : : "Имя сущности (для I/O и parent)."
+	targetname(string) : "Name" : : "Entity name (for I/O and parenting)."
 ]
 
 @BaseClass = HordeOrigin
 [
-	origin(string) : "Origin (X Y Z)" : "0 0 0" : "Точка в мире."
+	origin(string) : "Origin (X Y Z)" : "0 0 0" : "World position."
 ]
 
-@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_difficulty : "HORDE: сложность / модификатор карты (при старте и через Inputs)."
+@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_difficulty : "HORDE: map difficulty / modifier (on map start and via inputs)."
 [
 	difficulty(string) : "Difficulty" : : "CASUAL, NORMAL, HARD, NIGHTMARE, APOCALYPSE, CHAOS..."
 	modifier(string) : "Modifier" : : "BOSS_RUSH, UNARMED, HUNDRED, PURISM, WAVE_666..."
-	base(string) : "Modifier base (Include)" : : "База для модификатора. Пусто = как в моде."
+	base(string) : "Modifier base (Include)" : : "Base difficulty for the modifier. Empty = gamemode default."
 	enabled(choices) : "Apply on map start" : 1 =
 	[
 		0 : "No"
@@ -23,19 +23,19 @@
 		0 : "No"
 		1 : "Yes"
 	]
-	name(string) : "Custom name" : : "Имя своей сложности (при custom=1)."
-	index(integer) : "Custom index" : : "Индекс своей сложности. Пусто = свободный."
+	name(string) : "Custom name" : : "Custom difficulty name (when custom=1)."
+	index(integer) : "Custom index" : : "Custom difficulty index. Empty = first free."
 
-	damagemult(string) : "DamageMult" : : "Множитель урона врагов."
-	healthmult(string) : "HealthMult" : : "Множитель HP врагов."
-	rewardmult(string) : "RewardMult" : : "Множитель наград."
-	startmoneymult(string) : "StartMoneyMult" : : "Множитель стартовых денег."
-	enemycountmult(string) : "EnemyCountMult" : : "Множитель числа врагов."
-	spawnradiusmult(string) : "SpawnRadiusMult" : : "Множитель радиуса спавна."
-	maxenemiesscalefactor(string) : "MaxEnemiesScaleFactor" : : "Масштаб лимита живых врагов."
-	additionalpack(string) : "AdditionalPack" : : "Доп. пачки."
-	additionalammoboxes(string) : "AdditionalAmmoBoxes" : : "Доп. ящики патронов."
-	additionalenemiesperspawn(string) : "AdditionalEnemiesPerSpawn" : : "Доп. враги за спавн."
+	damagemult(string) : "DamageMult" : : "Enemy damage multiplier."
+	healthmult(string) : "HealthMult" : : "Enemy health multiplier."
+	rewardmult(string) : "RewardMult" : : "Reward multiplier."
+	startmoneymult(string) : "StartMoneyMult" : : "Starting money multiplier."
+	enemycountmult(string) : "EnemyCountMult" : : "Enemy count multiplier."
+	spawnradiusmult(string) : "SpawnRadiusMult" : : "Spawn radius multiplier."
+	maxenemiesscalefactor(string) : "MaxEnemiesScaleFactor" : : "Alive enemy limit scale."
+	additionalpack(string) : "AdditionalPack" : : "Additional packs."
+	additionalammoboxes(string) : "AdditionalAmmoBoxes" : : "Additional ammo boxes."
+	additionalenemiesperspawn(string) : "AdditionalEnemiesPerSpawn" : : "Additional enemies per spawn."
 	enemiesperspawnwavestep(string) : "EnemiesPerSpawnWaveStep" : : ""
 	enemiesperspawnwaveamount(string) : "EnemiesPerSpawnWaveAmount" : : ""
 	enemiesperspawnwavecap(string) : "EnemiesPerSpawnWaveCap" : : ""
@@ -57,40 +57,40 @@
 	mutationprobability(string) : "MutationProbability" : : ""
 	elitemutationprobability(string) : "EliteMutationProbability" : : ""
 
-	input SetDifficulty(string) : "Базовая сложность (имя)."
-	input SetModifier(string) : "Модификатор (имя)."
-	input ClearModifier(void) : "Снять модификатор."
-	input SetBase(string) : "Include-база модификатора."
-	input SetParameter(string) : "\"Field Value\" например DamageMult 1.5"
-	input ResetParameters(void) : "Сбросить параметры."
-	input CreateCustom(string) : "\"Name [Index] [Base]\""
-	input Enable(void) : "Включить применение."
-	input Disable(void) : "Выключить применение."
+	input SetDifficulty(string) : "Base difficulty (name)."
+	input SetModifier(string) : "Modifier (name)."
+	input ClearModifier(void) : "Remove the modifier."
+	input SetBase(string) : "Modifier base (Include)."
+	input SetParameter(string) : "Field Value, e.g. DamageMult 1.5"
+	input ResetParameters(void) : "Reset parameters."
+	input CreateCustom(string) : "Name [Index] [Base]"
+	input Enable(void) : "Enable applying."
+	input Disable(void) : "Disable applying."
 	input Toggle(void) : "Toggle enabled."
-	input Apply(void) : "Применить сейчас."
+	input Apply(void) : "Apply now."
 ]
 
-@SolidClass base(HordeTargetname) = trigger_horde_holdzone : "HORDE: зона удержания (hold). Shape/parent/fixedorientation."
+@SolidClass base(HordeTargetname) = trigger_horde_holdzone : "HORDE: hold zone. Supports shape, parent and fixed orientation."
 [
-	wave(integer) : "Wave" : 0 : "0 = все волны."
-	group(integer) : "Group" : 0 : "Группа зон."
-	label(string) : "Label" : "the area" : "Текст в уведомлении."
+	wave(integer) : "Wave" : 0 : "0 = every wave."
+	group(integer) : "Group" : 0 : "Zone group."
+	label(string) : "Label" : "the area" : "Text shown in notifications."
 	combine(choices) : "Combine group" : 0 =
 	[
 		0 : "No (pick one)"
 		1 : "Yes (all active)"
 	]
-	link(integer) : "Link" : 0 : "Связь с payload spawn (одно задание)."
-	shape(choices) : "Shape" : 0 : "0=коробка по брашу, 1=цилиндр в игре." =
+	link(integer) : "Link" : 0 : "Link to a payload spawn (one objective)."
+	shape(choices) : "Shape" : 0 : "0 = brush box, 1 = in-game cylinder." =
 	[
 		0 : "Box (brush)"
 		1 : "Cylinder"
 	]
-	radius(string) : "Cylinder radius" : "0" : "Радиус. 0 = половина браша XY."
-	height(string) : "Cylinder height" : "0" : "Высота цилиндра. 0 = высота браша."
-	parent(string) : "Parent" : : "targetname func_physbox (или другой entity)."
-	parentname(string) : "Parent name (alias)" : : "То же, что Parent."
-	fixedorientation(choices) : "Fixed orientation" : 0 : "Yes = не крутится с parent, только едет." =
+	radius(string) : "Cylinder radius" : "0" : "Radius. 0 = half of the brush XY size."
+	height(string) : "Cylinder height" : "0" : "Cylinder height. 0 = brush height."
+	parent(string) : "Parent" : : "Targetname of a func_physbox (or any other entity)."
+	parentname(string) : "Parent name (alias)" : : "Same as Parent."
+	fixedorientation(choices) : "Fixed orientation" : 0 : "Yes = moves with the parent but does not rotate." =
 	[
 		0 : "No (follow parent angles)"
 		1 : "Yes (always upright)"
@@ -101,20 +101,20 @@
 		1 : "Yes"
 	]
 
-	OnCompleted(output) : "Зона удержана на 100%."
+	output OnCompleted(void) : "Zone held to 100%."
 
 	input Enable(void) : "Enable"
 	input Disable(void) : "Disable"
 	input Toggle(void) : "Toggle"
-	input SetParent(string) : "Привязать к targetname."
+	input SetParent(string) : "Parent to targetname."
 	input SetGroup(integer) : "Set group"
 	input SetLink(integer) : "Set link"
 	input SetShape(integer) : "0=box 1=cylinder"
-	input SetRadius(string) : "Радиус цилиндра"
-	input SetFixedOrientation(integer) : "0=крутиться 1=вверх"
+	input SetRadius(string) : "Cylinder radius"
+	input SetFixedOrientation(integer) : "0 = follow parent angles, 1 = always upright"
 ]
 
-@SolidClass base(HordeTargetname) = trigger_horde_payload_destination : "HORDE: точка доставки груза."
+@SolidClass base(HordeTargetname) = trigger_horde_payload_destination : "HORDE: payload delivery point."
 [
 	wave(integer) : "Wave" : 0
 	group(integer) : "Group" : 0
@@ -131,9 +131,10 @@
 	input Enable(void) : "Enable"
 	input Disable(void) : "Disable"
 	input Toggle(void) : "Toggle"
+	output OnDelivered(void) : "Payload delivered to this zone."
 ]
 
-@SolidClass base(HordeTargetname) = trigger_horde_escapezone : "HORDE: зона эвакуации (победа)."
+@SolidClass base(HordeTargetname) = trigger_horde_escapezone : "HORDE: escape zone (victory)."
 [
 	group(integer) : "Group" : 0
 	disabled(choices) : "Start disabled" : 0 =
@@ -146,16 +147,16 @@
 	input Toggle(void) : "Toggle"
 ]
 
-@SolidClass base(HordeTargetname) = trigger_horde_buyzone : "HORDE: зона магазина."
+@SolidClass base(HordeTargetname) = trigger_horde_buyzone : "HORDE: buy zone."
 [
 ]
 
-@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_payload_spawn : "HORDE: точка появления груза."
+@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_payload_spawn : "HORDE: payload spawn point."
 [
 	wave(integer) : "Wave" : 0
 	group(integer) : "Group" : 0
 	label(string) : "Label" : "the payload"
-	model(string) : "Model" : : "Путь к модели (опционально)."
+	model(string) : "Model" : : "Model path (optional)."
 	icon(integer) : "Icon index" : 0
 	mass(string) : "Mass" : "0"
 	combine(choices) : "Combine group" : 0 =
@@ -163,7 +164,7 @@
 		0 : "No (pick one)"
 		1 : "Yes (all active)"
 	]
-	link(integer) : "Link" : 0 : "Связь с holdzone."
+	link(integer) : "Link" : 0 : "Link to a hold zone."
 	disabled(choices) : "Start disabled" : 0 =
 	[
 		0 : "No"
@@ -174,16 +175,17 @@
 	input Toggle(void) : "Toggle"
 	input SetGroup(integer) : "Set group"
 	input SetLink(integer) : "Set link"
+	output OnCompleted(void) : "Payload delivered."
 ]
 
-@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_enemy_spawn : "HORDE: точка спавна врагов."
+@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_enemy_spawn : "HORDE: enemy spawn point."
 [
 	disabled(choices) : "Start disabled" : 0 =
 	[
 		0 : "No"
 		1 : "Yes"
 	]
-	weight(string) : "Weight" : : "Вес выбора точки."
+	weight(string) : "Weight" : : "Spawn point selection weight."
 	wave(integer) : "Wave" : 0
 	lastwave(integer) : "Last wave" : 0
 	max(integer) : "Max" : 0
@@ -194,14 +196,14 @@
 	input Toggle(void) : "Toggle"
 ]
 
-@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_boss_spawn : "HORDE: точка спавна босса."
+@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_boss_spawn : "HORDE: boss spawn point."
 [
 	disabled(choices) : "Start disabled" : 0 =
 	[
 		0 : "No"
 		1 : "Yes"
 	]
-	boss(string) : "Boss" : : "Имя/класс босса."
+	boss(string) : "Boss" : : "Boss name or class."
 	wave(integer) : "Wave" : 0
 	lastwave(integer) : "Last wave" : 0
 	zoffset(string) : "Z offset" : : ""
@@ -210,7 +212,7 @@
 	input Toggle(void) : "Toggle"
 ]
 
-@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_ammobox_spawn : "HORDE: спавн ящика патронов."
+@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_ammobox_spawn : "HORDE: ammo box spawn."
 [
 	disabled(choices) : "Start disabled" : 0 =
 	[
@@ -222,9 +224,9 @@
 	input Toggle(void) : "Toggle"
 ]
 
-@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_token_spawn : "HORDE: деньги / черепа / металл."
+@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_token_spawn : "HORDE: money / skull / metal spawn."
 [
-	token(string) : "Token type" : : "money / skull / metal и т.п."
+	token(string) : "Token type" : : "money / skull / metal, etc."
 	amount(integer) : "Amount" : 0
 	lifetime(string) : "Lifetime" : : ""
 	spawn_on_start(choices) : "Spawn on start" : 0 =
@@ -235,11 +237,12 @@
 	input Spawn(void) : "Spawn"
 	input Kill(void) : "Kill"
 	input SetAmount(integer) : "Set amount"
+	output OnSpawn(void) : "Item spawned."
 ]
 
-@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_buildable : "HORDE: постройка на карте без владельца."
+@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_buildable : "HORDE: ownerless map buildable."
 [
-	buildable(string) : "Buildable" : : "Класс/имя постройки."
+	buildable(string) : "Buildable" : : "Buildable class or name."
 	health(string) : "Health" : : ""
 	ammo(string) : "Ammo" : : ""
 	infinite_ammo(choices) : "Infinite ammo" : 0 =
@@ -259,19 +262,22 @@
 	input SetHealth(string) : "Set health"
 	input SetAmmo(string) : "Set ammo"
 	input SetRelationship(string) : "Set relationship"
+	output OnSpawn(void) : "Buildable spawned."
 ]
 
-@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = logic_horde_waves : "HORDE: управление волнами."
+@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = logic_horde_waves : "HORDE: wave control."
 [
-	wave(integer) : "Wave" : 0
+	wave(integer) : "Wave" : 0 : "Wave number for OnWaveStart/OnWaveEnd. 0 = every wave."
 	input AdvanceWave(void) : "Advance wave"
 	input EndWave(void) : "End wave"
 	input SetWave(integer) : "Set wave"
 	input SetWaves(integer) : "Set total waves"
 	input SetWaveStart(integer) : "Set wave start"
+	output OnWaveStart(integer) : "Wave started (parameter = wave number)."
+	output OnWaveEnd(integer) : "Wave ended (parameter = wave number)."
 ]
 
-@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = logic_horde_economy : "HORDE: экономика карты."
+@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = logic_horde_economy : "HORDE: map economy."
 [
 	startingmoney(integer) : "Starting money" : 0
 	killrewardbase(integer) : "Kill reward base" : 0
@@ -279,4 +285,47 @@
 	input SetStartingMoney(integer) : "Set starting money"
 	input SetKillRewardBase(integer) : "Set kill reward base"
 	input SetRoundBonusBase(integer) : "Set round bonus base"
+]
+
+@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = logic_horde_achievement : "HORDE: grant an achievement to a player."
+[
+	achievement(string) : "Achievement" : : "Achievement ID."
+	description(string) : "Description" : : ""
+	input ActivateAchievement(string) : "Grant to a player (player targetname or the activator)."
+]
+
+@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_spawn_distribution_uniform : "HORDE: spawn evenly across all points."
+[
+	disabled(choices) : "Start disabled" : 0 =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	input Enable(void) : "Enable"
+	input Disable(void) : "Disable"
+	input Toggle(void) : "Toggle"
+]
+
+@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_spawn_distribution_proximity : "HORDE: spawn by proximity to players."
+[
+	disabled(choices) : "Start disabled" : 0 =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	input Enable(void) : "Enable"
+	input Disable(void) : "Disable"
+	input Toggle(void) : "Toggle"
+]
+
+@PointClass base(HordeTargetname, HordeOrigin) studio("models/editor/axis_helper.mdl") = info_horde_spawn_distribution_proximity_noisy : "HORDE: spawn by proximity with noise."
+[
+	disabled(choices) : "Start disabled" : 0 =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	input Enable(void) : "Enable"
+	input Disable(void) : "Disable"
+	input Toggle(void) : "Toggle"
 ]
