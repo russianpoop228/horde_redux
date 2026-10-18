@@ -688,7 +688,13 @@ local function GetDefaultBinds()
     return default_binds
 end
 
-hook.Add("Think", "Horde_GameplayDefaultControls", function()
+local function BindState(entry)
+    local bound = input.LookupBinding(entry.cmd, true)
+    local engine_owns_key = bound ~= nil and string.upper(bound) == string.upper(entry.key)
+    return bound, engine_owns_key, (not engine_owns_key) and (entry.additive or bound == nil)
+end
+
+local function PollDefaultControls()
     if not cv_use_defaults:GetBool() then return end
 
     local ply = LocalPlayer()
@@ -703,11 +709,8 @@ hook.Add("Think", "Horde_GameplayDefaultControls", function()
         local down = (not ui_block) and ComboHeld(entry.codes)
 
         if down and not held[entry] then
-            local bound = input.LookupBinding(entry.cmd)
-            local engine_owns_key = bound ~= nil
-                and string.upper(bound) == string.upper(entry.key)
-
-            if not engine_owns_key and (entry.additive or bound == nil) then
+            local _, _, run = BindState(entry)
+            if run then
                 held[entry] = true
                 RunConsoleCommand(entry.cmd)
             end
@@ -716,6 +719,29 @@ hook.Add("Think", "Horde_GameplayDefaultControls", function()
             if string.sub(entry.cmd, 1, 1) == "+" then
                 RunConsoleCommand("-" .. string.sub(entry.cmd, 2))
             end
+        end
+    end
+end
+
+hook.Remove("Think", "Horde_GameplayDefaultControls")
+timer.Create("Horde_GameplayDefaultControls", 0, 0, PollDefaultControls)
+
+concommand.Add("horde_controls_debug", function()
+    local ply = LocalPlayer()
+    print(string.format("[Horde Controls] use_defaults=%s typing=%s console=%s cursor=%s gameui=%s",
+        tostring(cv_use_defaults:GetBool()), tostring(IsValid(ply) and ply:IsTyping()),
+        tostring(gui.IsConsoleVisible and gui.IsConsoleVisible()), tostring(vgui.CursorVisible()),
+        tostring(gui.IsGameUIVisible())))
+    for _, def in ipairs(HORDE.GameplayControlDefs) do
+        local cmd, key = HORDE:GetEffectiveGameplayControl(def.id)
+        local entry
+        for _, e in ipairs(GetDefaultBinds()) do if e.id == def.id then entry = e break end end
+        if entry then
+            local bound, owns, run = BindState(entry)
+            print(string.format("  %-14s %-28s key=%-10s codes=%s engine_bind=%s run=%s",
+                def.id, cmd, key, table.concat(entry.codes, "+"), tostring(bound), tostring(run)))
+        else
+            print(string.format("  %-14s %-28s key=%-10s (inactive)", def.id, cmd, key))
         end
     end
 end)

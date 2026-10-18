@@ -19,7 +19,7 @@ HORDE.GameplayControlDefs = {
     { id = "kick",           label = "Use kick:",            cmd = "",                           key = "" },
     { id = "drop",           label = "Drop item:",           cmd = "horde_drop",                 key = "" },
     { id = "money",          label = "Throw money:",         cmd = "horde_drop_money",           key = "V" },
-    { id = "secondary_ammo", label = "Secondary ammo:",      cmd = "horde_arccw_secondary_ammo", key = "B" },
+    { id = "secondary_ammo", label = "Secondary ammo:",      cmd = "horde_arccw_secondary_ammo", key = "" },
     { id = "grenade",        label = "Throw grenade:",       cmd = "horde_use_quick_grenade",    key = "G" },
     { id = "stats",          label = "Stats:",               cmd = "horde_stats",                key = "F1" },
     { id = "control_menu",   label = "Control menu:",        cmd = "horde_config_menu",          key = "F2" },
