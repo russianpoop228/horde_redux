@@ -3,18 +3,26 @@ AddCSLuaFile("cl_init.lua")
 include("shared.lua")
 ENT.CleanupPriority = 2
 
-local DEFAULT_MODEL    = "models/props_c17/oildrum001.mdl"
 local DEFAULT_LIFETIME = 45
+local LEGACY_MODEL = "models/props_c17/oildrum001.mdl"
 
 function ENT:Initialize()
-    self:SetModel(self.Horde_Model or DEFAULT_MODEL)
+    local model = self.Horde_Model
+    if not isstring(model) or model == "" or string.lower(model) == LEGACY_MODEL then
+        model = IsMounted("cstrike") and "models/props/cs_assault/money.mdl" or "models/items/flare.mdl"
+        if not IsMounted("cstrike") then self:SetColor(Color(0, 255, 0)) end
+    end
+    self:SetModel(model)
+    self:SetModelScale(2)
     self:SetAngles(angle_zero)
 
     self:SetSolid(SOLID_BBOX)
     self:SetMoveType(MOVETYPE_NONE)
+    self:SetCollisionBounds(Vector(-8, -8, 0), Vector(8, 8, 12))
     self:SetCollisionGroup(COLLISION_GROUP_WEAPON)
+    self:SetSolidFlags(bit.bor(FSOLID_NOT_SOLID, FSOLID_TRIGGER))
     self:SetTrigger(true)
-    self:UseTriggerBounds(true, 8)
+    self:UseTriggerBounds(true, 24)
 
     self.Removing = false
 
@@ -36,7 +44,7 @@ function ENT:Horde_DropToFloor()
         mask   = MASK_SOLID_BRUSHONLY,
     })
     if not tr.Hit then return end
-    self:SetPos(tr.HitPos - Vector(0, 0, self:OBBMins().z))
+    self:SetPos(tr.HitPos + Vector(0, 0, 2))
 end
 
 function ENT:StartTouch(entity)
