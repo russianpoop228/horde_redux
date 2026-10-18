@@ -12,15 +12,13 @@ local DEFAULTS = {
     [8] = { Name="PURISM", IsModifier=true,     DamageMult=2.185, HealthMult=1.725, RewardMult=0.348, EnemyCountMult=1.955, StartMoneyMult=0.522, SpawnRadiusMult=0.6, MaxEnemiesScaleFactor=1.495, PoisonHeadcrabDamage=90, StatusDurationBonus=5, BreakHealthLeft=0.04, ShockDamageIncrease=0.35, FrostbiteSlow=0.60, EliteHealthScaleAdd=0.145, EliteHealthScaleMultiplier=1.38, AdditionalPack=4, AdditionalAmmoboxes=0, MutationProbability=0.45, EliteMutationProbability=0.55, IsPurism=true, MaxWaves=10 },
 }
 
-local function MaxDifficultyIndex()
-    local max_index = #DEFAULTS
-    for idx in pairs(HORDE._difficulties or {}) do
-        if type(idx) == "number" and idx > max_index then max_index = idx end
-    end
-    return math.max(1, max_index)
+local function ResolveDifficultyIndex()
+    local idx = GetConVar("horde_difficulty"):GetInt() + 1
+    if (HORDE._difficulties and HORDE._difficulties[idx]) or DEFAULTS[idx] then return idx end
+    return math.Clamp(idx, 1, #DEFAULTS)
 end
 
-HORDE.difficulty = math.Clamp(GetConVar("horde_difficulty"):GetInt() + 1, 1, MaxDifficultyIndex())
+HORDE.difficulty = ResolveDifficultyIndex()
 
 local function GetDiffData(index)
     local base = (HORDE._difficulties and HORDE._difficulties[index])
@@ -329,6 +327,7 @@ hook.Add("Horde_AllModulesLoaded", "Horde_ApplyDifficulty", function()
     if HORDE.LoadDifficultyBasicsFromDB then
         HORDE:LoadDifficultyBasicsFromDB()
     end
+    HORDE.difficulty = ResolveDifficultyIndex()
     ApplyDifficulty()
     if HORDE.ApplySettingsModifier then HORDE:ApplySettingsModifier() end
     if HORDE.RefreshActiveEnemies then HORDE:RefreshActiveEnemies() end
@@ -376,7 +375,7 @@ function HORDE:ApplySettingsModifier()
 end
 
 function HORDE:ReapplyDifficulty()
-    HORDE.difficulty = math.Clamp(GetConVar("horde_difficulty"):GetInt() + 1, 1, MaxDifficultyIndex())
+    HORDE.difficulty = ResolveDifficultyIndex()
     ApplyDifficulty()
     if HORDE.RefreshActiveEnemies then HORDE:RefreshActiveEnemies() end
     return HORDE.difficulty
