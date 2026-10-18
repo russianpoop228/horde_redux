@@ -73,7 +73,8 @@ ENT.Horde_Immune_Bleeding = true
 function ENT:CustomOnInitialize()
 	self:SetSkin(math.random(0,3))
 	timer.Simple(0.1, function ()
-		self:SetAngles(Angle(0,0,0))
+		if not IsValid(self) then return end
+		self:SetAngles(Angle(0, self:GetAngles().y, 0))
 		HORDE:DropTurret(self)
 	end)
 end
