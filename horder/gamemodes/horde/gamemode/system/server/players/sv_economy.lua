@@ -19,6 +19,30 @@ concommand.Add("horde_drop_weapon", function (ply, cmd, args)
     ply:DropWeapon()
 end)
 
+local GIVE_LEFTOVER_LIMIT = 3
+local GIVE_LEFTOVER_LIFETIME = 30
+
+function HORDE:TrackGivenLeftover(ply, ent)
+    if not IsValid(ent) or ent:IsWeapon() then return end
+    timer.Simple(0, function()
+        if not IsValid(ent) or IsValid(ent:GetOwner()) then return end
+        if not IsValid(ply) then ent:Remove() return end
+        local list = ply.Horde_GiveLeftovers or {}
+        for i = #list, 1, -1 do
+            if not IsValid(list[i]) then table.remove(list, i) end
+        end
+        list[#list + 1] = ent
+        while #list > GIVE_LEFTOVER_LIMIT do
+            local old = table.remove(list, 1)
+            if IsValid(old) then old:Remove() end
+        end
+        ply.Horde_GiveLeftovers = list
+        timer.Simple(GIVE_LEFTOVER_LIFETIME, function()
+            if IsValid(ent) and not IsValid(ent:GetOwner()) then ent:Remove() end
+        end)
+    end)
+end
+
 util.AddNetworkString("Horde_BuyItem")
 util.AddNetworkString("Horde_BuyItemAmmoPrimary")
 util.AddNetworkString("Horde_BuyItemAmmoSecondary")
@@ -600,8 +624,9 @@ net.Receive("Horde_BuyItem", function (len, ply)
                 ply:Give(class)
                 ply:SelectWeapon(class)
             elseif item.entity_properties.type == HORDE.ENTITY_PROPERTY_GIVE then
-                if GetConVar("horde_default_item_config"):GetInt() == 1 and class == "item_battery" then
-                    if ply:Armor() >= ply:GetMaxArmor() then return end
+                if class == "item_battery" and ply:Armor() >= ply:GetMaxArmor() then
+                    HORDE:SendNotification("Your armor is already full.", 1, ply)
+                    return
                 end
                 ply:Horde_AddMoney(-price)
                 ply:Horde_AddSkullTokens(-skull_tokens)
@@ -609,7 +634,7 @@ net.Receive("Horde_BuyItem", function (len, ply)
                     ArcCW:PlayerGiveAtt(ply, class, 1)
                     ArcCW:PlayerSendAttInv(ply)
                 else
-                    ply:Give(class)
+                    HORDE:TrackGivenLeftover(ply, ply:Give(class))
                 end
             elseif item.entity_properties.type == HORDE.ENTITY_PROPERTY_DROP then
                 local drop_entities = ply:Horde_GetDropEntities()
