@@ -1208,7 +1208,9 @@ function DESC:DrawInfusion(m, alpha)
     local f = UI.Font(13.5, false)
     local f_b = UI.Font(12, true)
     local ids = {}
-    for _, inf in pairs(item.infusions) do ids[#ids + 1] = inf end
+    for _, inf in pairs(item.infusions) do
+        if inf ~= HORDE.Infusion_None and HORDE:IsInfusionRegistered(inf) then ids[#ids + 1] = inf end
+    end
     table.sort(ids)
 
     local y0 = m.text_y

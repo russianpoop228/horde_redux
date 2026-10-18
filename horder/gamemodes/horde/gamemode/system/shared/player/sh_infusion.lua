@@ -76,6 +76,11 @@ function HORDE:RegisterInfusion(tbl)
     return id
 end
 
+function HORDE:IsInfusionRegistered(id)
+    id = tonumber(id)
+    return id ~= nil and (id == HORDE.Infusion_None or HORDE.Infusion_Names[id] ~= nil)
+end
+
 function HORDE:GetInfusionID(key)
     return HORDE.Infusion_ByKey and HORDE.Infusion_ByKey[key]
 end
@@ -116,7 +121,7 @@ if SERVER then
 function HORDE:InfuseWeapon(ply, class, infusion)
     if not ply.Horde_Infusions then ply.Horde_Infusions = {} end
     if not ply.Horde_Infusions[class] then ply.Horde_Infusions[class] = {} end
-    if infusion == HORDE.Infusion_None then
+    if infusion == HORDE.Infusion_None or not HORDE:IsInfusionRegistered(infusion) then
         ply.Horde_Infusions[class] = nil
     else
         ply.Horde_Infusions[class] = infusion
@@ -178,6 +183,7 @@ net.Receive("Horde_BuyInfusion", function (len, ply)
     if not IsValid(ply) or not ply:Alive() or not ply.Horde_Init_Complete then return end
     local class = net.ReadString()
     local infusion = net.ReadUInt(5)
+    if infusion ~= HORDE.Infusion_None and not HORDE:IsInfusionRegistered(infusion) then return end
     local item = HORDE.items and HORDE.items[class]
     if not item or not istable(item.infusions) or table.IsEmpty(item.infusions)
         or not table.HasValue(item.infusions, infusion) or not ply:HasWeapon(class) then return end

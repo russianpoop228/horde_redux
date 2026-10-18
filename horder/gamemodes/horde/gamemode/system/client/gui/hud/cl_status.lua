@@ -1,3 +1,4 @@
+local infusion_mats = {}
 local plymeta = FindMetaTable("Player")
 
 function plymeta:SetStatus(status, stack)
@@ -509,11 +510,16 @@ hook.Add("HUDPaint", "Horde_DrawHud", function ()
                 end
 
             else
-                if MySelf:Horde_GetInfusion(wpn:GetClass()) ~= HORDE.Infusion_None then
-                    local infusion = MySelf:Horde_GetInfusion(wpn:GetClass())
-                    local infusion_mat = Material(HORDE.Infusion_Icons[infusion], "mips smooth")
+                local infusion = MySelf:Horde_GetInfusion(wpn:GetClass())
+                local infusion_icon = infusion ~= HORDE.Infusion_None and HORDE.Infusion_Icons[infusion]
+                if infusion_icon then
+                    local infusion_mat = infusion_mats[infusion_icon]
+                    if not infusion_mat then
+                        infusion_mat = Material(infusion_icon, "mips smooth")
+                        infusion_mats[infusion_icon] = infusion_mat
+                    end
                     surface.SetMaterial(infusion_mat)
-                    surface.SetDrawColor(HORDE.Infusion_Colors[infusion])
+                    surface.SetDrawColor(HORDE.Infusion_Colors[infusion] or color_white)
                     surface.DrawTexturedRect(ScrW() - ScreenScale(16), icon_y, ScreenScale(6), ScreenScale(6))
                 end
                 if wpn.Base == "arccw_horde_base_nade" then

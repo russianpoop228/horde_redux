@@ -212,7 +212,9 @@ function PANEL:SetData(item)
     if not item.infusions or table.IsEmpty(item.infusions) then return end
 
     for _, infusion in SortedPairsByValue(item.infusions) do
+        if infusion ~= HORDE.Infusion_None and HORDE:IsInfusionRegistered(infusion) then
             self:add_infusion(infusion, 100 + item.price / 5)
+        end
     end
 end
 
