@@ -174,6 +174,8 @@ function ENT:SoulResurrect()
     target.Horde_Fake_Respawn = nil
 
     if IsValid(target) then
+        if HORDE and HORDE.ClearSpectatorState then HORDE:ClearSpectatorState(target) end
+        target:UnSpectate()
         target:SetPos(pos)
         target:SetAngles(ang)
         target:SetVelocity(vector_origin)
