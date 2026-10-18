@@ -64,12 +64,25 @@ local function GiveSkullToken(killPos, attacker)
     HORDE:SendNotification("Skull token found!", 0, target)
 end
 
+local PICKUP_LIFETIME = 30
+local PICKUPS = {
+    item_healthkit  = true,
+    item_healthvial = true,
+    item_battery    = true,
+    horde_ammobox   = true,
+}
+
 local function SpawnEntity(class, spawnPos)
     local ent = ents.Create(class)
     if not IsValid(ent) then return end
     ent:SetPos(spawnPos)
     ent:Spawn()
     ent:Activate()
+    if PICKUPS[class] then
+        timer.Simple(PICKUP_LIFETIME, function()
+            if IsValid(ent) and not IsValid(ent:GetOwner()) then ent:Remove() end
+        end)
+    end
 end
 
 MUTATION.Hooks.Horde_OnEnemyKilled = function(ent, attacker, inflictor)
