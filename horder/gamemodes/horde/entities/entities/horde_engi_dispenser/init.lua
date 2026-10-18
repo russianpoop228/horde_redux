@@ -139,6 +139,24 @@ function ENT:DoResupplyTick()
 		end
 	end
 
+	local clips = HORDE.Dispenser_PlayerClips or 1
+	if clips > 0 then
+		for _, ply in ipairs(player.GetAll()) do
+			if ply:Alive() and ply:GetPos():DistToSqr(my_pos) <= range_sqr then
+				local wpn = ply:GetActiveWeapon()
+				if IsValid(wpn) then
+					local ammo_type = wpn:GetPrimaryAmmoType()
+					if ammo_type and ammo_type >= 0 then
+						local clip = wpn:GetMaxClip1()
+						if not clip or clip <= 0 then clip = 10 end
+						ply:GiveAmmo(math.ceil(clip * clips), ammo_type, false)
+						resupplied_any = true
+					end
+				end
+			end
+		end
+	end
+
 	if resupplied_any or metal_added then
 		local ed = EffectData()
 		ed:SetOrigin(my_pos + vector_up * 20)

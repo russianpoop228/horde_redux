@@ -7,8 +7,9 @@ ENT.Category		= "Horde"
 
 HORDE = HORDE or {}
 HORDE.Dispenser_Range     = 150
-HORDE.Dispenser_Tick      = HORDE.Dispenser_Tick or 10
-HORDE.Dispenser_RefillPct = HORDE.Dispenser_RefillPct or 0.05
+HORDE.Dispenser_Tick      = HORDE.Dispenser_Tick or 5
+HORDE.Dispenser_RefillPct = HORDE.Dispenser_RefillPct or 0.15
+HORDE.Dispenser_PlayerClips = HORDE.Dispenser_PlayerClips or 1
 HORDE.Dispenser_MetalRefill = HORDE.Dispenser_MetalRefill or 15
 
 if (CLIENT) then
