@@ -14,7 +14,12 @@ function ENT:OnRemove()
 	towers[self] = nil
 end
 
+local next_scan = 0
 hook.Add("PreDraw_ImmersionBreakingCircles", "Draw_EngiHealingTowerRadius", function()
+	if CurTime() >= next_scan then
+		next_scan = CurTime() + 0.5
+		for _, e in ipairs(ents.FindByClass("horde_engi_healing_tower")) do towers[e] = true end
+	end
 	if next(towers) == nil then return end
 	local ply = LocalPlayer()
 	if not IsValid(ply) then return end
