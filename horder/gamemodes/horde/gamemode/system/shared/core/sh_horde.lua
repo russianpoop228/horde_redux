@@ -144,7 +144,8 @@ HORDE.color_config_btn = Color(40,40,40)
 HORDE.start_game = false
 HORDE.total_enemies_per_wave = {15, 19, 23, 27, 30, 33, 36, 39, 42, 45}
 
-local rng_state = bit.tobit(os.time() * 2654435761 + math.floor(SysTime() * 1000000))
+local rng_state = bit.bxor(bit.tobit(os.time() % 4294967296),
+    bit.rol(bit.tobit(math.floor(SysTime() * 1000000) % 4294967296), 16))
 if rng_state == 0 then rng_state = 0x2545F491 end
 
 function HORDE:Random(a, b)
@@ -158,6 +159,8 @@ function HORDE:Random(a, b)
     if b == nil then a, b = 1, a end
     return a + math.floor(f * (b - a + 1))
 end
+
+for _ = 1, 16 do HORDE:Random() end
 
 function HORDE:Shuffle(list)
     for i = #list, 2, -1 do
