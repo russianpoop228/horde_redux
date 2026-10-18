@@ -1430,8 +1430,8 @@ function HORDE:WaveStart()
     end
 
     for _, ent in pairs(ents.FindByClass("logic_horde_waves")) do
-        if ent.Wave == current_wave or ent.Wave == -1 then
-            ent:Input("onwavestart", ent, ent, current_wave)
+        if ent.Wave == HORDE.current_wave or ent.Wave == -1 then
+            ent:Input("onwavestart", ent, ent, HORDE.current_wave)
         end
     end
 end
